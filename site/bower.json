@@ -1,0 +1,22 @@
+{
+  "name": "citrushack.com",
+  "version": "1.0.0",
+  "authors": [
+    "omoman <mannysanchez998@gmail.com>"
+  ],
+  "description": "UCR's Hackathon Site",
+  "main": "index.html",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "homepage": "http://citrushack.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

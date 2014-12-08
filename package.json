@@ -1,0 +1,14 @@
+{
+  "name": "citrushack",
+  "version": "1.0.0",
+  "description": "UCR's Hackathon Website",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Manuel Sanchez",
+  "license": "MIT",
+  "dependencies": {
+    "express": "~4.10.4"
+  }
+}
