@@ -1,0 +1,40 @@
+/**
+ * apply
+ */
+
+/**
+ * Module imports
+ */
+
+@import 'modules/colors';
+
+/**
+ * Local variables
+ */
+
+$apply-height: 100%;
+$apply-bg-color: #F1F1F1;
+$apply-header-margin-top: 20px;
+$apply-header-margin-bottom: 20px;
+$submit-margin-top: 30px;
+
+/**
+ * Styles
+ */
+
+#apply {
+    min-height: $apply-height;
+    background-color: $apply-bg-color;
+
+    form {
+        margin-top: 50px;
+    } 
+
+    #submit {
+        margin: $submit-margin-top 0 0 0;
+    }
+
+    h3 {
+        margin: $apply-header-margin-top 0 $apply-header-margin-bottom 0;
+    }
+} 

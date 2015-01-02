@@ -14,7 +14,6 @@ var app = express();
  * Configure express server
  */
 
-// Set static file path
 var sitePath = path.join(__dirname, 'site');
 app.use(express.static(sitePath));
 

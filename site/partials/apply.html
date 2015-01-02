@@ -1,0 +1,137 @@
+<!-- Name, Phone Number, Address, School, Gender, Age, Nationality, Resume, Interests, Major, Projects -->
+<div id='apply' class='container-fluid'>
+    <section>
+        <header>
+            <h1>Ready for the Inland Empire's Premier Hackathon?</h1>
+            <h4 class='text-muted'>We just need this info from you</h4>
+        </header>
+
+        <div class='row'>
+            <div class='col-md-6'>
+                <form>
+                    <div class='row'>
+                        <!-- Who are you -->
+                        <div class='col-md-12'>
+                            <h3>Who are you?</h3>
+                        </div> 
+                        <div class='form-group col-md-6'>
+                            <label class='control-label required' for='firstName'>First Name</label>
+                            <input type='text' class='form-control' id='firstName' placeholder='Marion'> 
+                        </div>
+
+                        <div class='form-group col-md-6'>
+                            <label class='control-label required' for='lastName'>Last Name</label>
+                            <input type='text' class='form-control' id='lastName' placeholder='Smith'>
+                        </div>
+
+                        <div class='form-group col-md-6'>
+                            <label class='control-label required'>Gender</label>
+                            <br>
+                            <label class="radio-inline" ng-repeat='gender in GENDERS'>
+                                <input type="radio" name="gender" id="{{ gender }}" ng-true-value='true' ng-false-value='false'>{{ gender }}
+                            </label>
+                        </div><!-- who are you -->
+
+                        <!-- How do we contact you --> 
+                        <div class='col-md-12'>
+                            <h3>Contact info</h3>
+                        </div>
+                        <div class='form-group col-md-6'>
+                            <label class='control-label required' for='email'>Email</label>
+                            <input type='email' class='form-control' id='email' placeholder='msmith@ucr.edu'>
+                        </div>
+
+                        <div class='form-group col-md-6'>
+                            <label class='control-label' for='phoneNumber' tooltip='{{ phoneNeededReason }}'><u>Phone Number</u></label>
+                            <input type='text' class='form-control' id='phoneNumber' placeholder='9091234567' maxlength='10'>
+                        </div><!-- How do we contact you -->
+
+                        <!-- Education -->
+                        <div class='col-md-12'>
+                            <h3>Education</h3>
+                        </div>
+                        <div class='form-group col-md-12'>
+                            <label class='control-label required' for='school'>School</label>
+                            <select class='form-control' id='school' ng-model='school' ng-options="school for school in SCHOOLS">
+                                <option value="">-- Select your school --</option>
+                            </select>
+                        </div>
+
+                        <div class='form-group col-md-12'>
+                            <label class='control-label required' for='classLevel'>Class Level</label>
+                            <select class='form-control' id='classLevel' ng-model='classLevel' ng-options='level for level in CLASS_LEVELS'>
+                                <option value="">-- Select your class level --</option>
+                            </select>
+                        </div><!-- Education -->
+
+                        <!-- About you -->
+                        <div class='col-md-12'>
+                            <h3>About you</h3>
+                        </div>
+                        <div class='form-group col-md-12'>
+                            <label class='control-label' for='applicantType'>Hacker, Hustler, or Designer?</label>
+                            <select class='form-control' id='applicantType' ng-model='applicantType' ng-options='type for type in APPLICANT_TYPES'>
+                                <option value="">-- Select a role --</option>
+                            </select>
+                        </div>
+
+                        <div class='form-group col-md-12'>
+                            <label class='control-label required' tooltip='{{ ageNeededReason }}'for='age'><u>How young are you?</u></label>
+                            <input type='number' class='form-control' id='age' min='18' max='30' placeholder='18'>
+                        </div>
+
+                        <div class='form-group col-md-12'>
+                            <label class='control-label' for='dietaryRestrictions' tooltip='{{ dietaryRestrictionsInfo }}'>Dietary restrictions? <span class='text-muted'>(Select all that apply)</span></label>
+                            <br>
+                            <label class='checkbox-inline' ng-repeat='restriction in DIETARY_RESTRICTIONS'>
+                                <input type='checkbox' name='dietaryRestrictions' id='{{ restriction }}' value='{{ restriction }}'>{{ restriction }}
+                            </label>
+                        </div><!-- About you -->
+
+                        <!-- Last things -->
+                        <div class='col-md-12'>
+                            <h3>Last things</h3>
+                        </div>
+
+                        <div class='form-group col-md-12'>
+                            <label class='control-label required' for='transportation'>Will you need a ride?</label>
+                            <br>
+                            <label class='radio-inline'>
+                                <input type='radio' name='transportation' id='transportation' value='Yes'>Yes
+                            </label>
+                            <label class='radio-inline'>
+                                <input type='radio' name='transportation' id='transportation' value='No'>No
+                            </label>
+                        </div>
+
+                        <div class='form-group col-md-12'>
+                            <label class='control-label' for='github'>Github username</label>
+                            <div class='input-group'>
+                                <div class='input-group-addon'>@</div>
+                                <input type='text' class='form-control' id='github' placeholder='citrushack'>
+                            </div>
+                        </div>
+
+                        <div class='form-group col-md-12'>
+                            <label class='control-label' for='hardware'>What kind of hardware would you like to hack on? <span class='text-muted'>(Max 100 chars)</span></label>
+                            <input type='text' class='form-control' id='hardware' placeholder='Oculus Rift, Pebble, Myo...'>
+                        </div>
+
+                        <div class='form-group col-md-12'>
+                            <label class='control-label required' for='resume'>Resume</label>
+                            <input type='file' id='resume'>
+                        </div>
+                        <!-- submit -->
+                        <div class='col-md-12' id='submit'>                      
+                            <button type='submit' class='btn btn-danger btn-block'>Submit</button>
+                        </div><!-- submit -->
+                    </div>
+                </form>
+            </div>
+
+            <div class='col-md-6'>
+                <img src='../img/clock-tower.jpg' class='img-responsive'></img> 
+            </div>
+        </div>
+    </section>
+</div>

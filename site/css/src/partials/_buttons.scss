@@ -1,0 +1,89 @@
+/**
+ * Buttons
+ */
+
+/**
+ * Module imports
+ */
+
+@import 'modules/colors';
+@import 'modules/mixins';
+
+/**
+ * Local variables
+ */
+
+$btn-border-width: 2px;
+
+/**
+ * Remove blue outline from bootstrap Buttons. See 
+ * http://stackoverflow.com/questions/20340138/remove-blue-border-from-css-custom-styled-button-in-chrome
+ */
+
+.btn:focus {
+    outline: none !important;
+}
+
+/**
+ * Changed default border width and radius
+ */
+
+.btn {
+    border-width: $btn-border-width;
+    border-radius: 3px;
+}
+
+/**
+ * Add color change and active animation to
+ * all button classes
+ */
+
+.btn-success,
+.btn-warning,
+.btn-info,
+.btn-danger,
+.btn-default,
+.btn-primary {
+
+    &:hover,
+    &:focus {
+        -webkit-transition: background-color .5s, color .5s;
+        transition: background-color .5s, color .5s;
+    }
+
+    &:active {
+        @include transform(translateY(2px));
+    }
+}
+
+/**
+ * Make button classes transparent
+ */
+
+@mixin transparent-btn ($class, $bg-color, $text-color) {
+    .btn-#{$class} {
+        background-color: $transparent;
+        border-color: #{$bg-color};
+        color: #{$bg-color};
+        font-weight: bold;
+
+        &:disabled {
+            background-color: $transparent;
+            border-color: $bg-color;
+        }
+
+        &:hover,
+        &:focus {
+            background-color: #{$bg-color};
+            border-color: #{$bg-color};
+            color: #{$text-color};
+        }
+    }
+}
+
+@include transparent-btn ('primary', $brand-primary, $white);
+@include transparent-btn ('warning', $brand-warning, $white);
+@include transparent-btn ('info', $brand-info, $white);
+@include transparent-btn ('danger', $brand-danger, $white);
+@include transparent-btn ('success', $brand-success, $white);
+@include transparent-btn ('default', $vormator-gray, $white);

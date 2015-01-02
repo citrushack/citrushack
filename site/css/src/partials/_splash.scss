@@ -1,0 +1,27 @@
+/**
+ * Splash
+ */
+
+ /**
+  * Local variables
+  */
+
+$splash-width: 100%;
+$splash-height: 100%;
+
+$splash-img-src: 'img/bourns.jpg';
+
+/**
+ * Styles
+ */
+
+#splash {
+    min-height: $splash-height;
+    width: $splash-width;
+    position: relative;
+    // Background
+    background-image: image-url($splash-img-src);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}

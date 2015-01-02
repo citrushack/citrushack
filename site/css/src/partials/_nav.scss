@@ -1,0 +1,38 @@
+/**
+ * Navigation
+ */
+
+/**
+ * Module imports
+ */
+
+@import 'modules/colors';
+
+/**
+ * Local variables
+ */
+
+$nav-color: $scarlett-red;
+$nav-logo-width: 50%;
+$nav-padding-top: 30px;
+$nav-padding-left: 10px;
+$nav-padding-right: 10px;
+
+$login-btns-margin-top: 100px;
+
+/**
+ * Styles
+ */
+ 
+#nav-wrapper {
+    background-color: $nav-color;
+    padding: $nav-padding-top $nav-padding-right 0px $nav-padding-left;
+
+    #logo {
+        max-width: 50%;
+    }
+
+    #login-action-btns {
+        margin-top: $login-btns-margin-top;
+    }
+}
