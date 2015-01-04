@@ -12,7 +12,7 @@
  * Local variables
  */
 
-$nav-width: 260px;
+$nav-width: 180px;
 $nav-height: 100%;
 $content-height: 100%;
 $content-width: 100%;
@@ -106,7 +106,7 @@ $toggle-animation-speed: .25s;
 }
 
 #nav-toggle:checked ~ #nav-toggle-label {
-    left: 260px;
+    left: $nav-width;
 }
 
 #nav-toggle:checked ~ #nav-wrapper {
