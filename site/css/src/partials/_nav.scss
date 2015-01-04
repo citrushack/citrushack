@@ -12,7 +12,7 @@
  * Local variables
  */
 
-$nav-color: $scarlett-red;
+$nav-bg-image: "img/whitediamond.png";
 $nav-logo-width: 50%;
 $nav-padding-top: 30px;
 $nav-padding-left: 10px;
@@ -25,11 +25,13 @@ $login-btns-margin-top: 100px;
  */
  
 #nav-wrapper {
-    background-color: $nav-color;
+    // Background
+    background-image: image-url($nav-bg-image);
+    background-repeat: repeat;
     padding: $nav-padding-top $nav-padding-right 0px $nav-padding-left;
 
     #logo {
-        max-width: 50%;
+        max-width: 70%;
     }
 
     #login-action-btns {
