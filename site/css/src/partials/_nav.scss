@@ -12,7 +12,7 @@
  * Local variables
  */
 
-$nav-bg-image: "img/whitediamond.png";
+$nav-bg-color: $transparent;
 $nav-logo-width: 50%;
 $nav-padding-top: 30px;
 $nav-padding-left: 10px;
@@ -25,9 +25,17 @@ $login-btns-margin-top: 100px;
  */
  
 #nav-wrapper {
-    // Background
-    background-image: image-url($nav-bg-image);
-    background-repeat: repeat;
+    background-color: $nav-bg-color;
+    
+    /**
+     * When page is at most col-md width
+     * make nav non transparent
+     */
+
+    @media (max-width:991px) {
+        background-color: $white;
+    }
+
     padding: $nav-padding-top $nav-padding-right 0px $nav-padding-left;
 
     #logo {

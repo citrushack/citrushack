@@ -3,8 +3,23 @@
  */
 
 /**
+ * Module imports
+ */
+
+@import 'modules/colors';
+
+/**
+ * Local variables
+ */
+
+$intro-bg-color: $scarlett-red;
+$intro-color: $white;
+
+/**
  * Styles
  */
 
 #intro {
+    background-color: $intro-bg-color;
+    color: $intro-color;
 }

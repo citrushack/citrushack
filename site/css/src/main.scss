@@ -18,13 +18,20 @@
 @import 'partials/intro';
 
 /**
+ * Local variables
+ */
+
+$html-bg-image: 'img/whitediamond.png';
+$section-margin-top: 20px;
+
+/**
  * Ensure page is full width/height
  */
 
 html,
 body {
     min-width: 100%;
-    height: 100%
+    height: 100%;
 }
 
 /**
@@ -33,4 +40,29 @@ body {
 
 .container-fluid {
     padding: 40px 40px 40px 40px;
+}
+
+/**
+ * Styles to apply when page is at least
+ * col-md width
+ */
+
+@media (min-width:992px) {
+    /**
+     * Set HTML Body background
+     */
+     body {
+        // Background
+        background-image: image-url($html-bg-image);
+        background-repeat: repeat;
+     }
+
+    /**
+     * Make a gap between each section except for the 
+     * first
+     */
+
+    section:not(:first-child) {
+        margin-top: $section-margin-top;
+    }
 }
