@@ -1,0 +1,26 @@
+/**
+ * FAQ
+ */
+
+/**
+ * Module imports
+ */
+
+@import 'modules/colors';
+
+/**
+ * Local variables
+ */
+
+$faq-bg-color: $citrus-orange;
+$faq-color: $white;
+
+/**
+ * Styles
+ */
+
+#faq {
+    background-color: $faq-bg-color;
+    color: $faq-color;
+}
+
