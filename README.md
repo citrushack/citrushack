@@ -1,1 +1,1 @@
-Rewrite of CitrusHack Site
+Dynamic version of the Citrus Hack site
