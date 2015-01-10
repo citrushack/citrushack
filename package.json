@@ -8,9 +8,6 @@
   },
   "author": "Manuel Sanchez",
   "license": "MIT",
-  "dependencies": {
-    "express": "~4.10.4"
-  },
   "devDependencies": {
     "gulp": "~3.8.10",
     "gulp-concat": "~2.4.2",
