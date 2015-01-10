@@ -32,6 +32,31 @@ textarea {
     font-family: $body-font-stack;
 }
 
+/**
+ * When site is at least col-md width
+ */
+
+@media (min-width: 992px) {
+    h1 {
+        font-size: 46px;
+    }
+    h2 {
+        font-size: 40px;
+    }
+    h3 {
+        font-size: 34px;
+    }
+    h4 {
+        font-size: 28px;
+    }
+    h5 {
+        font-size: 22px;
+    }
+    h6 {
+        font-size: 16px;
+    }
+}
+
 .text-bold {
     font-weight: 700;
 }
