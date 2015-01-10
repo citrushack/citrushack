@@ -12,8 +12,9 @@
  * Local variables
  */
 
-$intro-bg-color: $scarlett-red;
-$intro-color: $white;
+$intro-bg-color: $white;
+$info-margin-top: 40px;
+$info-h1-color: $citrus-orange;
 
 /**
  * Styles
@@ -21,5 +22,10 @@ $intro-color: $white;
 
 #intro {
     background-color: $intro-bg-color;
-    color: $intro-color;
+    #info-group {
+        margin-top: $info-margin-top;  
+        h1 {
+            color: $info-h1-color;
+        }
+    }
 }
