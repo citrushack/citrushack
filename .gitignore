@@ -42,3 +42,6 @@ node_modules
 # Ignore vagrant stuff
 .vagrant
 
+# Vim stuff
+*.swp
+
