@@ -1,0 +1,32 @@
+/**
+ * Trailer
+ */
+
+/**
+ * Module Imports
+ */
+
+@import 'modules/colors';
+
+/**
+ * Local variables
+ */
+
+$trailer-bg-color: $citrus-lime;
+$trailer-color: $white;
+$trailer-video-margin-top: 40px;
+
+/**
+ * Styles
+ */
+
+#trailer {
+    background-color: $trailer-bg-color;
+    color: $trailer-color;
+
+    iframe {
+        max-width: 100%;
+        margin-top: $trailer-video-margin-top;
+    }
+}
+
