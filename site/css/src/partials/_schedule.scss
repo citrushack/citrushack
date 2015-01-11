@@ -16,6 +16,8 @@ $schedule-bg-color: $scarlett-red;
 $schedule-margin-top: 40px;
 $schedule-padding-sides: 40px;
 $schedule-header-color: $white;
+$schedule-footer-color: $white;
+$schedule-footer-margin-top: 40px;
 
 /**
  * Styles
@@ -27,6 +29,11 @@ $schedule-header-color: $white;
     
     #schedule-heading {
         color: $schedule-header-color;
+    }
+
+    #schedule-footer {
+        color: $schedule-footer-color;
+        margin-top: $schedule-footer-margin-top;
     }
 }
 
