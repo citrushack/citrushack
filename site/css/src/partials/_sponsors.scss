@@ -1,0 +1,30 @@
+/**
+ * Sponsors
+ */
+
+/**
+ * Module imports
+ */
+
+@import 'modules/colors';
+
+/**
+ * Local variables
+ */
+
+$sponsors-bg-color: $white;
+$sponsor-interest-color: $citrus-orange;
+$sponsor-interest-margin-top: 40px;
+
+/**
+ * Styles
+ */
+
+#sponsors {
+    background-color: $sponsors-bg-color;
+    #sponsor-interest {
+        color: $sponsor-interest-color;
+        margin-top: $sponsor-interest-margin-top;
+    }
+}
+
