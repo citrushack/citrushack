@@ -13,7 +13,11 @@
  */
 
 $faq-bg-color: $citrus-orange;
+$faq-panel-bg-color: darken($citrus-orange, 10%);
+$faq-panel-heading-color: $white;
 $faq-color: $white;
+$faq-body-margin-top: 40px;
+$disclaimer-margin-top: 40px;
 
 /**
  * Styles
@@ -21,6 +25,25 @@ $faq-color: $white;
 
 #faq {
     background-color: $faq-bg-color;
-    color: $faq-color;
+    
+    h1, h5, h6 {
+        color: $white;
+    }
+    .panel-default > .panel-heading {
+        background-color: $faq-panel-bg-color;
+        color: $faq-panel-heading-color;
+    }
+
+    .panel {
+        border-color: $faq-panel-bg-color;
+    }
+
+    #faq-body {
+        margin-top: $faq-body-margin-top;
+    }
+
+    #disclaimer {
+        margin-top: $disclaimer-margin-top;
+    }
 }
 
