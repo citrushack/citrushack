@@ -1,0 +1,42 @@
+/**
+ * Credits
+ */
+
+/**
+ * Module imports
+ */
+
+@import 'modules/colors';
+
+/**
+ * Local variables
+ */
+
+$credits-bg-color: $white;
+$organized-margin-top: 40px;
+$supporters-margin-top: 40px;
+$supporters-max-height: 100px;
+$supporters-margin-top: 20px;
+$organizer-max-height: 250px;
+
+/**
+ * Styles 
+ */
+
+#credits {
+    background-color: $credits-bg-color;
+    #organized {
+        margin-top: $organized-margin-top;
+        img {
+            max-height: $organizer-max-height;
+        }
+    }
+    #supporters {
+        margin-top: $supporters-margin-top;
+        img {
+            margin-top: $supporters-margin-top;
+            max-height: $supporters-max-height;
+        }
+    }
+}
+
