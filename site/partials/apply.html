@@ -118,8 +118,8 @@
                         </div>
 
                         <div class='form-group col-md-12'>
-                            <label class='control-label required' for='resume'>Resume</label>
-                            <input type='file' id='resume'>
+                            <label class='control-label required' for='resume'>Resume</label><br>
+                            <button type="button" onclick="upload()">Choose File</button>
                         </div>
                         <!-- submit -->
                         <div class='col-md-12' id='submit'>                      
@@ -134,4 +134,15 @@
             </div>
         </div>
     </section>
+    <script>
+    function upload() {
+        filepicker.setKey("AP3pWMU5gT0WXllKAKYybz");
+
+        filepicker.pick(
+          function(Blob){
+            console.log(Blob.url);
+          }
+        );
+    }
+    </script>
 </div>
