@@ -16,20 +16,19 @@
                         </div> 
                         <div class='form-group col-md-6'>
                             <label class='control-label required' for='firstName'>First Name</label>
-                            <input type='text' class='form-control' id='firstName' placeholder='Marion'> 
+                            <input name="Fname" type='text' class='form-control' id='firstName' placeholder='Marion'> 
                         </div>
 
                         <div class='form-group col-md-6'>
                             <label class='control-label required' for='lastName'>Last Name</label>
-                            <input type='text' class='form-control' id='lastName' placeholder='Smith'>
+                            <input name="Lname" type='text' class='form-control' id='lastName' placeholder='Smith'>
                         </div>
 
                         <div class='form-group col-md-6'>
                             <label class='control-label required'>Gender</label>
                             <br>
-                            <label class="radio-inline" ng-repeat='gender in GENDERS'>
-                                <input type="radio" name="gender" id="{{ gender }}" ng-true-value='true' ng-false-value='false'>{{ gender }}
-                            </label>
+                            Male: <input type="radio" name="gender" value="Male"/> &nbsp;&nbsp;
+                            Female: <input type="radio" name="gender" value="Female"/><br/>
                         </div><!-- who are you -->
 
                         <!-- How do we contact you --> 
@@ -38,12 +37,12 @@
                         </div>
                         <div class='form-group col-md-6'>
                             <label class='control-label required' for='email'>Email</label>
-                            <input type='email' class='form-control' id='email' placeholder='msmith@ucr.edu'>
+                            <input name="email" type='email' class='form-control' id='email' placeholder='msmith@ucr.edu'>
                         </div>
 
                         <div class='form-group col-md-6'>
                             <label class='control-label' for='phoneNumber' tooltip='{{ phoneNeededReason }}'><u>Phone Number</u></label>
-                            <input type='text' class='form-control' id='phoneNumber' placeholder='9091234567' maxlength='10'>
+                            <input name="phone" type='text' class='form-control' id='phoneNumber' placeholder='9091234567' maxlength='10'>
                         </div><!-- How do we contact you -->
 
                         <!-- Education -->
@@ -77,7 +76,7 @@
 
                         <div class='form-group col-md-12'>
                             <label class='control-label required' tooltip='{{ ageNeededReason }}'for='age'><u>How young are you?</u></label>
-                            <input type='number' class='form-control' id='age' min='18' max='30' placeholder='18'>
+                            <input name="age" type='number' class='form-control' id='age' min='18' max='30' placeholder='18'>
                         </div>
 
                         <div class='form-group col-md-12'>
@@ -108,18 +107,19 @@
                             <label class='control-label' for='github'>Github username</label>
                             <div class='input-group'>
                                 <div class='input-group-addon'>@</div>
-                                <input type='text' class='form-control' id='github' placeholder='citrushack'>
+                                <input name="github" type='text' class='form-control' id='github' placeholder='citrushack'>
                             </div>
                         </div>
 
                         <div class='form-group col-md-12'>
                             <label class='control-label' for='hardware'>What kind of hardware would you like to hack on? <span class='text-muted'>(Max 100 chars)</span></label>
-                            <input type='text' class='form-control' id='hardware' placeholder='Oculus Rift, Pebble, Myo...'>
+                            <input name="hardware" type='text' class='form-control' id='hardware' placeholder='Oculus Rift, Pebble, Myo...'>
                         </div>
 
                         <div class='form-group col-md-12'>
                             <label class='control-label required' for='resume'>Resume</label><br>
                             <button type="button" onclick="upload()">Choose File</button>
+                            <input type="hidden" value="" name="application" id="resume">
                         </div>
                         <!-- submit -->
                         <div class='col-md-12' id='submit'>                      
@@ -141,8 +141,34 @@
         filepicker.pick(
           function(Blob){
             console.log(Blob.url);
+            var x = document.getElementById("resume");
+            x.setAttribute("value", Blob.url);
           }
         );
     }
+    
+    $.fn.serializeObject = function()
+    {
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function() {
+            if (o[this.name] !== undefined) {
+                if (!o[this.name].push) {
+                    o[this.name] = [o[this.name]];
+                }
+                o[this.name].push(this.value || '');
+            } else {
+                o[this.name] = this.value || '';
+            }
+        });
+        return o;
+    };
+
+    $(function() {
+        $('form').submit(function() {
+            console.log(JSON.stringify($('form').serializeObject()));
+            return false;
+        });
+    });
     </script>
 </div>
