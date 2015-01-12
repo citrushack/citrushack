@@ -8,7 +8,7 @@
 
         <div class='row'>
             <div class='col-md-6'>
-                <form>
+                <form id="submission">
                     <div class='row'>
                         <!-- Who are you -->
                         <div class='col-md-12'>
@@ -16,19 +16,19 @@
                         </div> 
                         <div class='form-group col-md-6'>
                             <label class='control-label required' for='firstName'>First Name</label>
-                            <input name="Fname" type='text' class='form-control' id='firstName' placeholder='Marion'> 
+                            <input title="First Name" name="Fname" type='text' class='form-control' id='firstName' placeholder='Marion'> 
                         </div>
 
                         <div class='form-group col-md-6'>
                             <label class='control-label required' for='lastName'>Last Name</label>
-                            <input name="Lname" type='text' class='form-control' id='lastName' placeholder='Smith'>
+                            <input title="Last Name" name="Lname" type='text' class='form-control' id='lastName' placeholder='Smith'>
                         </div>
 
                         <div class='form-group col-md-6'>
                             <label class='control-label required'>Gender</label>
                             <br>
-                            Male: <input type="radio" name="gender" value="Male"/> &nbsp;&nbsp;
-                            Female: <input type="radio" name="gender" value="Female"/><br/>
+                            Male: <input id="gender" title="Gender" type="radio" name="gender" value="Male"/> &nbsp;&nbsp;
+                            Female: <input title="Gender" type="radio" name="gender" value="Female"/><br/>
                         </div><!-- who are you -->
 
                         <!-- How do we contact you --> 
@@ -37,12 +37,12 @@
                         </div>
                         <div class='form-group col-md-6'>
                             <label class='control-label required' for='email'>Email</label>
-                            <input name="email" type='email' class='form-control' id='email' placeholder='msmith@ucr.edu'>
+                            <input title="Email Address" name="email" type='email' class='form-control' id='email' placeholder='msmith@ucr.edu'>
                         </div>
 
                         <div class='form-group col-md-6'>
                             <label class='control-label' for='phoneNumber' tooltip='{{ phoneNeededReason }}'><u>Phone Number</u></label>
-                            <input name="phone" type='text' class='form-control' id='phoneNumber' placeholder='9091234567' maxlength='10'>
+                            <input title="Phone Number" name="phone" type='text' class='form-control' id='phoneNumber' placeholder='9091234567' maxlength='10'>
                         </div><!-- How do we contact you -->
 
                         <!-- Education -->
@@ -51,15 +51,15 @@
                         </div>
                         <div class='form-group col-md-12'>
                             <label class='control-label required' for='school'>School</label>
-                            <select class='form-control' id='school' ng-model='school' ng-options="school for school in SCHOOLS">
+                            <select title="School" name="school" class='form-control' id='school' ng-model='school' ng-options="school for school in SCHOOLS">
                                 <option value="">-- Select your school --</option>
                             </select>
                         </div>
 
                         <div class='form-group col-md-12'>
                             <label class='control-label required' for='classLevel'>Class Level</label>
-                            <select class='form-control' id='classLevel' ng-model='classLevel' ng-options='level for level in CLASS_LEVELS'>
-                                <option value="">-- Select your class level --</option>
+                            <select title="Class Level" name="classLevel" class='form-control' id='classLevel' ng-model='classLevel' ng-options='level for level in CLASS_LEVELS'>
+                                <option title="Class Level" value="">-- Select your class level --</option>
                             </select>
                         </div><!-- Education -->
 
@@ -69,21 +69,21 @@
                         </div>
                         <div class='form-group col-md-12'>
                             <label class='control-label' for='applicantType'>Hacker, Hustler, or Designer?</label>
-                            <select class='form-control' id='applicantType' ng-model='applicantType' ng-options='type for type in APPLICANT_TYPES'>
-                                <option value="">-- Select a role --</option>
+                            <select name="applicantType" class='form-control' id='applicantType' ng-model='applicantType' ng-options='type for type in APPLICANT_TYPES'>
+                                <option title="Role" value="">-- Select a role --</option>
                             </select>
                         </div>
 
                         <div class='form-group col-md-12'>
                             <label class='control-label required' tooltip='{{ ageNeededReason }}'for='age'><u>How young are you?</u></label>
-                            <input name="age" type='number' class='form-control' id='age' min='18' max='30' placeholder='18'>
+                            <input title="Age" name="age" type='number' class='form-control' id='age' min='18' max='30' placeholder='18'>
                         </div>
 
                         <div class='form-group col-md-12'>
                             <label class='control-label' for='dietaryRestrictions' tooltip='{{ dietaryRestrictionsInfo }}'>Dietary restrictions? <span class='text-muted'>(Select all that apply)</span></label>
                             <br>
                             <label class='checkbox-inline' ng-repeat='restriction in DIETARY_RESTRICTIONS'>
-                                <input type='checkbox' name='dietaryRestrictions' id='{{ restriction }}' value='{{ restriction }}'>{{ restriction }}
+                                <input title="Restrictions" type='checkbox' name='dietaryRestrictions' id='{{ restriction }}' value='{{ restriction }}'>{{ restriction }}
                             </label>
                         </div><!-- About you -->
 
@@ -95,31 +95,27 @@
                         <div class='form-group col-md-12'>
                             <label class='control-label required' for='transportation'>Will you need a ride?</label>
                             <br>
-                            <label class='radio-inline'>
-                                <input type='radio' name='transportation' id='transportation' value='Yes'>Yes
-                            </label>
-                            <label class='radio-inline'>
-                                <input type='radio' name='transportation' id='transportation' value='No'>No
-                            </label>
+                            Yes: &nbsp;<input id="ride" title="Ride" type="radio" name="ride" value="Yes" required/> &nbsp;&nbsp;
+                            No: &nbsp;<input title="Ride" type="radio" name="ride" value="No" required/><br/>
                         </div>
 
                         <div class='form-group col-md-12'>
-                            <label class='control-label' for='github'>Github username</label>
+                            <label class='control-label' for='github'>Github Username</label>
                             <div class='input-group'>
                                 <div class='input-group-addon'>@</div>
-                                <input name="github" type='text' class='form-control' id='github' placeholder='citrushack'>
+                                <input title="Github Username" name="github" type='text' class='form-control' id='github' placeholder='citrushack'>
                             </div>
                         </div>
 
                         <div class='form-group col-md-12'>
                             <label class='control-label' for='hardware'>What kind of hardware would you like to hack on? <span class='text-muted'>(Max 100 chars)</span></label>
-                            <input name="hardware" type='text' class='form-control' id='hardware' placeholder='Oculus Rift, Pebble, Myo...'>
+                            <input title="Hardware" name="hardware" type='text' class='form-control' id='hardware' placeholder='Oculus Rift, Pebble, Myo...'>
                         </div>
 
                         <div class='form-group col-md-12'>
                             <label class='control-label required' for='resume'>Resume</label><br>
                             <button type="button" onclick="upload()">Choose File</button>
-                            <input type="hidden" value="" name="application" id="resume">
+                            <input title="Resume Submission" type="hidden" value="" name="application" id="resume">
                         </div>
                         <!-- submit -->
                         <div class='col-md-12' id='submit'>                      
@@ -152,23 +148,80 @@
         var o = {};
         var a = this.serializeArray();
         $.each(a, function() {
-            if (o[this.name] !== undefined) {
-                if (!o[this.name].push) {
-                    o[this.name] = [o[this.name]];
+            if (this.name !== undefined) {
+                if(o[this.name])
+                    o[this.name] += ", "+this.value || '';
+                else {
+                    if(this.name == "school") {
+                        o[this.name] = $("#school option:selected").text() || '';
+                    } else if(this.name == "classLevel" && this.value != 0) {
+                        o[this.name] = $("#classLevel option:selected").text() || '';
+                    } else if(this.name == "applicantType" && this.value != 0) {
+                        o[this.name] = $("#applicantType option:selected").text() || '';
+                    } else {
+                        o[this.name] = this.value || '';
+                    }
                 }
-                o[this.name].push(this.value || '');
             } else {
                 o[this.name] = this.value || '';
             }
         });
         return o;
     };
+    
+    function Validate()
+    {
+        var msg= "",
+            fields = document.getElementById("submission").querySelectorAll('input,textarea,select');
 
+        for (var i=0; i<fields.length; i++){
+            if(fields[i].id == "ride")
+                if ($$('input[name=ride]:checked').length == 0)
+                    msg += "Ride is required. \n";
+            if(fields[i].id == "gender")
+                if ($$('input[name=gender]:checked').length == 0)
+                    msg += "Gender is required. \n";
+            if (fields[i].value == "" && fields[i].name != "phone" && fields[i].name != "github" && fields[i].name != "hardware" && fields[i].name != "applicantType") { 
+                msg += fields[i].title + ' is required. \n';
+            }
+        }
+
+        if(msg) {
+            alert(msg);
+            return false;
+        }
+        else
+            return true;
+    }
+    
     $(function() {
         $('form').submit(function() {
-            console.log(JSON.stringify($('form').serializeObject()));
-            return false;
+            if(Validate()) {
+                post_form = JSON.stringify($('form').serializeObject());
+                console.log(JSON.stringify($('form').serializeObject()));
+                submit(post_form);
+                return false;
+            }
         });
     });
+    
+    function submit(post) {
+        
+        var localJSONData = post;
+
+        $.ajax({
+            data:"JSONFile=" + localJSONData,
+            type: 'POST',
+            url: 'https://fast-dawn-6470.herokuapp.com/app_dev.php/api/post',
+            dataType: 'json',
+            success: function(data){
+                console.log(data['code']);
+                alert("Application submitted successfully");
+                window.location.replace("http://localhost:8000/#/main");
+            }
+        });
+    }
+
     </script>
 </div>
+<script src="js/MooTools-Core-1.5.1.js"></script>
