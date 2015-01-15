@@ -5,7 +5,7 @@
      * Create main app
      */
      
-    angular.module('CitrusHack', ['ngAnimate', 'ui.router', 'ui.bootstrap', 'CitrusHack.controllers', 'CitrusHack.directives', 'CitrusHack.constants'])
+    angular.module('CitrusHack', ['ngAnimate', 'ui.router', 'ui.bootstrap', 'CitrusHack.controllers', 'CitrusHack.directives', 'CitrusHack.constants', 'CitrusHack.services'])
         .run(['$rootScope', 'SCHOOLS', 'CLASS_LEVELS', 'APPLICANT_TYPES', 'GENDERS', 'DIETARY_RESTRICTIONS', function($rootScope, SCHOOLS, CLASS_LEVELS, APPLICANT_TYPES, GENDERS, DIETARY_RESTRICTIONS){
             // Make constant accessible in partials
             $rootScope.SCHOOLS = SCHOOLS;
@@ -18,5 +18,6 @@
     angular.module('CitrusHack.controllers', []);
     angular.module('CitrusHack.directives', []);
     angular.module('CitrusHack.constants', []);
-
+    angular.module('CitrusHack.services', []);
 })();
+
