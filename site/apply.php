@@ -7,6 +7,7 @@ try {
     $Fname = $json['Fname'];
     $Lname = $json['Lname'];
     $gender = $json['gender'];
+	$shirt = '';
     $email = $json['email'];
     $phone = $json['phone'];
     $school = $json['school'];
@@ -26,14 +27,15 @@ try {
                 
     $stmt = $mysqli->prepare(
         "INSERT INTO apps 
-        (`Fname`, `Lname`, `Gender`, `Email`, `Phone`, `School`, `Class`, `Role`, `Age`, `Diet`, `Ride`, `Github`, `Hardware`, `Resume`)
+        (`Fname`, `Lname`, `Gender`, `Shirt` `Email`, `Phone`, `School`, `Class`, `Role`, `Age`, `Diet`, `Ride`, `Github`, `Hardware`, `Resume`)
         VALUES
-        ( :Fname , :Lname, :gender, :email, :phone, :school, :class, :role, :age, :diet, :ride, :github, :hardware, :resume)"
+        ( :Fname , :Lname, :gender, :shirt, :email, :phone, :school, :class, :role, :age, :diet, :ride, :github, :hardware, :resume)"
     );
     
     $stmt->bindParam(':Fname', $Fname);
     $stmt->bindParam(':Lname', $Lname);
     $stmt->bindParam(':gender', $gender);
+    $stmt->bindParam(':shirt', $shirt);
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':phone', $phone);
     $stmt->bindParam(':school', $school);
