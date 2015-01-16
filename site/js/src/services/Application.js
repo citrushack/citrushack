@@ -17,16 +17,17 @@
             // be here
             this.Fname    = ''; 
             this.Lname    = '';
-            this.gender   = '';
-            this.email    = '';
-            this.school   = '';
-            this.classLvl = '';
-            this.type     = '';
-            this.diet     = [];
-            this.phone    = '';
-            this.age      = 0;
-            this.github   = '';
-            this.hardware = '';
+            this.Gender   = '';
+            this.Email    = '';
+            this.School   = '';
+            this.ClassLvl = '';
+            this.Type     = '';
+            this.Ride     = '';
+            this.Diet     = {};
+            this.Phone    = '';
+            this.Age      = 0;
+            this.Github   = '';
+            this.Hardware = '';
         }  
 
         application.prototype.sendApplication = function () {

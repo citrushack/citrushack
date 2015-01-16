@@ -5,7 +5,7 @@
      * Apply controller
      */
 
-    function applyCtrl ($scope, Application) {
+    function applyCtrl ($scope, $rootScope, Application) {
         // Name of the view
         $scope.pageView = 'apply-view';
         // Reason for needing a phone number
@@ -23,6 +23,16 @@
         angular.forEach(Application, function(value, key) {
             $scope[key] = value;  
         });
+
+        // Initialize Diet values
+        angular.forEach($rootScope.DIETARY_RESTRICTIONS, function(value, key) {
+            $scope.Diet[value] = 'no';
+        });
+
+        // Form submission
+        $scope.submit = function () {
+            Application.sendApplication();
+        };
     }
 
     /**
@@ -30,6 +40,6 @@
      */
 
     angular.module('CitrusHack.controllers')
-        .controller('ApplyCtrl', ['$scope', 'Application', applyCtrl]); 
+        .controller('ApplyCtrl', ['$scope', '$rootScope', 'Application', applyCtrl]); 
         
 })();
