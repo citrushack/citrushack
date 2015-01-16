@@ -14,21 +14,21 @@
                         <div class='col-md-12'>
                             <h3>Who are you?</h3>
                         </div> 
-                        <div class='form-group col-md-6'>
+                        <div class='form-group col-md-6' show-errors>
                             <label class='control-label required' for='firstName'>First Name</label>
-                            <input type='text' class='form-control' id='firstName' ng-model='Fname' placeholder='Marion'> 
+                            <input type='text' class='form-control' id='firstName' name='firstname' required ng-model='Fname' placeholder='Marion'> 
                         </div>
 
-                        <div class='form-group col-md-6'>
+                        <div class='form-group col-md-6' show-errors>
                             <label class='control-label required' for='lastName'>Last Name</label>
-                            <input type='text' class='form-control' id='lastName' ng-model='Lname' placeholder='Smith'>
+                            <input type='text' class='form-control' id='lastName' name='lastname' required ng-model='Lname' placeholder='Smith'>
                         </div>
 
                         <div class='form-group col-md-6'>
                             <label class='control-label required'>Gender</label>
                             <br>
                             <label class='radio-inline' ng-repeat='gender in GENDERS'>
-                                <input type='radio' name='gender' id='{{ gender }}' ng-model='Gender' ng-value='gender'>{{ gender }}
+                                <input type='radio' name='gender' id='{{ gender }}' required ng-model='Gender' ng-value='gender'>{{ gender }}
                             </label>
                         </div><!-- who are you -->
 
@@ -36,14 +36,14 @@
                         <div class='col-md-12'>
                             <h3>Contact info</h3>
                         </div>
-                        <div class='form-group col-md-6'>
+                        <div class='form-group col-md-6' show-errors>
                             <label class='control-label required' for='email'>Email</label>
-                            <input type='email' class='form-control' id='email' ng-model='Email' placeholder='msmith@ucr.edu'>
+                            <input type='email' class='form-control' name='email' id='email' ng-model='Email' ng-pattern='/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.edu)$/' required placeholder='msmith@ucr.edu'>
                         </div>
 
-                        <div class='form-group col-md-6'>
-                            <label class='control-label' for='phoneNumber' tooltip='{{ phoneNeededReason }}'><u>Phone Number</u></label>
-                            <input type='text' class='form-control' id='phoneNumber' ng-model='Phone' placeholder='9091234567' maxlength='10'>
+                        <div class='form-group col-md-6' show-errors>
+                            <label class='control-label required' for='phoneNumber' tooltip='{{ phoneNeededReason }}'><u>Phone Number</u></label>
+                            <input type='text' class='form-control' name='phoneNumber' id='phoneNumber' ng-model='Phone' placeholder='9091234567' maxlength='10' required ng-pattern='/^[0-9]{10}$/'>
                         </div><!-- How do we contact you -->
 
                         <!-- Education -->
@@ -52,14 +52,14 @@
                         </div>
                         <div class='form-group col-md-12'>
                             <label class='control-label required' for='school'>School</label>
-                            <select class='form-control' id='school' ng-model='School' ng-options='school for school in SCHOOLS'>
+                            <select class='form-control' id='school' name='school' required ng-model='School' ng-options='school for school in SCHOOLS'>
                                 <option value=''>-- Select your school --</option>
                             </select>
                         </div>
 
                         <div class='form-group col-md-12'>
                             <label class='control-label required' for='classLvl'>Class Level</label>
-                            <select class='form-control' id='classLvl' ng-model='ClassLvl' ng-options='level for level in CLASS_LEVELS'>
+                            <select class='form-control' id='classLvl' name='classLvl' required ng-model='ClassLvl' ng-options='level for level in CLASS_LEVELS'>
                                 <option value=''>-- Select your class level --</option>
                             </select>
                         </div><!-- Education -->
@@ -75,9 +75,9 @@
                             </select>
                         </div>
 
-                        <div class='form-group col-md-12'>
+                        <div class='form-group col-md-12' show-errors>
                             <label class='control-label required' tooltip='{{ ageNeededReason }}' for='age'><u>How young are you?</u></label>
-                            <input type='number' class='form-control' id='age' min='18' max='30' ng-model='Age' placeholder='18'>
+                            <input type='number' class='form-control' id='age' required name='age' min='18' max='99' ng-model='Age' placeholder='18'>
                         </div>
 
                         <div class='form-group col-md-12'>
