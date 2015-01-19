@@ -34,19 +34,14 @@
                         </div>
                         <div class='clearfix'></div>
                         <div class='col-md-6'>
-                            <div class='form-group' show-errors> 
-                                <label class='control-label required'>Gender</label>
+                            <div class='form-group'> 
+                                <label class='control-label'>Gender</label>
                                 <br>
-                                <!-- Hack for show-errors directive. The directive fires
-                                     BEFORE ng-repeat has finished, so this element is here
-                                     so show-errors can attach -->
-                                <input type='radio' name='gender' style='display:none'>
                                 <div class='radio' ng-repeat='gender in GENDERS'>
                                     <label> 
-                                        <input type='radio' required name='gender' id='{{ gender }}' ng-model='Gender' ng-value='gender'>{{ gender }}
+                                        <input type='radio' name='gender' id='{{ gender }}' ng-model='Gender' ng-value='gender'>{{ gender }}
                                     </label>
                                 </div>
-                                <p class='help-block'>Please select your gender</p>
                             </div>
                         </div><!-- who are you -->
 
