@@ -129,16 +129,15 @@
                             <h3>Last things</h3>
                         </div>
                         <div class='col-md-12'>
-                            <div class='form-group' show-errors>
-                                <label class='control-label required' tooltip='{{ transDetail }}' for='transportation'><u>Will you need a ride?</u></label>
+                            <div class='form-group'>
+                                <label class='control-label' tooltip='{{ transDetail }}' for='transportation'><u>Will you need a ride?</u></label>
                                 <br \>
                                 <label class='radio-inline'>
                                     <input type='radio' name='transportation' id='transportation' ng-model='Ride' value='yes' required>Yes
                                 </label>
                                 <label class='radio-inline'>
-                                    <input type='radio' name='transportation' id='transportation' ng-model='Ride' value='no' required>No
+                                    <input type='radio' name='transportation' id='transportation' ng-model='Ride' value='no'>No
                                 </label>
-                                <p class='help-block'>Please let us know if you need transportation!</p>
                             </div>
                         </div>
                         <div class='col-md-12'>

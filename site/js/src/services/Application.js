@@ -28,6 +28,7 @@
             this.Age      = 0;
             this.Github   = '';
             this.Hardware = '';
+            this.Resume   = '';
         }  
 
         application.prototype.sendApplication = function () {
