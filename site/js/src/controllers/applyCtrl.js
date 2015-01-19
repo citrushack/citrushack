@@ -16,6 +16,11 @@
         $scope.ageNeededReason = 'Since this is an overnight event, You must ' +
                                  'be 18 or older to participate'; 
 
+        // Details about transportation
+        $scope.transDetail = 'We will be providing transportation for a select ' +
+                             'number of schools. This will help us figure out ' +
+                             'which schools have the most need';
+
         // School person attends
         $scope.school = '';
         
@@ -31,7 +36,11 @@
 
         // Form submission
         $scope.submit = function () {
-            Application.sendApplication();
+            $scope.$broadcast('show-errors-check-validity');
+            if ($scope.applyForm.$valid) {
+                // Send application
+                Application.sendApplication();
+            }
         };
     }
 

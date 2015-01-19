@@ -5,7 +5,7 @@
      * Genders constants
      */
 
-    var genders = ['Male', 'Female'];
+    var genders = ['Male', 'Female', 'Other/Decline to answer'];
 
     /**
      * Register constant

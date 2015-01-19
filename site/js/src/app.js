@@ -13,6 +13,11 @@
             $rootScope.APPLICANT_TYPES = APPLICANT_TYPES;
             $rootScope.GENDERS = GENDERS;
             $rootScope.DIETARY_RESTRICTIONS = DIETARY_RESTRICTIONS;
+        }])
+        // Configure angular-show-errors to also show
+        // valid form entries
+        .config(['showErrorsConfigProvider', function(showErrorsConfigProvider) {
+          showErrorsConfigProvider.showSuccess(true);
         }]);
 
     angular.module('CitrusHack.controllers', []);

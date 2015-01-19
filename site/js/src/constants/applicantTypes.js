@@ -5,7 +5,7 @@
      * Applicant types constant
      */
 
-    var applicantTypes = ['Hacker', 'Hustler', 'Designer'];
+    var applicantTypes = ['Hacker', 'Hipster', 'Hustler'];
 
     /**
      * Register constant

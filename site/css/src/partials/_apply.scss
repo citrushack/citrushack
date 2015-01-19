@@ -28,6 +28,21 @@ $submit-margin-top: 30px;
 
     form {
         margin-top: 50px;
+    
+        .form-group .help-block,
+        .form-group .glyphicon-ok,
+        .form-group .glyphicon-remove {
+            display: none;
+        }
+        
+        .form-group.has-error .help-block,
+        .form-group.has-error .glyphicon-remove {
+            display: block;
+        }
+
+        .form-group.has-success .glyphicon-ok {
+            display: block;
+        }
     } 
 
     #submit {

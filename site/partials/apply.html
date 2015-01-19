@@ -8,118 +8,165 @@
         
         <div class='row'>
             <div class='col-md-6'>
-                <form novalidate>
+                <form name='applyForm' novalidate>
                     <div class='row'>
                         <!-- Who are you -->
                         <div class='col-md-12'>
                             <h3>Who are you?</h3>
                         </div> 
-                        <div class='form-group col-md-6' show-errors>
-                            <label class='control-label required' for='firstName'>First Name</label>
-                            <input type='text' class='form-control' id='firstName' name='firstname' required ng-model='Fname' placeholder='Marion'> 
+                        <div class='col-md-6'>
+                            <div class='form-group has-feedback' show-errors>
+                                <label class='control-label required' for='firstName'>First Name</label>
+                                <input type='text' class='form-control' id='firstName' name='firstname' required ng-model='Fname' placeholder='Marion'> 
+                                <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                                <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                                <p class='help-block'>Please enter your first name</p>
+                            </div>
                         </div>
-
-                        <div class='form-group col-md-6' show-errors>
-                            <label class='control-label required' for='lastName'>Last Name</label>
-                            <input type='text' class='form-control' id='lastName' name='lastname' required ng-model='Lname' placeholder='Smith'>
+                        <div class='col-md-6'>
+                            <div class='form-group has-feedback' show-errors>
+                                <label class='control-label required' for='lastName'>Last Name</label>
+                                <input type='text' class='form-control' id='lastName' name='lastname' required ng-model='Lname' placeholder='Smith'>
+                                <p class='help-block'>Please enter your last name</p>
+                                <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                                <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                            </div>
                         </div>
-
-                        <div class='form-group col-md-6'>
-                            <label class='control-label required'>Gender</label>
-                            <br>
-                            <label class='radio-inline' ng-repeat='gender in GENDERS'>
-                                <input type='radio' name='gender' id='{{ gender }}' required ng-model='Gender' ng-value='gender'>{{ gender }}
-                            </label>
+                        <div class='clearfix'></div>
+                        <div class='col-md-6'>
+                            <div class='form-group' show-errors> 
+                                <label class='control-label required'>Gender</label>
+                                <br>
+                                <!-- Hack for show-errors directive. The directive fires
+                                     BEFORE ng-repeat has finished, so this element is here
+                                     so show-errors can attach -->
+                                <input type='radio' name='gender' style='display:none'>
+                                <div class='radio' ng-repeat='gender in GENDERS'>
+                                    <label> 
+                                        <input type='radio' required name='gender' id='{{ gender }}' ng-model='Gender' ng-value='gender'>{{ gender }}
+                                    </label>
+                                </div>
+                                <p class='help-block'>Please select your gender</p>
+                            </div>
                         </div><!-- who are you -->
 
                         <!-- How do we contact you --> 
                         <div class='col-md-12'>
                             <h3>Contact info</h3>
                         </div>
-                        <div class='form-group col-md-6' show-errors>
-                            <label class='control-label required' for='email'>Email</label>
-                            <input type='email' class='form-control' name='email' id='email' ng-model='Email' ng-pattern='/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.edu)$/' required placeholder='msmith@ucr.edu'>
+                        <div class='col-md-6'>
+                            <div class='form-group has-feedback' show-errors>
+                                <label class='control-label required' for='email'>Email</label>
+                                <input type='email' class='form-control' name='email' id='email' ng-model='Email' ng-pattern='/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.edu)$/' required placeholder='msmith@ucr.edu'>
+                                <p class='help-block'>Please enter a valid .edu address</p>
+                                <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                                <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                            </div>
                         </div>
-
-                        <div class='form-group col-md-6' show-errors>
-                            <label class='control-label required' for='phoneNumber' tooltip='{{ phoneNeededReason }}'><u>Phone Number</u></label>
-                            <input type='text' class='form-control' name='phoneNumber' id='phoneNumber' ng-model='Phone' placeholder='9091234567' maxlength='10' required ng-pattern='/^[0-9]{10}$/'>
-                        </div><!-- How do we contact you -->
+                        <div class='col-md-6'>
+                            <div class='form-group has-feedback' show-errors>
+                                <label class='control-label required' for='phoneNumber' tooltip='{{ phoneNeededReason }}'><u>Phone Number</u></label>
+                                <input type='text' class='form-control' name='phoneNumber' id='phoneNumber' ng-model='Phone' placeholder='9091234567' maxlength='10' required ng-pattern='/^[0-9]{10}$/'>
+                                <p class='help-block'>Please enter your phone number</p>
+                                <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                                <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                             </div><!-- How do we contact you -->
+                        </div>
 
                         <!-- Education -->
                         <div class='col-md-12'>
                             <h3>Education</h3>
                         </div>
-                        <div class='form-group col-md-12'>
-                            <label class='control-label required' for='school'>School</label>
-                            <select class='form-control' id='school' name='school' required ng-model='School' ng-options='school for school in SCHOOLS'>
-                                <option value=''>-- Select your school --</option>
-                            </select>
+                        <div class='col-md-12'>
+                            <div class='form-group has-feedback' show-errors>
+                                <label class='control-label required' for='school'>School</label>
+                                <select class='form-control' id='school' name='school' required ng-model='School' ng-options='school for school in SCHOOLS'>
+                                    <option value=''>-- Select your school --</option>
+                                </select>
+                                <p class='help-block'>Please select your school</p>
+                            </div>
                         </div>
-
-                        <div class='form-group col-md-12'>
-                            <label class='control-label required' for='classLvl'>Class Level</label>
-                            <select class='form-control' id='classLvl' name='classLvl' required ng-model='ClassLvl' ng-options='level for level in CLASS_LEVELS'>
-                                <option value=''>-- Select your class level --</option>
-                            </select>
+                        <div class='col-md-12'>
+                            <div class='form-group has-feedback' show-errors>
+                                <label class='control-label required' for='classLvl'>Class Level</label>
+                                <select class='form-control' id='classLvl' name='classLvl' required ng-model='ClassLvl' ng-options='level for level in CLASS_LEVELS'>
+                                    <option value=''>-- Select your class level --</option>
+                                </select>
+                                <p class='help-block'>Please select your class level</p>
+                            </div>
                         </div><!-- Education -->
 
                         <!-- About you -->
                         <div class='col-md-12'>
                             <h3>About you</h3>
                         </div>
-                        <div class='form-group col-md-12'>
-                            <label class='control-label' for='applicantType'>Hacker, Hustler, or Designer?</label>
-                            <select class='form-control' id='applicantType' ng-model='Type' ng-options='type for type in APPLICANT_TYPES'>
-                                <option value=''>-- Select a role --</option>
-                            </select>
+                        <div class='col-md-12'>
+                            <div class='form-group'>
+                                <label class='control-label' for='applicantType'><a href='http://www.forbes.com/sites/andyellwood/2012/08/22/the-dream-team-hipster-hacker-and-hustler/' target='_blank'>Hacker, Hipster, or Hustler?</a></label>
+                                <select class='form-control' id='applicantType' name='applicantType' ng-model='Type' ng-options='type for type in APPLICANT_TYPES'>
+                                    <option value=''>-- Select a role --</option>
+                                </select>
+                            </div>
                         </div>
-
-                        <div class='form-group col-md-12' show-errors>
-                            <label class='control-label required' tooltip='{{ ageNeededReason }}' for='age'><u>How young are you?</u></label>
-                            <input type='number' class='form-control' id='age' required name='age' min='18' max='99' ng-model='Age' placeholder='18'>
+                        <div class='col-md-12'>
+                            <div class='form-group has-feedback' show-errors>
+                                <label class='control-label required' tooltip='{{ ageNeededReason }}' for='age'><u>How old are you?</u></label>
+                                <input type='number' class='form-control' id='age' required name='age' min='18' max='99' ng-model='Age' placeholder='18'>
+                                <p class='help-block'>Please enter your age. You must be at least 18 years old.</p>
+                                <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                                <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                            </div>
                         </div>
-
-                        <div class='form-group col-md-12'>
-                            <label class='control-label' for='dietaryRestrictions' tooltip='{{ dietaryRestrictionsInfo }}'>Dietary restrictions? <span class='text-muted'>(Select all that apply)</span></label>
-                            <br>
-                            <label class='checkbox-inline' ng-repeat='restriction in DIETARY_RESTRICTIONS'>
-                                <input type='checkbox' name='dietaryRestrictions' id='{{ restriction }}' ng-model='Diet[restriction]' ng-true-value='yes' ng-false-value='no'>{{ restriction }}
-                            </label>
+                        <div class='col-md-12'>
+                            <div class='form-group'>
+                                <label class='control-label' for='dietaryRestrictions' tooltip='{{ dietaryRestrictionsInfo }}'>Dietary restrictions? <span class='text-muted'>(Select all that apply)</span></label>
+                                <br>
+                                <div class='checkbox' ng-repeat='restriction in DIETARY_RESTRICTIONS'>
+                                    <label>
+                                        <input type='checkbox' name='dietaryRestrictions' id='{{ restriction }}' ng-model='Diet[restriction]' ng-true-value='yes' ng-false-value='no'>{{ restriction }}
+                                    </label>
+                                </div>
+                            </div>
                         </div><!-- About you -->
 
                         <!-- Last things -->
                         <div class='col-md-12'>
                             <h3>Last things</h3>
                         </div>
-
-                        <div class='form-group col-md-12'>
-                            <label class='control-label required' for='transportation'>Will you need a ride?</label>
-                            <br>
-                            <label class='radio-inline'>
-                                <input type='radio' name='transportation' id='transportation' ng-model='Ride' value='yes'>Yes
-                            </label>
-                            <label class='radio-inline'>
-                                <input type='radio' name='transportation' id='transportation' ng-model='Ride' value='no'>No
-                            </label>
-                        </div>
-
-                        <div class='form-group col-md-12'>
-                            <label class='control-label' for='github'>Github username</label>
-                            <div class='input-group'>
-                                <div class='input-group-addon'>@</div>
-                                <input type='text' class='form-control' id='github' placeholder='citrushack' ng-model='Github'>
+                        <div class='col-md-12'>
+                            <div class='form-group' show-errors>
+                                <label class='control-label required' tooltip='{{ transDetail }}' for='transportation'><u>Will you need a ride?</u></label>
+                                <br \>
+                                <label class='radio-inline'>
+                                    <input type='radio' name='transportation' id='transportation' ng-model='Ride' value='yes' required>Yes
+                                </label>
+                                <label class='radio-inline'>
+                                    <input type='radio' name='transportation' id='transportation' ng-model='Ride' value='no' required>No
+                                </label>
+                                <p class='help-block'>Please let us know if you need transportation!</p>
                             </div>
                         </div>
-
-                        <div class='form-group col-md-12'>
-                            <label class='control-label' for='hardware'>What kind of hardware would you like to hack on? <span class='text-muted'>(Max 100 chars)</span></label>
-                            <input type='text' class='form-control' id='hardware' placeholder='Oculus Rift, Pebble, Myo...' ng-model='Hardware' maxlength='100'>
+                        <div class='col-md-12'>
+                            <div class='form-group'>
+                                <label class='control-label' for='github'>Github username</label>
+                                <div class='input-group'>
+                                    <div class='input-group-addon'>@</div>
+                                    <input type='text' class='form-control' id='github' placeholder='citrushack' ng-model='Github'>
+                                </div>
+                            </div>
                         </div>
-
-                        <div class='form-group col-md-12'>
-                            <label class='control-label required' for='resume'>Resume</label>
-                            <input type='file' id='resume'>
+                        <div class='col-md-12'>
+                            <div class='form-group'>
+                                <label class='control-label' for='hardware'>What kind of hardware would you like to hack on? <span class='text-muted'>(Max 100 chars)</span></label>
+                                <input type='text' class='form-control' id='hardware' placeholder='Oculus Rift, Pebble, Myo...' ng-model='Hardware' maxlength='100'>
+                            </div>
+                        </div>
+                        <div class='col-md-12'>
+                            <div class='form-group' show-errors>
+                                <label class='control-label required' for='resume'>Resume <span class='text-muted'>(.doc, .docx, or .pdf only)</span></label>
+                                <input type='file' name='resume' id='resume' required ng-model='Resume'>
+                                <p class='help-block'>Please upload your resume.</p>
+                            </div>
                         </div>
                         <!-- submit -->
                         <div class='col-md-12' id='submit'>                      
