@@ -30,9 +30,10 @@
         });
 
         // Initialize Diet values
-        angular.forEach($rootScope.DIETARY_RESTRICTIONS, function(value, key) {
-            $scope.Diet[value] = 'no';
-        });
+        $scope.Diet['Vegan'] = 'no';
+        $scope.Diet['Vegetarian'] = 'no';
+        $scope.Diet['Lactose Intolerant'] = 'no';
+        $scope.Diet['Gluten-Free'] = 'no';
 
         // Form submission
         $scope.submit = function () {

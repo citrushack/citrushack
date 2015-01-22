@@ -34,12 +34,22 @@
                         </div>
                         <div class='clearfix'></div>
                         <div class='col-md-6'>
-                            <div class='form-group'> 
-                                <label class='control-label'>Gender</label>
+                            <div class='form-group' show-errors> 
+                                <label class='control-label required'>Gender</label>
                                 <br>
-                                <div class='radio' ng-repeat='gender in GENDERS'>
+                                <div class='radio'>
                                     <label> 
-                                        <input type='radio' name='gender' id='{{ gender }}' ng-model='Gender' ng-value='gender'>{{ gender }}
+                                        <input type='radio' name='gender' id='male' ng-model='Gender' value='Male' ng-required='!Gender'>Male
+                                    </label>
+                                </div>
+                                <div class='radio'>
+                                    <label>
+                                        <input type='radio' name='gender' id='female' ng-model='Gender' value='Female' ng-required='!Gender'>Female
+                                    </label>
+                                </div>
+                                <div class='radio'>
+                                    <label>
+                                        <input type='radio' name='gender' id='other' ng-model='Gender' value='Other' ng-required='!Gender'>Other/Don't wish to disclose
                                     </label>
                                 </div>
                             </div>
@@ -116,9 +126,24 @@
                             <div class='form-group'>
                                 <label class='control-label' for='dietaryRestrictions' tooltip='{{ dietaryRestrictionsInfo }}'>Dietary restrictions? <span class='text-muted'>(Select all that apply)</span></label>
                                 <br>
-                                <div class='checkbox' ng-repeat='restriction in DIETARY_RESTRICTIONS'>
+                                <div class='checkbox'>
                                     <label>
-                                        <input type='checkbox' name='dietaryRestrictions' id='{{ restriction }}' ng-model='Diet[restriction]' ng-true-value='yes' ng-false-value='no'>{{ restriction }}
+                                        <input type='checkbox' name='dietaryRestrictions' id='vegetarian' ng-model='Diet["Vegetarian"]' ng-true-value='yes' ng-false-value='no'>Vegetarian
+                                    </label>
+                                </div>
+                                <div class='checkbox'>
+                                    <label>
+                                        <input type='checkbox' name='dietaryRestrictions' id='Vegan' ng-model='Diet["Vegan"]' ng-true-value='yes' ng-false-value='no'>Vegan
+                                    </label>
+                                </div>
+                                <div class='checkbox'>
+                                    <label>
+                                        <input type='checkbox' name='dietaryRestrictions' id='lactoseIntolerant' ng-model='Diet["Lactose Intolerant"]' ng-true-value='yes' ng-false-value='no'>Lactose Intolerant
+                                    </label>
+                                </div>
+                                <div class='checkbox'>
+                                    <label>
+                                        <input type='checkbox' name='dietaryRestrictions' id='glutenFree' ng-model='Diet["Gluten-Free"]' ng-true-value='yes' ng-false-value='no'>Gluten-Free
                                     </label>
                                 </div>
                             </div>
@@ -129,14 +154,14 @@
                             <h3>Last things</h3>
                         </div>
                         <div class='col-md-12'>
-                            <div class='form-group'>
-                                <label class='control-label' tooltip='{{ transDetail }}' for='transportation'><u>Will you need a ride?</u></label>
+                            <div class='form-group' show-errors>
+                                <label class='control-label required' tooltip='{{ transDetail }}' for='transportation'><u>Will you need a ride?</u></label>
                                 <br \>
                                 <label class='radio-inline'>
-                                    <input type='radio' name='transportation' id='transportation' ng-model='Ride' value='yes' required>Yes
+                                    <input type='radio' name='transportation' id='transportation' ng-model='Ride' value='yes' ng-required='!Ride'>Yes
                                 </label>
                                 <label class='radio-inline'>
-                                    <input type='radio' name='transportation' id='transportation' ng-model='Ride' value='no'>No
+                                    <input type='radio' name='transportation' id='transportation' ng-model='Ride' value='no' ng-required='!Ride'>No
                                 </label>
                             </div>
                         </div>
