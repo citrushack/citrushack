@@ -20,9 +20,6 @@
         $scope.transDetail = 'We will be providing transportation for a select ' +
                              'number of schools. This will help us figure out ' +
                              'which schools have the most need';
-
-        // School person attends
-        $scope.school = '';
         
         // Bind application model to scope
         angular.forEach(Application, function(value, key) {
@@ -34,9 +31,6 @@
         $scope.Diet['Vegetarian'] = 'no';
         $scope.Diet['Lactose Intolerant'] = 'no';
         $scope.Diet['Gluten-Free'] = 'no';
-
-        // Tshirt size
-        $scope.tshirt = '';
 
         // Form submission
         $scope.submit = function () {

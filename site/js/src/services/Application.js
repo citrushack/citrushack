@@ -26,6 +26,7 @@
             this.Diet     = {};
             this.Phone    = '';
             this.Age      = 0;
+            this.TShirt   = '';
             this.Github   = '';
             this.Hardware = '';
             this.Resume   = '';
