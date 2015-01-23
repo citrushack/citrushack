@@ -147,6 +147,34 @@
                                     </label>
                                 </div>
                             </div>
+                        </div>
+                        <div class='col-md-12'>
+                            <div class='form-group' show-errors>
+                                <label class='control-label required' for='tshirt'>T-Shirt Size</label>
+                                <br>
+                                <label class='radio-inline'>
+                                    <input type='radio' name='tshirt' id='tshirt' ng-model='tshirt' value='xs' ng-required='!tshirt'>XS
+                                </label>
+                                <label class='radio-inline'>
+                                    <input type='radio' name='tshirt' id='tshirt' ng-model='tshirt' value='s' ng-required='!tshirt'>S
+                                </label>
+                                <label class='radio-inline'>
+                                    <input type='radio' name='tshirt' id='tshirt' ng-model='tshirt' value='m' ng-required='!tshirt'>M
+                                </label>
+                                <label class='radio-inline'>
+                                    <input type='radio' name='tshirt' id='tshirt' ng-model='tshirt' value='l' ng-required='!tshirt'>L
+                                </label>
+                                <label class='radio-inline'>
+                                    <input type='radio' name='tshirt' id='tshirt' ng-model='tshirt' value='xl' ng-required='!tshirt'>XL
+                                </label>
+                                <label class='radio-inline'>
+                                    <input type='radio' name='tshirt' id='tshirt' ng-model='tshirt' value='xxl' ng-required='!tshirt'>XXL
+                                </label>
+                                <div class='radio'>
+                                    <label>
+                                        <input type='radio' name='tshirt' id='tshirt' ng-model='tshirt' value='xxxl' ng-required='!tshirt'>XXXL
+                                </label>
+                            </div>
                         </div><!-- About you -->
 
                         <!-- Last things -->
@@ -156,7 +184,7 @@
                         <div class='col-md-12'>
                             <div class='form-group' show-errors>
                                 <label class='control-label required' tooltip='{{ transDetail }}' for='transportation'><u>Will you need a ride?</u></label>
-                                <br \>
+                                <br>
                                 <label class='radio-inline'>
                                     <input type='radio' name='transportation' id='transportation' ng-model='Ride' value='yes' ng-required='!Ride'>Yes
                                 </label>

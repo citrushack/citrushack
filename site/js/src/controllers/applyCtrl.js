@@ -35,6 +35,9 @@
         $scope.Diet['Lactose Intolerant'] = 'no';
         $scope.Diet['Gluten-Free'] = 'no';
 
+        // Tshirt size
+        $scope.tshirt = '';
+
         // Form submission
         $scope.submit = function () {
             $scope.$broadcast('show-errors-check-validity');
