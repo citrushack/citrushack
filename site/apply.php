@@ -6,18 +6,18 @@ try {
     
     $Fname = $json['Fname'];
     $Lname = $json['Lname'];
-    $gender = $json['gender'];
-	$shirt = '';
-    $email = $json['email'];
-    $phone = $json['phone'];
-    $school = $json['school'];
-    $classLevel = $json['classLvl'];
-    $applicantType = $json['type'];
-    $age = intval($json['age']);
+    $gender = $json['Gender'];
+	$shirt = $json['TShirt'];
+    $email = $json['Email'];
+    $phone = $json['Phone'];
+    $school = $json['School'];
+    $classLevel = $json['ClassLvl'];
+    $applicantType = $json['Type'];
+    $age = intval($json['Age']);
     $diet = '';
-    $ride = '';
-    $github = $json['github'];
-    $hardware = $json['hardware'];
+    $ride = $json['Ride'];
+    $github = $json['Github'];
+    $hardware = $json['Hardware'];
     $application = '';
     
     if(isset($json['dietaryRestrictions']))
