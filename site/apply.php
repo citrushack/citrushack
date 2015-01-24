@@ -27,7 +27,7 @@ try {
                 
     $stmt = $mysqli->prepare(
         "INSERT INTO apps 
-        (`Fname`, `Lname`, `Gender`, `Shirt` `Email`, `Phone`, `School`, `Class`, `Role`, `Age`, `Diet`, `Ride`, `Github`, `Hardware`, `Resume`)
+        (`Fname`, `Lname`, `Gender`, `Shirt`, `Email`, `Phone`, `School`, `Class`, `Role`, `Age`, `Diet`, `Ride`, `Github`, `Hardware`, `Resume`)
         VALUES
         ( :Fname , :Lname, :gender, :shirt, :email, :phone, :school, :class, :role, :age, :diet, :ride, :github, :hardware, :resume)"
     );
