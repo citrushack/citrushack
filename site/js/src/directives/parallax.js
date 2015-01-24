@@ -17,7 +17,7 @@
               , speed = attrs.chParallaxSpeed || 5;
 
             var windowEl = angular.element($window);
-
+ 
             // Ensure element has background properties
             element.css({
                 backgroundPosition: posX + 'px ' + posY + 'px'
@@ -34,9 +34,13 @@
                 });
             }
 
-            // Register updateY as a scroll event
-            windowEl.on('scroll', updateY);
-
+            // Activate directive only if window is at least
+            // col-md width
+            if (windowEl.width() >= 992)
+            {
+                windowEl.on('scroll', updateY);
+            }
+            
             // Clean up
             element.on('destroy', function (){
                 windowEl.off('scroll', updateY);
