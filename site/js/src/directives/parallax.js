@@ -5,7 +5,7 @@
      * Parallax scrolling directive
      */
 
-    function parallax ($window, $document){
+    function parallax ($window){
         
         /**
          * Directive syntax
@@ -53,6 +53,7 @@
      */
 
     angular.module('CitrusHack.directives')
-        .directive('chParallax', ['$window', '$document', parallax]);
+        .directive('chParallax', ['$window', parallax]);
 
 })();
+
