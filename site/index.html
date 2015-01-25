@@ -35,7 +35,26 @@
                 <a ui-sref='main'>
                     <img src='img/logo-black.png' id='logo' class='img-responsive center-block'></img>
                 </a>
-                <div id='login-action-btns'>
+                
+                <ul class='nav nav-pills nav-stacked' ng-if="location.url() === '/main'">
+                    <li du-scrollspy='trailer'> 
+                        <a href='#trailer' du-smooth-scroll>Trailer</a>
+                    </li>
+                    <li du-scrollspy='schedule-wrapper'>
+                        <a href='#schedule-wrapper' du-smooth-scroll>Schedule</a>
+                    </li>
+                    <li du-scrollspy='faq'>
+                        <a href='#faq' du-smooth-scroll>FAQ</a>
+                    </li>
+                    <li du-scrollspy='sponsors'>
+                        <a href='#sponsors' du-smooth-scroll>Sponsors</a>
+                    </li>
+                    <li du-scrollspy='credits'>
+                        <a href='#credits' du-smooth-scroll>Organized By</a>
+                    </li>
+                </ul>
+
+                <div id='action-btns'>
                     <a ui-sref='apply' class='btn btn-success btn-block'>
                         Apply 
                     </a>
@@ -54,6 +73,7 @@
         <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
         <script src="bower_components/angular-bootstrap-show-errors/src/showErrors.min.js"></script>
         <script src="bower_components/es5-shim/es5-shim.min.js"></script>
+        <script src="bower_components/angular-scroll/angular-scroll.min.js"></script>
         <script src="js/CitrusHack.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

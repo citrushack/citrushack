@@ -18,7 +18,7 @@ $nav-padding-top: 30px;
 $nav-padding-left: 10px;
 $nav-padding-right: 10px;
 
-$login-btns-margin-top: 100px;
+$action-btns-margin-top: 100px;
 
 /**
  * Styles
@@ -42,7 +42,9 @@ $login-btns-margin-top: 100px;
         max-width: 70%;
     }
 
-    #login-action-btns {
-        margin-top: $login-btns-margin-top;
+    #action-btns {
+        margin-top: $action-btns-margin-top;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
