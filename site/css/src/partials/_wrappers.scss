@@ -7,6 +7,7 @@
  */
 
 @import 'modules/mixins';
+@import 'modules/colors';
 
 /**
  * Local variables
@@ -120,7 +121,8 @@ $toggle-animation-speed: .25s;
     z-index: 10000;
     width: 53px;
     height: 50px;
-    border: 1px solid black;
+    border: 1px solid $vormator-dark-gray;
+    background-color: $vormator-dark-gray;
 
     // Hamburger
     &:before {
@@ -129,9 +131,9 @@ $toggle-animation-speed: .25s;
       position: absolute;
       height: 2px;
       width: 24px;
-      background: black;
+      background: $white;
       left: 13px;
       top: 18px;
-      box-shadow: 0 6px 0 black, 0 12px 0 black;
+      box-shadow: 0 6px 0 $white, 0 12px 0 $white;
     }
 }
