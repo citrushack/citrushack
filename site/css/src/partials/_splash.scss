@@ -3,6 +3,12 @@
  */
 
  /**
+  * Module imports
+  */
+
+@import 'modules/mixins';
+
+ /**
   * Local variables
   */
 
@@ -20,8 +26,25 @@ $splash-img-src: 'img/bourns.jpg';
     width: $splash-width;
     position: relative;
     // Background
-    background-image: image-url($splash-img-src);
+    background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+                image-url($splash-img-src);
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
+
+    #splash-group {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include transform(translate(-50%, -50%));
+        width: 50%;
+
+        img {
+            max-width: 80%;
+        }
+
+        h5 {
+            color: $white;
+        }
+    }
 }
