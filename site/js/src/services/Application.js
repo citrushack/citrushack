@@ -33,15 +33,26 @@
         }  
 
         application.prototype.sendApplication = function () {
-            // Build JSON data string for PHP backend
-            var dataEncoded = 'JSONFile=' + JSON.stringify(this);
-            $http.post('SERVER', dataEncoded)
-                .success(function(){
-                    return true;
-                })
-                .error(function(){
-                    return false;
-                });
+            $http({
+                method: 'POST'
+              , url: '/apply.php'
+              , headers: {'Content-Type': false}
+              , data: { scope: this, file: this.Resume } 
+              , transformRequest: function (data){
+                    var formData = new FormData();
+                    // Append Resume file to formData
+                    formData.append("Resume", data.file);
+                    // Append scope to formData
+                    formData.append("Scope", JSON.stringify(data.scope));
+                    return formData;
+                }
+            })
+            .success(function(){
+                return true;
+            })
+            .error(function(){
+                return false;
+            });
         };
 
         return new application ();

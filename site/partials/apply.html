@@ -17,7 +17,7 @@
                         <div class='col-md-6'>
                             <div class='form-group has-feedback' show-errors>
                                 <label class='control-label required' for='firstName'>First Name</label>
-                                <input type='text' class='form-control' id='firstName' name='firstname' required ng-model='Fname' placeholder='Marion'> 
+                                <input type='text' class='form-control' id='firstName' name='firstname' required ng-model='Application.Fname' placeholder='Marion'> 
                                 <span class="glyphicon glyphicon-ok form-control-feedback"></span>
                                 <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                                 <p class='help-block'>Please enter your first name</p>
@@ -26,7 +26,7 @@
                         <div class='col-md-6'>
                             <div class='form-group has-feedback' show-errors>
                                 <label class='control-label required' for='lastName'>Last Name</label>
-                                <input type='text' class='form-control' id='lastName' name='lastname' required ng-model='Lname' placeholder='Smith'>
+                                <input type='text' class='form-control' id='lastName' name='lastname' required ng-model='Application.Lname' placeholder='Smith'>
                                 <p class='help-block'>Please enter your last name</p>
                                 <span class="glyphicon glyphicon-ok form-control-feedback"></span>
                                 <span class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -39,17 +39,17 @@
                                 <br>
                                 <div class='radio'>
                                     <label> 
-                                        <input type='radio' name='gender' id='male' ng-model='Gender' value='Male' ng-required='!Gender'>Male
+                                        <input type='radio' name='gender' id='male' ng-model='Application.Gender' value='Male' ng-required='!Gender'>Male
                                     </label>
                                 </div>
                                 <div class='radio'>
                                     <label>
-                                        <input type='radio' name='gender' id='female' ng-model='Gender' value='Female' ng-required='!Gender'>Female
+                                        <input type='radio' name='gender' id='female' ng-model='Application.Gender' value='Female' ng-required='!Gender'>Female
                                     </label>
                                 </div>
                                 <div class='radio'>
                                     <label>
-                                        <input type='radio' name='gender' id='other' ng-model='Gender' value='Other' ng-required='!Gender'>Other/Don't wish to disclose
+                                        <input type='radio' name='gender' id='other' ng-model='Application.Gender' value='Other' ng-required='!Gender'>Other/Don't wish to disclose
                                     </label>
                                 </div>
                             </div>
@@ -62,7 +62,7 @@
                         <div class='col-md-6'>
                             <div class='form-group has-feedback' show-errors>
                                 <label class='control-label required' for='email'>Email</label>
-                                <input type='email' class='form-control' name='email' id='email' ng-model='Email' ng-pattern='/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.edu)$/' required placeholder='msmith@ucr.edu'>
+                                <input type='email' class='form-control' name='email' id='email' ng-model='Application.Email' ng-pattern='/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.edu)$/' required placeholder='msmith@ucr.edu'>
                                 <p class='help-block'>Please enter a valid .edu address</p>
                                 <span class="glyphicon glyphicon-ok form-control-feedback"></span>
                                 <span class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -71,7 +71,7 @@
                         <div class='col-md-6'>
                             <div class='form-group has-feedback' show-errors>
                                 <label class='control-label required' for='phoneNumber' tooltip='{{ phoneNeededReason }}'><u>Phone Number</u></label>
-                                <input type='text' class='form-control' name='phoneNumber' id='phoneNumber' ng-model='Phone' placeholder='9091234567' maxlength='10' required ng-pattern='/^[0-9]{10}$/'>
+                                <input type='text' class='form-control' name='phoneNumber' id='phoneNumber' ng-model='Application.Phone' placeholder='9091234567' maxlength='10' required ng-pattern='/^[0-9]{10}$/'>
                                 <p class='help-block'>Please enter your phone number</p>
                                 <span class="glyphicon glyphicon-ok form-control-feedback"></span>
                                 <span class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -85,7 +85,7 @@
                         <div class='col-md-12'>
                             <div class='form-group has-feedback' show-errors>
                                 <label class='control-label required' for='school'>School</label>
-                                <select class='form-control' id='school' name='school' required ng-model='School' ng-options='school for school in SCHOOLS'>
+                                <select class='form-control' id='school' name='school' required ng-model='Application.School' ng-options='school for school in SCHOOLS'>
                                     <option value=''>-- Select your school --</option>
                                 </select>
                                 <p class='help-block'>Please select your school</p>
@@ -94,7 +94,7 @@
                         <div class='col-md-12'>
                             <div class='form-group has-feedback' show-errors>
                                 <label class='control-label required' for='classLvl'>Class Level</label>
-                                <select class='form-control' id='classLvl' name='classLvl' required ng-model='ClassLvl' ng-options='level for level in CLASS_LEVELS'>
+                                <select class='form-control' id='classLvl' name='classLvl' required ng-model='Application.ClassLvl' ng-options='level for level in CLASS_LEVELS'>
                                     <option value=''>-- Select your class level --</option>
                                 </select>
                                 <p class='help-block'>Please select your class level</p>
@@ -108,7 +108,7 @@
                         <div class='col-md-12'>
                             <div class='form-group'>
                                 <label class='control-label' for='applicantType'><a href='http://www.forbes.com/sites/andyellwood/2012/08/22/the-dream-team-hipster-hacker-and-hustler/' target='_blank'>Hacker, Hipster, or Hustler?</a></label>
-                                <select class='form-control' id='applicantType' name='applicantType' ng-model='Type' ng-options='type for type in APPLICANT_TYPES'>
+                                <select class='form-control' id='applicantType' name='applicantType' ng-model='Application.Type' ng-options='type for type in APPLICANT_TYPES'>
                                     <option value=''>-- Select a role --</option>
                                 </select>
                             </div>
@@ -116,7 +116,7 @@
                         <div class='col-md-12'>
                             <div class='form-group has-feedback' show-errors>
                                 <label class='control-label required' tooltip='{{ ageNeededReason }}' for='age'><u>How old are you?</u></label>
-                                <input type='number' class='form-control' id='age' required name='age' min='18' max='99' ng-model='Age' placeholder='18'>
+                                <input type='number' class='form-control' id='age' required name='age' min='18' max='99' ng-model='Application.Age' placeholder='18'>
                                 <p class='help-block'>Please enter your age. You must be at least 18 years old.</p>
                                 <span class="glyphicon glyphicon-ok form-control-feedback"></span>
                                 <span class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -128,22 +128,22 @@
                                 <br>
                                 <div class='checkbox'>
                                     <label>
-                                        <input type='checkbox' name='dietaryRestrictions' id='vegetarian' ng-model='Diet["Vegetarian"]' ng-true-value='yes' ng-false-value='no'>Vegetarian
+                                        <input type='checkbox' name='dietaryRestrictions' id='vegetarian' ng-model='Application.Diet["Vegetarian"]' ng-true-value='yes' ng-false-value='no'>Vegetarian
                                     </label>
                                 </div>
                                 <div class='checkbox'>
                                     <label>
-                                        <input type='checkbox' name='dietaryRestrictions' id='Vegan' ng-model='Diet["Vegan"]' ng-true-value='yes' ng-false-value='no'>Vegan
+                                        <input type='checkbox' name='dietaryRestrictions' id='Vegan' ng-model='Application.Diet["Vegan"]' ng-true-value='yes' ng-false-value='no'>Vegan
                                     </label>
                                 </div>
                                 <div class='checkbox'>
                                     <label>
-                                        <input type='checkbox' name='dietaryRestrictions' id='lactoseIntolerant' ng-model='Diet["Lactose Intolerant"]' ng-true-value='yes' ng-false-value='no'>Lactose Intolerant
+                                        <input type='checkbox' name='dietaryRestrictions' id='lactoseIntolerant' ng-model='Application.Diet["Lactose Intolerant"]' ng-true-value='yes' ng-false-value='no'>Lactose Intolerant
                                     </label>
                                 </div>
                                 <div class='checkbox'>
                                     <label>
-                                        <input type='checkbox' name='dietaryRestrictions' id='glutenFree' ng-model='Diet["Gluten-Free"]' ng-true-value='yes' ng-false-value='no'>Gluten-Free
+                                        <input type='checkbox' name='dietaryRestrictions' id='glutenFree' ng-model='Application.Diet["Gluten-Free"]' ng-true-value='yes' ng-false-value='no'>Gluten-Free
                                     </label>
                                 </div>
                             </div>
@@ -154,37 +154,37 @@
                                 <br>
                                 <div class='radio'>
                                     <label>
-                                        <input type='radio' name='TShirt' id='TShirt' ng-model='TShirt' value='xs' ng-required='!TShirt'>XS
+                                        <input type='radio' name='TShirt' id='TShirt' ng-model='Application.TShirt' value='xs' ng-required='!TShirt'>XS
                                     </label>
                                 </div>
                                 <div class='radio'>
                                     <label>
-                                        <input type='radio' name='TShirt' id='TShirt' ng-model='TShirt' value='s' ng-required='!TShirt'>S
+                                        <input type='radio' name='TShirt' id='TShirt' ng-model='Application.TShirt' value='s' ng-required='!TShirt'>S
                                     </label>
                                 </div>
                                 <div class='radio'>
                                     <label>
-                                        <input type='radio' name='TShirt' id='TShirt' ng-model='TShirt' value='m' ng-required='!TShirt'>M
+                                        <input type='radio' name='TShirt' id='TShirt' ng-model='Application.TShirt' value='m' ng-required='!TShirt'>M
                                     </label>
                                 </div>
                                 <div class='radio'>
                                     <label>
-                                        <input type='radio' name='TShirt' id='TShirt' ng-model='TShirt' value='l' ng-required='!TShirt'>L
+                                        <input type='radio' name='TShirt' id='TShirt' ng-model='Application.TShirt' value='l' ng-required='!TShirt'>L
                                     </label>
                                 </div>
                                 <div class='radio'>
                                     <label>
-                                        <input type='radio' name='TShirt' id='TShirt' ng-model='TShirt' value='xl' ng-required='!TShirt'>XL
+                                        <input type='radio' name='TShirt' id='TShirt' ng-model='Application.TShirt' value='xl' ng-required='!TShirt'>XL
                                     </label>
                                 </div>
                                 <div class='radio'>
                                     <label>
-                                        <input type='radio' name='TShirt' id='TShirt' ng-model='TShirt' value='xxl' ng-required='!TShirt'>XXL
+                                        <input type='radio' name='TShirt' id='TShirt' ng-model='Application.TShirt' value='xxl' ng-required='!TShirt'>XXL
                                     </label>
                                 </div>
                                 <div class='radio'>
                                     <label>
-                                        <input type='radio' name='TShirt' id='TShirt' ng-model='TShirt' value='xxxl' ng-required='!TShirt'>XXXL
+                                        <input type='radio' name='TShirt' id='TShirt' ng-model='Application.TShirt' value='xxxl' ng-required='!TShirt'>XXXL
                                     </label>
                                 </div>
                             </div>
@@ -199,10 +199,10 @@
                                 <label class='control-label required' tooltip='{{ transDetail }}' for='transportation'><u>Will you need a ride?</u></label>
                                 <br>
                                 <label class='radio-inline'>
-                                    <input type='radio' name='transportation' id='transportation' ng-model='Ride' value='yes' ng-required='!Ride'>Yes
+                                    <input type='radio' name='transportation' id='transportation' ng-model='Application.Ride' value='yes' ng-required='!Ride'>Yes
                                 </label>
                                 <label class='radio-inline'>
-                                    <input type='radio' name='transportation' id='transportation' ng-model='Ride' value='no' ng-required='!Ride'>No
+                                    <input type='radio' name='transportation' id='transportation' ng-model='Application.Ride' value='no' ng-required='!Ride'>No
                                 </label>
                             </div>
                         </div>
@@ -211,20 +211,20 @@
                                 <label class='control-label' for='github'>Github username</label>
                                 <div class='input-group'>
                                     <div class='input-group-addon'>@</div>
-                                    <input type='text' class='form-control' id='github' placeholder='citrushack' ng-model='Github'>
+                                    <input type='text' class='form-control' id='github' placeholder='citrushack' ng-model='Application.Github'>
                                 </div>
                             </div>
                         </div>
                         <div class='col-md-12'>
                             <div class='form-group'>
                                 <label class='control-label' for='hardware'>What kind of hardware would you like to hack on? <span class='text-muted'>(Max 100 chars)</span></label>
-                                <input type='text' class='form-control' id='hardware' placeholder='Oculus Rift, Pebble, Myo...' ng-model='Hardware' maxlength='100'>
+                                <input type='text' class='form-control' id='hardware' placeholder='Oculus Rift, Pebble, Myo...' ng-model='Application.Hardware' maxlength='100'>
                             </div>
                         </div>
                         <div class='col-md-12'>
                             <div class='form-group' show-errors>
-                                <label class='control-label required' for='resume'>Resume <span class='text-muted'>(.doc, .docx, or .pdf only)</span></label>
-                                <input type='file' name='resume' id='resume' required ng-model='Resume'>
+                                <label class='control-label required' for='resume'>Resume <span class='text-muted'>(.doc, .docx, .pdf, or .txt only)</span></label>
+                                <input type='file' name='resume' id='resume' required resume-upload accept='application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/msword,text/plain' ng-model='Application.Resume'>
                                 <p class='help-block'>Please upload your resume.</p>
                             </div>
                         </div>

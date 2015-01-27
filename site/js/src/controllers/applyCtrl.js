@@ -22,15 +22,13 @@
                              'which schools have the most need';
         
         // Bind application model to scope
-        angular.forEach(Application, function(value, key) {
-            $scope[key] = value;  
-        });
+        $scope.Application = Application;  
 
         // Initialize Diet values
-        $scope.Diet['Vegan'] = 'no';
-        $scope.Diet['Vegetarian'] = 'no';
-        $scope.Diet['Lactose Intolerant'] = 'no';
-        $scope.Diet['Gluten-Free'] = 'no';
+        $scope.Application.Diet['Vegan'] = 'no';
+        $scope.Application.Diet['Vegetarian'] = 'no';
+        $scope.Application.Diet['Lactose Intolerant'] = 'no';
+        $scope.Application.Diet['Gluten-Free'] = 'no';
 
         // Form submission
         $scope.submit = function () {
