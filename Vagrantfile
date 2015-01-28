@@ -20,7 +20,4 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 		# Allocate 2048 or 2GB of memory for virtual machine
 		vb.customize ["modifyvm", :id, "--memory", "2048"]
 	end
-	
-	# Run our install script
-	config.vm.provision "shell", path: "etc/install/run.sh"
 end
