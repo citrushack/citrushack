@@ -27,8 +27,9 @@
                             ngModel.$setViewValue(element.val());
                             
                             // Bind file to scope if it exists
-                            if (event.target.files && event.target.files.length >= 1)
+                            if (event.target.files && event.target.files.length >= 1){
                                 ngModel.Resume = event.target.files[0];
+                            }
 
                             ngModel.$render();
                         });
