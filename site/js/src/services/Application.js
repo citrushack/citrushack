@@ -36,7 +36,7 @@
             $http({
                 method: 'POST'
               , url: '/apply.php'
-              , headers: {'Content-Type': false}
+              , headers: {'Content-Type': undefined}
               , data: { scope: this, file: this.Resume } 
               , transformRequest: function (data){
                     var formData = new FormData();
