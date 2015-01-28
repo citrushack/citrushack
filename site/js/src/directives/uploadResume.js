@@ -14,24 +14,21 @@
             restrict: 'A'
           , require: '^ngModel'
           , scope: {
-                Resume: '@'
+                Application: '@'
             }
           , link: function (scope, element, attrs, ngModel){
-                    ngModel.$render = function () {
-                        ngModel.$setViewValue(element.val());
+                    ngModel.$render = function (value) {
+                        ngModel.$setViewValue(value);
                     };
                     
                     //change event is fired when file is selected
                     element.bind('change',function(event){
                         scope.$apply(function(){
-                            ngModel.$setViewValue(element.val());
-                            
                             // Bind file to scope if it exists
                             if (event.target.files && event.target.files.length >= 1){
                                 ngModel.Resume = event.target.files[0];
                             }
-
-                            ngModel.$render();
+                            ngModel.$render(event.target.files[0]);
                         });
                     });
                  }

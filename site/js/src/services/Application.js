@@ -29,7 +29,7 @@
             this.TShirt   = '';
             this.Github   = '';
             this.Hardware = '';
-            this.Resume   = '';
+            this.Resume   = undefined;
         }  
 
         application.prototype.sendApplication = function () {
