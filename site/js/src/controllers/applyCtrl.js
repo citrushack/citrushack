@@ -30,12 +30,19 @@
         $scope.Application.Diet['Lactose Intolerant'] = 'no';
         $scope.Application.Diet['Gluten-Free'] = 'no';
 
+        // Send button state
+        $scope.submitting = false; 
+
         // Form submission
         $scope.submit = function () {
             $scope.$broadcast('show-errors-check-validity');
             if ($scope.applyForm.$valid) {
+                $scope.submitting = true;
                 // Send application
-                Application.sendApplication();
+                Application.sendApplication()
+                    .finally(function(){
+                        $scope.submitting = false;
+                    });
             }
         };
     }
