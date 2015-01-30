@@ -68,8 +68,9 @@ $btn-border-width: 2px;
         font-weight: bold;
 
         &:disabled {
-            background-color: $transparent;
+            background-color: #{$bg-color};
             border-color: $bg-color;
+            color: #{$text-color};
         }
 
         &:hover,
