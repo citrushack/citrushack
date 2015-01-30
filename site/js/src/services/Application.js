@@ -5,7 +5,7 @@
      * Application factory
      */
 
-    function applicationFactory ($http){
+    function applicationFactory ($http, $q){
             
         /**
          * Application object
@@ -33,6 +33,8 @@
         }  
 
         application.prototype.sendApplication = function () {
+            var deferred = $q.defer();
+
             $http({
                 method: 'POST'
               , url: '/apply.php'
@@ -48,11 +50,13 @@
                 }
             })
             .success(function(){
-                return true;
+                deferred.resolve();
             })
             .error(function(){
-                return false;
+                deferred.reject();
             });
+
+            return deferred.promise;
         };
 
         return new application ();
@@ -63,7 +67,7 @@
      */
 
     angular.module('CitrusHack.services')
-        .factory('Application', ['$http', applicationFactory]);
+        .factory('Application', ['$http', '$q', applicationFactory]);
 
 })();
 
