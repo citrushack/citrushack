@@ -230,7 +230,7 @@
                         </div>
                         <!-- submit -->
                         <div class='col-md-12' id='submit'>                      
-                            <button type='submit' class='btn btn-danger btn-block' ng-click='submit()'>Submit</button>
+                            <button type='submit' class='btn btn-danger btn-block' ng-click='submit()' ng-disabled='submitting'>{{ submitting ? 'Sending...' : 'Submit' }}</button>
                         </div><!-- submit -->
                     </div>
                 </form>
