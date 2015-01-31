@@ -28,7 +28,16 @@
 
             // Update position function
             function updateY () {
-                posY = -(windowEl.scrollTop() / speed);
+                var offset       = element.offset().top
+                  , height       = element.outerHeight()
+                  , scrollTop    = windowEl.scrollTop()
+                  , windowHeight = windowEl.height();
+
+                if (offset + height <= scrollTop || offset >= scrollTop + windowHeight) 
+                    return;
+                
+                posY = Math.round((offset - scrollTop) / speed);
+                
                 element.css({
                     backgroundPosition: posX + 'px ' + posY + 'px'
                 });
