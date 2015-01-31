@@ -1,0 +1,28 @@
+/**
+ * Modals
+ */
+
+/**
+ * Module imports
+ */
+
+@import 'modules/colors';
+
+/**
+ * Local variables
+ */
+
+$success-header-bg-color: $scarlett-red;
+$success-header-color: $white;
+
+/**
+ * Styles
+ */
+
+#successAppModal {
+    .modal-header {
+        color: $success-header-color;
+        background-color: $success-header-bg-color;
+    }
+}
+
