@@ -1,0 +1,38 @@
+/**
+ * contact
+ */
+
+/**
+ * Module imports
+ */
+
+@import 'modules/colors';
+
+/**
+ * Local variables
+ */
+
+$contact-form-margin-top: 15px; 
+$contact-img-src: 'img/bourns-bcoe.jpg';
+
+/**
+ * Styles
+ */
+
+#contact {
+    color: $white;
+
+    background: image-url($contact-img-src);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+
+    #form-wrapper {
+        margin-top: $contact-form-margin-top;
+        background-color: $citrus-orange;
+        padding: 20px 20px 20px 20px;
+        border-radius: 5px;
+    }
+}
+
+
