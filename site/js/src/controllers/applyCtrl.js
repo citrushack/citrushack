@@ -5,7 +5,7 @@
      * Apply controller
      */
 
-    function applyCtrl ($scope, $rootScope, Application) {
+    function applyCtrl ($scope, $rootScope, $modal, $document, Application) {
         // Name of the view
         $scope.pageView = 'apply-view';
         // Reason for needing a phone number
@@ -40,9 +40,22 @@
                 $scope.submitting = true;
                 // Send application
                 Application.sendApplication()
+                    // Success
+                    .then(function(){
+                        $rootScope.successApply = true; 
+                    })
                     .finally(function(){
                         $scope.submitting = false;
                     });
+            }
+            // There was an error in the form
+            else {
+                // Focus on the first invalid field
+                var applyFormElem       = angular.element('[name="applyForm"]')
+                  , firstErrorInputElem = applyFormElem.find('.has-error').first()
+                  , documentElem        = angular.element($document);
+                
+                documentElem.scrollToElementAnimated(firstErrorInputElem, 10);
             }
         };
     }
@@ -52,6 +65,6 @@
      */
 
     angular.module('CitrusHack.controllers')
-        .controller('ApplyCtrl', ['$scope', '$rootScope', 'Application', applyCtrl]); 
+        .controller('ApplyCtrl', ['$scope', '$rootScope', '$modal', '$document', 'Application', applyCtrl]); 
         
 })();

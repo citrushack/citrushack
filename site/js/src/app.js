@@ -17,6 +17,9 @@
             $rootScope.FBInit = function () {
                 FB.XFBML.parse();
             };
+            
+            // Flag for showing success registration modal
+            $rootScope.successApply = false;
         }])
         // Configure angular-show-errors to also show
         // valid form entries
