@@ -18,12 +18,12 @@
  */
 
 .ng-enter {
-    z-index: 1000;
+    z-index: 400;
     position: relative;
 }
 
 .ng-leave {
-    z-index: 2000;
+    z-index: 401;
     position: relative;
 }
 
