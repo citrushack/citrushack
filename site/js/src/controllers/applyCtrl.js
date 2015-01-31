@@ -5,7 +5,7 @@
      * Apply controller
      */
 
-    function applyCtrl ($scope, $rootScope, $modal, $document, Application) {
+    function applyCtrl ($scope, $rootScope, $modal, $document, $location, Application) {
         // Name of the view
         $scope.pageView = 'apply-view';
         // Reason for needing a phone number
@@ -43,6 +43,7 @@
                     // Success
                     .then(function(){
                         $rootScope.successApply = true; 
+                        $location.url('/main');
                     })
                     .finally(function(){
                         $scope.submitting = false;
@@ -65,6 +66,6 @@
      */
 
     angular.module('CitrusHack.controllers')
-        .controller('ApplyCtrl', ['$scope', '$rootScope', '$modal', '$document', 'Application', applyCtrl]); 
+        .controller('ApplyCtrl', ['$scope', '$rootScope', '$modal', '$document', '$location', 'Application', applyCtrl]); 
         
 })();
