@@ -347,17 +347,17 @@
             <form name='contactForm' novalidate>
                 <div class='form-group has-feedback' show-errors>
                     <label class='control-label required'>Email:</label>
-                    <input type='text' class='form-control' id='email' name='email' required placeholder='you@email.com'>
+                    <input ng-model='Contact.Email' type='text' class='form-control' id='email' name='email' required placeholder='you@email.com'>
                 </div>
                 <div class='form-group has-feedback' show-errors>
                     <label class='control-label required'>Subject:</label>
-                    <input type='text' class='form-control' id='subject' name='subject' required placeholder='Sponsorship, registration, etc...'>
+                    <input ng-model='Contact.Subject' type='text' class='form-control' id='subject' name='subject' required placeholder='Sponsorship, registration, etc...'>
                 </div>
                 <div class='form-group has-feedback' show-errors>
                     <label class='control-label required'>Body:</label>
-                    <textarea class='form-control' id='body' name='body' required placeholder='Hello..' rows='4'></textarea>
+                    <textarea ng-model='Contact.Message' class='form-control' id='body' name='body' required placeholder='Hello..' rows='4'></textarea>
                 </div>
-                <button class='btn btn-warning btn-block'>Send!</button>
+                <button ng-click='sendMessage()' class='btn btn-warning btn-block'>Send!</button>
             </form>
         </div>
     </div>

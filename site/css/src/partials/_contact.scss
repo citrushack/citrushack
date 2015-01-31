@@ -14,22 +14,23 @@
 
 $contact-form-margin-top: 15px; 
 $contact-img-src: 'img/bourns-bcoe.jpg';
+$contact-form-bg-color: $white;
 
 /**
  * Styles
  */
 
 #contact {
-    color: $white;
-
+    color: white;
     background: image-url($contact-img-src);
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
 
     #form-wrapper {
+        color: black;
         margin-top: $contact-form-margin-top;
-        background-color: $citrus-orange;
+        background-color: $contact-form-bg-color;
         padding: 20px 20px 20px 20px;
         border-radius: 5px;
     }
