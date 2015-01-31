@@ -41,7 +41,7 @@
                         $scope.submitting = false;
                     });
             }
-        }
+        };
     }
 
     /**
