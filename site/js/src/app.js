@@ -13,6 +13,10 @@
             $rootScope.APPLICANT_TYPES = APPLICANT_TYPES;
             // Make location available in rootScope
             $rootScope.location = $location;
+            // Make FB init available in rootScope
+            $rootScope.FBInit = function () {
+                FB.XFBML.parse();
+            };
         }])
         // Configure angular-show-errors to also show
         // valid form entries
