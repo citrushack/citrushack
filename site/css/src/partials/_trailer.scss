@@ -12,7 +12,7 @@
  * Local variables
  */
 
-$trailer-bg-color: $citrus-lime;
+$trailer-img-src: 'img/bourns-hall.jpg';
 $trailer-color: $white;
 $trailer-video-margin-top: 40px;
 
@@ -21,7 +21,13 @@ $trailer-video-margin-top: 40px;
  */
 
 #trailer {
-    background-color: $trailer-bg-color;
+    // Background
+    background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)),
+                image-url($trailer-img-src);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+
     color: $trailer-color;
 
     iframe {
