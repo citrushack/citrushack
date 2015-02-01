@@ -223,14 +223,14 @@
                         </div>
                         <div class='col-md-12'>
                             <div class='form-group' show-errors>
-                                <label class='control-label required' for='resume'>Resume <span class='text-muted'>(.pdf, .doc, or .docx only)</span></label>
+                                <label class='control-label required' for='resume'>Resume <span class='text-muted'>5mb max (.pdf, .doc, or .docx only)</span></label>
                                 <input type='file' name='resume' id='resume' required resume-upload accept='application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/msword' ng-model='Application.Resume'>
                                 <p class='help-block'>Please upload your resume.</p>
                             </div>
                         </div>
                         <!-- submit -->
                         <div class='col-md-12' id='submit'>                      
-                            <button type='submit' class='btn btn-danger btn-block' ng-click='submit()' ng-disabled='submitting'>{{ submitting ? 'Sending...' : 'Submit' }}</button>
+                            <button type='submit' class='btn btn-success btn-block' ng-click='submit()' ng-disabled='submitting'>{{ submitting ? 'Sending...' : 'Submit' }}</button>
                         </div><!-- submit -->
                     </div>
                 </form>
