@@ -14,8 +14,8 @@
         $scope.projectIdeasType = 'These projects would be a mix of humanitarian and utility applications'; 
         // Bind contact
         $scope.Contact = Contact;
-        // See if we are sending a form
-        $scope.submitting = false;
+        // See if we have sent the contact form
+        $scope.sentForm = false;
 
         if ($rootScope.successApply){
             $modal.open({
@@ -34,11 +34,10 @@
         $scope.sendMessage = function () {
             $scope.$broadcast('show-errors-check-validity');
             if ($scope.contactForm.$valid) {
-                $scope.submitting = true;
                 // Send the from
                 Contact.sendMessage()
                     .finally(function(){
-                        $scope.submitting = false;
+                        $scope.sentForm = true;
                     });
             }
         };

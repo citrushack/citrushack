@@ -341,10 +341,10 @@
 <!-- Contact -->
 <section id='contact' class='container-fluid' ch-parallax>
     <h1 class='text-center text-bold'>Contact Us</h1>
-    <h5 class='text-center'>we love to hear from you...</h5>
+    <h5 class='text-center'>we love to hear from you!</h5>
     <div class='row'>
         <div class='col-md-offset-3 col-md-6' id='form-wrapper'> 
-            <form name='contactForm' novalidate>
+            <form name='contactForm' novalidate ng-hide='sentForm'>
                 <div class='form-group has-feedback' show-errors>
                     <label class='control-label required'>Email:</label>
                     <input ng-model='Contact.Email' type='email' class='form-control' id='email' name='email' required placeholder='you@email.com' ng-pattern='/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-zA-z]{3})$/'>
@@ -366,8 +366,12 @@
                     <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                     <p class='help-block'>Please out the body of your message</p>
                 </div>
-                <button ng-click='sendMessage()' class='btn btn-warning btn-block' ng-disabled='submitting'>{{ submitting ? 'Sending...' : 'Submit' }}</button>
+                <button ng-click='sendMessage()' class='btn btn-warning btn-block'>Submit</button>
             </form>
+            <div ng-show='sentForm'>
+                <h1 style='color:green'>Thanks!</h1>
+                <p>We have receieved your email and will hear back from us shortly!</p>
+            </div>
         </div>
     </div>
 </section><!-- Contact -->
