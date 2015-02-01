@@ -1,9 +1,18 @@
 <?php
 
+ignore_user_abort(true);
+
 $json = json_decode(file_get_contents("php://input"), true);
 
 if($json) 
 {
+    header('HTTP/1.0 200 Success');
+    header("Connection: close", true);
+    header("Content-Encoding: none\r\n");
+    header("Content-Length: 0", true);
+    flush();
+    ob_flush();
+    session_write_close();
     $to      = 'citrushack@gmail.com';
     $subject = ''.$json['Subject'];
     $message = ''.$json['Message'];
