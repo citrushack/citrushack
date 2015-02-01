@@ -366,7 +366,7 @@
                     <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                     <p class='help-block'>Please out the body of your message</p>
                 </div>
-                <button ng-click='sendMessage()' class='btn btn-warning btn-block'>Send!</button>
+                <button ng-click='sendMessage()' class='btn btn-warning btn-block' ng-disabled='submitting'>{{ submitting ? 'Sending...' : 'Submit' }}</button>
             </form>
         </div>
     </div>
