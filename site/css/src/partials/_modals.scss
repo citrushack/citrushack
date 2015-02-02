@@ -13,6 +13,8 @@
  */
 
 $success-header-bg-color: $scarlett-red;
+$error-email-header-bg-color: $scarlett-red;
+$error-email-header-color: $white;
 $success-header-color: $white;
 
 /**
@@ -23,6 +25,17 @@ $success-header-color: $white;
     .modal-header {
         color: $success-header-color;
         background-color: $success-header-bg-color;
+    }
+
+    #people {
+        margin-bottom: 10px;
+    }
+}
+
+#errorEmailAppModal {
+    .modal-header {
+        color: $error-email-header-color;
+        background-color: $error-email-header-bg-color;
     }
 
     #people {
