@@ -29,6 +29,7 @@
         $scope.Application.Diet['Vegetarian'] = 'no';
         $scope.Application.Diet['Lactose Intolerant'] = 'no';
         $scope.Application.Diet['Gluten-Free'] = 'no';
+        $scope.Application.Diet['Other'] = '';
 
         // Send button state
         $scope.submitting = false; 
