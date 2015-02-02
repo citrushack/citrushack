@@ -46,5 +46,11 @@ $splash-img-src: 'img/bourns.jpg';
         h5 {
             color: $white;
         }
+
+        .alert {
+            margin-top: 40px;
+            text-align: center;
+            font-weight: bold;
+        }
     }
 }
