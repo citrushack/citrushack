@@ -44,6 +44,12 @@
                     .then(function(){
                         $rootScope.successApply = true; 
                         $location.url('/main');
+                    }, function(){
+                        $modal.open({
+                            templateUrl: 'partials/errorEmailAppModal.html'
+                          , controller: 'ErrorEmailAppModalCtrl'
+                          , size: 'md'
+                        });
                     })
                     .finally(function(){
                         $scope.submitting = false;
