@@ -85,9 +85,14 @@
                         <div class='col-md-12'>
                             <div class='form-group has-feedback' show-errors>
                                 <label class='control-label required' for='school'>School</label>
-                                <select class='form-control' id='school' name='school' required ng-model='Application.School' ng-options='school for school in SCHOOLS'>
+                                <select class='form-control' id='school' name='school' required ng-model='Application.School' ng-options='school for school in SCHOOLS' ng-hide='schoolOther == "YES"'>
                                     <option value=''>-- Select your school --</option>
                                 </select>
+                                <br> 
+                                <label class='text-muted'>Other:</label>
+                                <input type='checkbox' ng-model='schoolOther' ng-true-value='YES' ng-false-value='NO'>
+                                <br>
+                                <input type='text' class='form-control' id='school' name='school' placeholder='MIT, Stanford, etc..' ng-model='Application.School' ng-show='schoolOther == "YES"' required>
                                 <p class='help-block'>Please select your school</p>
                             </div>
                         </div>
