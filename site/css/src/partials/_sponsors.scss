@@ -17,6 +17,7 @@ $sponsor-interest-color: $citrus-orange;
 $sponsor-interest-margin-top: 40px;
 
 $sponsor-list-margin-top: 50px;
+$sponsor-margin: 15px;
 $sponsor-sm-max-height: 50px;
 
 /**
@@ -33,6 +34,12 @@ $sponsor-sm-max-height: 50px;
         
     #sponsor-list {
         margin-top: $sponsor-list-margin-top;
+        
+        [class^='sponsor-'] {
+            margin-top: $sponsor-margin;
+            margin-bottom: $sponsor-margin;
+        }
+
         .sponsor-sm {
             max-height: $sponsor-sm-max-height;
         }
