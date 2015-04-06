@@ -1,0 +1,68 @@
+/**
+ * ng-view animations
+ * 
+ * Most of this file is adapted from
+ * http://embed.plnkr.co/uW4v9T/preview
+ */
+
+/**
+ * Module imports
+ */
+
+@import 'modules/mixins';
+@import 'animations';
+
+/**
+ * Make sure leaving page is on top of 
+ * entering page
+ */
+
+.ng-enter {
+    z-index: 400;
+    position: relative;
+}
+
+.ng-leave {
+    z-index: 401;
+    position: relative;
+}
+
+/**
+ * View animations
+ */
+
+.main-view.ng-enter {
+    @include animation(fadeIn .7s linear both);
+    display: none;
+}
+
+.main-view.ng-enter.ng-enter-active {
+    display: block;
+}
+
+.main-view.ng-leave {
+    @include animation(fadeOut .7s linear both);
+    display: none;
+}
+
+.main-view.ng-leave.ng-leave-active {
+    display: block;
+}
+
+.apply-view.ng-enter {
+    @include animation(fadeIn .7s linear both);
+    display: none;
+}
+
+.apply-view.ng-enter.ng-enter-active {
+    display: block;
+}
+
+.apply-view.ng-leave {
+    @include animation(fadeOut .7s linear both);
+    display: none;
+}
+
+.apply-view.ng-leave.ng-leave-active {
+    display: block;
+}

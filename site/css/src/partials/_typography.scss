@@ -1,0 +1,66 @@
+/**
+ * Typography
+ */
+
+/**
+ * Extension of default bootstrap font stack
+ * Added Raleways for header and Roboto for body
+ */
+
+$header-font-stack: 'Raleway', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$body-font-stack: 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+/**
+ * Font styles 
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $header-font-stack;
+}
+
+body,
+input,
+label,
+button,
+select,
+textarea {
+    font-family: $body-font-stack;
+}
+
+/**
+ * When site is at least col-md width
+ */
+
+@media (min-width: 992px) {
+    h1 {
+        font-size: 46px;
+    }
+    h2 {
+        font-size: 40px;
+    }
+    h3 {
+        font-size: 34px;
+    }
+    h4 {
+        font-size: 28px;
+    }
+    h5 {
+        font-size: 22px;
+    }
+    h6 {
+        font-size: 16px;
+    }
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+.text-skinny {
+    font-weight: 200;
+}

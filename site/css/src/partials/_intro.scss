@@ -1,0 +1,31 @@
+/**
+ * Intro
+ */
+
+/**
+ * Module imports
+ */
+
+@import 'modules/colors';
+
+/**
+ * Local variables
+ */
+
+$intro-bg-color: $white;
+$info-margin-top: 40px;
+$info-h1-color: $citrus-orange;
+
+/**
+ * Styles
+ */
+
+#intro {
+    background-color: $intro-bg-color;
+    #info-group {
+        margin-top: $info-margin-top;  
+        h1 {
+            color: $info-h1-color;
+        }
+    }
+}

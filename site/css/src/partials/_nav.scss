@@ -1,0 +1,61 @@
+/**
+ * Navigation
+ */
+
+/**
+ * Module imports
+ */
+
+@import 'modules/colors';
+
+/**
+ * Local variables
+ */
+
+$nav-bg-color: $vormator-dark-gray;
+$nav-logo-width: 50%;
+$nav-padding-top: 30px;
+$nav-padding-left: 10px;
+$nav-padding-right: 10px;
+
+$nav-logo-margin-bottom: 40px;
+$nav-pills-bg-color: $citrushack-red;
+
+/**
+ * Styles
+ */
+ 
+#nav-wrapper {
+    background-color: $nav-bg-color;
+    padding: $nav-padding-top $nav-padding-right 0px $nav-padding-left;
+
+    #logo {
+        max-width: 70%;
+        margin-bottom: $nav-logo-margin-bottom;
+    }
+
+    #action-btns {
+        bottom: 0px;
+    }
+
+    /**
+     * Nav pill styles
+     */
+
+    .nav-pills > li.active > a {
+        background-color: $nav-pills-bg-color;
+    }
+
+    .nav-pills > li > a {
+        color: $white;
+
+        &:hover {
+            font-size: 110%;
+            background-color: $transparent;
+        }
+
+        &:focus {
+            background-color: lighten($nav-pills-bg-color, 5%);
+        }
+    }
+}

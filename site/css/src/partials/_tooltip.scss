@@ -1,0 +1,18 @@
+/**
+ * Style bootstrap tooltips
+ * See http://stackoverflow.com/questions/15383440/css-styling-bootstrap-tooltips-arrow
+ */
+
+/**
+ * Module imports
+ */
+
+@import 'modules/colors';
+
+/**
+ * Styles
+ */
+
+.tooltip{
+    z-index:10000;
+}

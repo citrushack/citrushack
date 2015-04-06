@@ -1,0 +1,20 @@
+/**
+ * Forms
+ */
+
+/**
+ * Module imports
+ */
+
+@import 'modules/colors';
+
+/**
+ * Styles
+ */
+
+.required {
+    &:after {
+        content: '\0000a0*';
+        color: red;
+    }
+}

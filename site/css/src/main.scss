@@ -1,0 +1,75 @@
+/**
+ * Main scss file
+ */
+
+/**
+ * Partial imports
+ */
+
+@import 'partials/wrappers';
+@import 'partials/nav';
+@import 'partials/splash';
+@import 'partials/buttons';
+@import 'partials/ng_view';
+@import 'partials/apply';
+@import 'partials/typography';
+@import 'partials/forms';
+@import 'partials/tooltip';
+@import 'partials/intro';
+@import 'partials/trailer';
+@import 'partials/faq';
+@import 'partials/sponsors';
+@import 'partials/credits';
+@import 'partials/schedule';
+@import 'partials/modals';
+@import 'partials/contact';
+
+/**
+ * Local variables
+ */
+
+$html-bg-image: 'img/whitediamond.png';
+$section-margin-top: 20px;
+
+/**
+ * Ensure page is full width/height
+ */
+
+html,
+body {
+    min-width: 100%;
+    height: 100%;
+}
+
+/**
+ * Add padding to bootstrap's container-fluid
+ */
+
+.container-fluid {
+    padding: 40px 40px 40px 40px;
+}
+
+/**
+ * Styles to apply when page is at least
+ * col-md width
+ */
+
+@media (min-width:992px) {
+    /**
+     * Set HTML Body background
+     */
+     body {
+        // Background
+        background-image: image-url($html-bg-image);
+        background-repeat: repeat;
+     }
+
+    /**
+     * Make a gap between each section except for the 
+     * first
+     */
+
+    section:not(:first-child) {
+        margin-top: $section-margin-top;
+    }
+}

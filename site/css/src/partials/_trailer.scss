@@ -1,0 +1,38 @@
+/**
+ * Trailer
+ */
+
+/**
+ * Module Imports
+ */
+
+@import 'modules/colors';
+
+/**
+ * Local variables
+ */
+
+$trailer-img-src: 'img/bourns-hall.jpg';
+$trailer-color: $white;
+$trailer-video-margin-top: 40px;
+
+/**
+ * Styles
+ */
+
+#trailer {
+    // Background
+    background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)),
+                image-url($trailer-img-src);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+
+    color: $trailer-color;
+
+    iframe {
+        max-width: 100%;
+        margin-top: $trailer-video-margin-top;
+    }
+}
+
