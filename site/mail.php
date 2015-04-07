@@ -13,7 +13,7 @@ if($json)
     flush();
     ob_flush();
     session_write_close();
-    $to      = 'citrushack@gmail.com';
+    $to      = 'cutiehack@gmail.com';
     $subject = ''.$json['Subject'];
     $message = ''.$json['Message'];
     $headers = 'From: '.$json['Email']. "\r\n" .
