@@ -18,7 +18,7 @@ $sponsor-interest-margin-top: 40px;
 
 $sponsor-list-margin-top: 50px;
 $sponsor-margin: 15px;
-$sponsor-sm-max-height: 50px;
+$sponsor-max-height: 80px;
 
 /**
  * Styles
@@ -40,8 +40,8 @@ $sponsor-sm-max-height: 50px;
             margin-bottom: $sponsor-margin;
         }
 
-        .sponsor-sm {
-            max-height: $sponsor-sm-max-height;
+        .sponsor {
+            max-height: $sponsor-max-height;
         }
     }
 }
