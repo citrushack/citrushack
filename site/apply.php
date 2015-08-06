@@ -17,49 +17,46 @@ try {
         die;
 
     } else {
-        
+
         if(!isset($_POST['Scope'])) suicide(417); 
         
         $json = json_decode($_POST['Scope'], true);
         
-        $Fname = $json['Fname'] || suicide(401);
-        $Lname = $json['Lname'] || suicide(401);
-        $gender = $json['Gender'] || suicide(401);
-        $shirt = $json['TShirt'] || suicide(401);
-        $email = $json['Email'] || suicide(401);
-        $phone = $json['Phone'] || suicide(401);
-        $school = $json['School'] || suicide(401);
-        $classLevel = $json['ClassLvl'] || suicide(401);
-        $applicantType = $json['Type'] || suicide(401);
-        $age = intval($json['Age']) || suicide(401);
-        $diet = '' || suicide(401);
-        $ride = $json['Ride'] || suicide(401);
-        $github = $json['Github'] || suicide(401);
-        $hardware = $json['Hardware'] || suicide(401);
-
+        $Fname = isset($json['Fname']) ? $json['Fname'] : suicide(400);
+        $Lname = isset($json['Lname']) ? $json['Lname'] : suicide(400);
+        $gender = isset($json['Gender']) ? $json['Gender'] : suicide(400);
+        $shirt = isset($json['TShirt']) ? $json['TShirt'] : suicide(400);
+        $email = isset($json['Email']) ? $json['Email'] : suicide(400);
+        $phone = isset($json['Phone']) ? $json['Phone'] : suicide(400);
+        $school = isset($json['School']) ? $json['School'] : suicide(400);
+        $classLevel = isset($json['ClassLvl']) ? $json['ClassLvl'] : suicide(400);
+        $applicantType = isset($json['Type']) ? $json['Type'] : suicide(400);
+        $age = isset($json['Age']) ? intval($json['Age']) : suicide(400);
+        $diet = isset($json['Diet']) ? $json['Diet'] : suicide(400);
+        $ride = isset($json['Ride']) ? $json['Ride'] : suicide(400);
+        $github = $json['Github'];
+	$hardware = $json['Hardware'];
+	
         // Make DB connection
-        $mysqli = new mysqli($_ENV["DB_HOST"], $_ENV["DB_USER"], $_ENV["DB_PASSWORD"], $_ENV["DB_NAME"]);
-        
+        $mysqli = new PDO('mysql:host=us-cdbr-iron-east-02.cleardb.net; dbname=heroku_9b40805300176df', 'be49eb03cbd17f', '9c9cfe8c');
+	
         // Check is email is taken
         $stmt = $mysqli->prepare("SELECT email FROM apps WHERE email=:email");
         $stmt->bindParam(':email', $email);
         $stmt->execute();
-        $stmt->store_result();
-        if($stmt->num_rows > 0) {
-            $stmt->free_result();
-            $stmt->close();
+        if($stmt->fetchColumn() > 0) {
             suicide(402);
         }
 
         $resume = $_FILES['Resume']['tmp_name'];
-        $uploadDir = $_ENV["RESUME_DIR"]; 
+        $uploadDir = '/var/opt/files/';
         $filePath = $uploadDir . $email;
 
         $result = move_uploaded_file($resume, $filePath);
 
         if(!$result) {
             error_log("Error uploading file");
-            exit;
+            suicide(500);
         } else {
             error_log("Success!");
         }
@@ -84,13 +81,12 @@ try {
         $stmt->bindParam(':class', $classLevel);
         $stmt->bindParam(':role', $applicantType);
         $stmt->bindParam(':age', $age);
-        $stmt->bindParam(':diet', $diet);
+        $stmt->bindParam(':diet', print_r($diet,true));
         $stmt->bindParam(':ride', $ride);
         $stmt->bindParam(':github', $github);
         $stmt->bindParam(':hardware', $hardware);
         
         $stmt->execute();
-        $stmt->store();
     }
 
 } catch (Exception $e) { 

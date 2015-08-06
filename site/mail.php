@@ -16,8 +16,10 @@ if($json)
     $to      = 'citrushack@gmail.com';
     $subject = ''.$json['Subject'];
     $message = ''.$json['Message'];
-    $headers = 'From: '.$json['Email']. "\r\n" .
-        'X-Mailer: PHP/' . phpversion();
+    $message .= "\r\nSent by: ".$json['Email'];
+    $headers = 'From: Contact Us <'.$json['Email']. ">\r\n" .
+        'X-Mailer: PHP/' . phpversion() . "\r\n".
+	'Reply-To: '.$json['Email'];
 
     $success = mail($to, $subject, $message, $headers);
 
