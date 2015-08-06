@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" ng-app='CitrusHack'> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Citrus Hack | UCR's and the Inland Empire's premier hackathon</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- FB tags -->
+        <meta property="og:title" content="Citrus Hack | UCR's and the Inland Empire's Premier Hackathon" />
+        <meta property="og:site_name" content="Citrus Hack | UCR's and the Inland Empire's Premier Hackathon" />
+        <meta property="og:url" content="http://citrushack.com" />
+        <meta property="og:description" content="Come to Citrus Hack! We are UCR's and the Inland Empire's premier hackathon. 400+ students, 36 hours, infinite possibilities" />
+        <meta property="og:image" content="http://citrushack.com/img/orange.png" />
+        <meta property="fb:app_id" content="639285699530831" />
+        <meta property="og:type" content="website" />
+        <meta property="article:author" content="https://www.facebook.com/manny.sanchez.9" />
+        <meta property="article:publisher" content="https://www.facebook.com/CitrusHack" />
+        <!-- SEO tags -->
+        <meta name='description' content="Welcome to Citrus Hack! We are UCR's and the Inland Empire's premier hackathon. 400+ students, 36 hours, infinite possibilities." />
+        <meta name='author' content='Manuel Sanchez' />
+        <meta name='keywords' content='hackathon,riverside,ucr,highlanders,programming,cs,citrus,hack,inland empire,premier' />
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel='icon' href='orange-icon.png' type='img/png'>
+        <!-- Fonts -->
+        <link href='https://fonts.googleapis.com/css?family=Raleway:700,200' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400italic,700italic,700,400' rel='stylesheet' type='text/css'>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css"></link>
+        <link rel="stylesheet" type="text/css" href="bower_components/angular-loading-bar/build/loading-bar.min.css"></link>
+        <link rel="stylesheet" type="text/css" href="css/CitrusHack.css"></link>
+
+        <!-- JS should go at the bottom of the page. This is an exception -->
+        <script src="bower_components/modernizr/modernizr.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <!-- FB stuff -->
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=639285699530831&version=v2.0";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script><!-- FB stuff -->
+ 
+        <div id='social-media' style='position:absolute;overflow:hidden;top:10px;right:10px;z-index:100'>
+            <div class="fb-like" data-href="https://www.facebook.com/CitrusHack" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+        </div>
+
+        <input type='checkbox' id='nav-toggle'></div>
+        <label for='nav-toggle' id='nav-toggle-label' class='visible-sm visible-xs'></label>
+
+        <div id='nav-wrapper'>
+            <nav>
+                <a ui-sref='main'>
+                    <img src='img/logo.png' id='logo' class='img-responsive center-block'></img>
+                </a>
+                <div ng-if="location.url() === '/main'"> 
+                    <ul class='nav nav-pills nav-stacked' >
+                        <li du-scrollspy='splash'>
+                            <a href='#splash' du-smooth-scroll>
+                                Landing
+                            </a>
+                        </li>
+			<!-- Removed as of 6/2/15
+                        <li du-scrollspy='trailer'> 
+                            <a href='#trailer' du-smooth-scroll>Trailer</a>
+                        </li>
+			-->
+                        <li du-scrollspy='faq'>
+                            <a href='#faq' du-smooth-scroll>FAQ</a>
+                        </li>
+                        <li du-scrollspy='sponsors'>
+                            <a href='#sponsors' du-smooth-scroll>Sponsors</a>
+                        </li>
+                        <li du-scrollspy='credits'>
+                            <a href='#credits' du-smooth-scroll>Organized By</a>
+                        </li>
+                        <li du-scrollspy='contact'>
+                            <a href='#contact' du-smooth-scroll>Contact Us</a>
+                        </li>
+			<!--
+			<a ui-sref='apply' class='btn btn-info btn-block'>
+				Apply
+			</a>
+			-->
+                    </ul>
+                </div>
+                <div ng-if="location.url() !== '/main'">
+                    <a ui-sref='main' class='btn btn-primary btn-block'>
+                        Back
+                    </a>
+                </div>
+		<div id='fb'>
+			<!--	<img src='img/fb_logo.png' id='fb_logo' class='img-responsive center-block'></img> -->
+		</div>
+            </nav>
+        </div>
+
+        <div id='content-wrapper' class='{{ pageView }}' ui-view>
+        </div>
+
+        <!-- Javascripts --> 
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+        <script src="bower_components/angular-bootstrap-show-errors/src/showErrors.js"></script>
+        <script src="bower_components/es5-shim/es5-shim.min.js"></script>
+        <script src="bower_components/angular-scroll/angular-scroll.min.js"></script>
+        <script src="bower_components/angular-loading-bar/build/loading-bar.min.js"></script>
+        <script src="bower_components/ngSticky/dist/sticky.min.js"></script>
+        <script src="js/CitrusHack.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-54500757-1');ga('send','pageview');
+        </script>
+    </body>
+</html>

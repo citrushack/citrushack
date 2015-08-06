@@ -1,0 +1,139 @@
+/**
+ * Wrappers
+ */
+
+/**
+ * Module imports
+ */
+
+@import 'modules/mixins';
+@import 'modules/colors';
+
+/**
+ * Local variables
+ */
+
+$nav-width: 180px;
+$nav-height: 100%;
+$content-height: 100%;
+$content-width: 100%;
+
+$toggle-animation-speed: .25s;
+
+/**
+ * Animate nav hiding
+ */
+
+#nav-wrapper, #content-wrapper, #nav-toggle-label {
+    @include transition(all, $toggle-animation-speed, ease-in-out);
+}
+
+/**
+ * When screen size is at least col-md width
+ * and navbar is present
+ */
+
+@media (min-width:992px) {
+
+    /**
+     * Nav
+     */
+
+    #nav-wrapper {
+        width: $nav-width;
+        min-height: $nav-height;
+        left: 0;
+        position: fixed;
+        // Nav should never be covered
+        z-index: 500;
+    }
+
+    /**
+     * Content
+     */
+
+    #content-wrapper {
+        height: $content-height;
+        @include calc(width, '100% - #{$nav-width}');
+        // Offset Nav width
+        margin-left: $nav-width;
+        top: 0;
+        position: absolute;
+    }
+
+}
+
+/**
+ * When screen size is at less than col-md width
+ * and navbar is not present
+ */
+ 
+@media (max-width:991px) {
+
+    /**
+     * Nav
+     */
+
+    #nav-wrapper {
+        width: $nav-width;
+        min-height: $nav-height;
+        // Hide nav by moving it nav-width to the left
+        left: -$nav-width;
+        position: fixed;
+        // Nav should never be covered
+        z-index: 500;
+    }
+
+    /**
+     * Content
+     */
+
+    #content-wrapper {
+        height: $content-height;
+        width: 100%;
+        top: 0;
+        position: absolute;
+    }
+
+}
+
+/**
+ * Nav toggle stuff
+ * Adapted from http://www.designcouch.com/home/why/2014/04/23/pure-css-drawer-menu/
+ */
+
+#nav-toggle {
+    display: none; 
+}
+
+#nav-toggle:checked ~ #nav-toggle-label {
+    left: $nav-width;
+}
+
+#nav-toggle:checked ~ #nav-wrapper {
+    left:0;
+}
+
+#nav-toggle-label {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 500;
+    width: 53px;
+    height: 50px;
+    border: 1px solid $vormator-dark-gray;
+    background-color: $vormator-dark-gray;
+
+    // Hamburger
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 2px;
+      width: 24px;
+      background: $white;
+      left: 13px;
+      top: 18px;
+      box-shadow: 0 6px 0 $white, 0 12px 0 $white;
+    }
+}
