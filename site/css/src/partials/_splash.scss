@@ -22,25 +22,34 @@ $splash-img-src: 'img/citrustree.jpg';
  */
 
 #splash {
-    min-height: $splash-height;
+    height: $splash-height;
     width: $splash-width;
     position: relative;
     // Background
-    background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
-                image-url($splash-img-src);
+    background: #3398DB;
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
+    width: 100vw;
+    height: 100vh;
 
     #splash-group {
+      
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+      margin: 0 auto;
+      
+      #title {
         position: absolute;
         top: 50%;
         left: 50%;
         @include transform(translate(-50%, -50%));
-        width: 50%;
+        z-index: 999;
 
         img {
-            max-width: 80%;
+            max-width: 100%;
         }
 
         h5 {
@@ -52,5 +61,154 @@ $splash-img-src: 'img/citrustree.jpg';
             text-align: center;
             font-weight: bold;
         }
+      }
+      
+      #background { 
+        min-width: 100vw;
+        min-height: 100vh;
+        
+        #right_hill {
+          position: absolute;
+          max-width: 80%;
+          bottom: 0;
+          right: 0;
+          z-index: 500;
+        }
+        
+        #left_hill {
+          position: absolute;
+          max-width: 80%;
+          bottom: 0;
+          left: 0;
+          z-index: 400;
+        }
+        
+        #belltower {
+          position: absolute;
+          width: 12%;
+          height: auto;
+          width: auto\9;
+          bottom: 5vw;
+          left: 10vw;
+          z-index: 300;
+        }
+        
+        #mountain {
+          position: absolute;
+          width: 60%;
+          height: auto;
+          width: auto\9;
+          bottom: 5vw;
+          right: 0;
+          z-index: 300;
+        }
+        
+        #clouds {
+          top: 100px;
+          position: relative;
+          left: -10vw;
+          z-index: 1;
+          
+          -webkit-perspective: 1; 
+          -webkit-backface-visibility:none; 
+        }
+        
+        .cloud1, .cloud2, .cloud3 {
+          opacity: 0;
+        }
+        
+        .cloud1 {
+          width: auto;
+          height: 10vw;
+          position: absolute;
+          top: 50px;
+          
+          -webkit-animation: move 55s infinite linear;  
+          -moz-animation: move 55s infinite linear;  
+          -ms-animation: move 55s infinite linear;
+          animation: move 55s infinite linear;
+          
+          -webkit-animation-delay: -2s;  
+          -moz-animation-delay: -2s;  
+          -ms-animation-delay: -2s;
+          animation-delay: -2s;
+        }
+        
+        .cloud2 {
+          width: auto;
+          height: 6vw;
+          position: absolute;
+          top: 180px;
+          
+          -webkit-animation: move 80s infinite linear;  
+          -moz-animation: move 80s infinite linear;  
+          -ms-animation: move 80s infinite linear;
+          animation: move 80s infinite linear;
+          
+          -webkit-animation-delay: 0s;  
+          -moz-animation-delay: 0s;  
+          -ms-animation-delay: 0s;
+          animation-delay: 0s;
+        }
+        
+        .cloud3 {
+          width: auto;
+          height: 8vw;
+          position: absolute;
+          top: 20px;
+          
+          -webkit-animation: move 60s infinite linear;  
+          -moz-animation: move 60s infinite linear;  
+          -ms-animation: move 60s infinite linear;
+          animation: move 60s infinite linear;
+          
+          -webkit-animation-delay: 12s;  
+          -moz-animation-delay: 12s;  
+          -ms-animation-delay: 12s;
+          animation-delay: 12s;
+        }
+        
+        .cloud4 {
+          width: auto;
+          height: 12vw;
+          position: absolute;
+          top: 80px;
+          left: -10vw;
+          
+          -webkit-animation: move 80s infinite linear;  
+          -moz-animation: move 80s infinite linear;  
+          -ms-animation: move 80s infinite linear;
+          animation: move 80s infinite linear;
+          
+          -webkit-animation-delay: 22s;  
+          -moz-animation-delay: 22s;  
+          -ms-animation-delay: 22s;
+          animation-delay: 22s;
+        }
+        
+        @-webkit-keyframes move {
+          0% {left: -10vw; opacity: 0;}
+          1% {left: -10vw; opacity: .8;}
+          98% {left: 120vw; opacity: .8;}
+          99% {left: 120vw; opacity: 0;} 
+          100% {left: -10vw; opacity: 0;} 
+        } 
+
+        @-moz-keyframes move {
+          0% {left: -10vw; opacity: 0;}
+          1% {left: -10vw; opacity: .8;}
+          98% {left: 120vw; opacity: .8;}
+          99% {left: 120vw; opacity: 0;} 
+          100% {left: -10vw; opacity: 0;} 
+        }
+
+        @-ms-keyframes move {
+          0% {left: -10vw; opacity: 0;}
+          1% {left: -10vw; opacity: .8;}
+          98% {left: 120vw; opacity: .8;}
+          99% {left: 120vw; opacity: 0;} 
+          100% {left: -10vw; opacity: 0;} 
+        } 
+      }
     }
 }

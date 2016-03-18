@@ -42,7 +42,7 @@
      * Register factory
      */
 
-    angular.module('CitrusHack.services')
+    angular.module('CutieHack.services')
         .factory('Contact', ['$http', '$q', contactFactory]);
 
 })();

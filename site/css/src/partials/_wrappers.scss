@@ -13,8 +13,8 @@
  * Local variables
  */
 
-$nav-width: 180px;
-$nav-height: 100%;
+$nav-width: 100%;
+$nav-height: 80px;
 $content-height: 100%;
 $content-width: 100%;
 
@@ -41,11 +41,11 @@ $toggle-animation-speed: .25s;
 
     #nav-wrapper {
         width: $nav-width;
-        min-height: $nav-height;
+        max-height: $nav-height;
         left: 0;
         position: fixed;
         // Nav should never be covered
-        z-index: 500;
+        z-index: 9999;
     }
 
     /**
@@ -54,9 +54,8 @@ $toggle-animation-speed: .25s;
 
     #content-wrapper {
         height: $content-height;
-        @include calc(width, '100% - #{$nav-width}');
+        width: 100%;
         // Offset Nav width
-        margin-left: $nav-width;
         top: 0;
         position: absolute;
     }

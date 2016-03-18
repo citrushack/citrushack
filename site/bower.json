@@ -1,8 +1,8 @@
 {
-  "name": "citrushack.com",
-  "version": "1.0.0",
+  "name": "cutiehack.com",
+  "version": "2.0.0",
   "authors": [
-    "omoman <mannysanchez998@gmail.com>"
+    "kilenaitor <kyleminshall@gmail.com>"
   ],
   "description": "UCR's Hackathon Site",
   "main": "index.html",
@@ -10,7 +10,7 @@
     "node"
   ],
   "license": "MIT",
-  "homepage": "http://citrushack.com",
+  "homepage": "http://cutiehack.com",
   "private": true,
   "ignore": [
     "**/.*",
@@ -31,6 +31,7 @@
     "angular-bootstrap-show-errors": "~2.2.0",
     "angular-scroll": "~0.6.4",
     "angular-loading-bar": "~0.6.0",
-    "ngSticky": "~1.7.9"
+    "ngSticky": "~1.7.9",
+    "components-font-awesome": "^4.5.0"
   }
 }

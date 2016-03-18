@@ -13,8 +13,8 @@
  */
 
 $contact-form-margin-top: 15px; 
-$contact-img-src: 'img/stairwell.jpg';
-$contact-form-bg-color: $white;
+$contact-img-src: '/img/stairwell.jpg';
+$contact-form-bg-color: #2B97DE;
 
 /**
  * Styles
@@ -22,13 +22,13 @@ $contact-form-bg-color: $white;
 
 #contact {
     color: white;
-    background: image-url($contact-img-src);
+    background-color: $contact-form-bg-color;
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
 
     #form-wrapper {
-        color: black;
+        color: white;
         margin-top: $contact-form-margin-top;
         background-color: $contact-form-bg-color;
         padding: 20px 20px 20px 20px;

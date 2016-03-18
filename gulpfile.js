@@ -21,14 +21,14 @@ var scripts = {
         path.join(__dirname, 'site/js/src/**/*.js')
     ]
   , dest      : path.join(__dirname, 'site/js')
-  , buildName : 'CitrusHack.js'
+  , buildName : 'CutieHack.js'
 };
 
 // Stylesheets
 var styles = {
     src       : path.join(__dirname, 'site/css/src/**/*.scss')
   , dest      : path.join(__dirname, 'site/css')
-  , buildName : 'CitrusHack.css'
+  , buildName : 'CutieHack.css'
 };
 
 /**

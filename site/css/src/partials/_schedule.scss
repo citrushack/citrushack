@@ -12,7 +12,8 @@
  * Local variables
  */
 
-$schedule-bg-color: $scarlett-red;
+$schedule-bg-color: $citrus-orange;
+$light-grey: #EBECEC;
 
 /**
  * Styles
@@ -21,4 +22,8 @@ $schedule-bg-color: $scarlett-red;
 #schedule {
     color: $white; 
     background-color: $schedule-bg-color;
+    
+    .text-muted {
+      color: $light-grey;
+    }
 }

@@ -12,14 +12,14 @@
  * Local variables
  */
 
-$nav-bg-color: $vormator-dark-gray;
+$nav-bg-color: #3398DB;
 $nav-logo-width: 50%;
-$nav-padding-top: 30px;
+$nav-padding-top: 10px;
 $nav-padding-left: 10px;
 $nav-padding-right: 10px;
 
 $nav-logo-margin-bottom: 40px;
-$nav-pills-bg-color: #F27B38;
+$nav-pills-bg-color: #F39538;
 
 /**
  * Styles
@@ -27,7 +27,7 @@ $nav-pills-bg-color: #F27B38;
  
 #nav-wrapper {
     background-color: $nav-bg-color;
-    padding: $nav-padding-top $nav-padding-right 0px $nav-padding-left;
+    padding: $nav-padding-top $nav-padding-right;
 
     #logo {
         max-width: 70%;
@@ -41,21 +41,27 @@ $nav-pills-bg-color: #F27B38;
     /**
      * Nav pill styles
      */
-
-    .nav-pills > li.active > a {
-        background-color: $nav-pills-bg-color;
-    }
-
+    
     .nav-pills > li > a {
         color: $white;
 
         &:hover {
-            font-size: 110%;
-            background-color: $transparent;
+          font-size: 110%;
+          background-color: $transparent;
         }
 
         &:focus {
-            background-color: lighten($nav-pills-bg-color, 5%);
+          background-color: $nav-bg-color;
+          outline: 0;
+        }
+    }
+    
+    .nav-pills > li.active > a {
+        background-color: $nav-pills-bg-color;
+        
+        &:hover {
+          font-size: 100%;
+          background-color: $nav-pills-bg-color;
         }
     }
 }

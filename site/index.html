@@ -2,125 +2,119 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" ng-app='CitrusHack'> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Cutie Hack | ACM and IEEE @ UCR's hackathon</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- FB tags -->
-        <meta property="og:title" content="Cutie Hack | ACM and IEEE @ UCR's hackathon" />
-        <meta property="og:site_name" content="Cutie Hack | ACM and IEEE @
-        UCR's hackathon" />  
-        <meta property="og:url" content="http://cutiehack.com" />
-        <meta property="og:description" content="Come to Cutie Hack! 80+
-        Hackers, tons of hardware, 24 hours, unlimited potential" />
-        <meta property="og:image" content="http://cutiehack.com/img/logo.png" />
-        <meta property="fb:app_id" content="544219672384014" />
-        <meta property="og:type" content="website" />
-        <meta property="article:author" content="https://www.facebook.com/manny.sanchez.9" />
-        <meta property="article:publisher" content="https://www.facebook.com/pages/Cutie-Hack/789833917761811?fref=ts" />
-        <!-- SEO tags -->
-        <meta name='description' content="Welcome to Cutie Hack! 80+ Hackers, tons of hardware, 24 hours, hosted by IEEE and ACM @ UCR" />
-        <meta name='author' content='Manuel Sanchez' />
-        <meta name='keywords' content='hackathon,riverside,ucr,highlanders,programming,cs,cutie,hack,inland empire' />
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel='icon' href='orange-icon.png' type='img/png'>
-        <!-- Fonts -->
-        <link href='https://fonts.googleapis.com/css?family=Raleway:700,200' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Roboto:400italic,700italic,700,400' rel='stylesheet' type='text/css'>
-        <!-- CSS -->
-        <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css"></link>
-        <link rel="stylesheet" type="text/css" href="bower_components/angular-loading-bar/build/loading-bar.min.css"></link>
-        <link rel="stylesheet" type="text/css" href="css/CitrusHack.css"></link>
+<!--[if gt IE 8]><!--> <html class="no-js" ng-app='CutieHack'> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cutie Hack | ACM@UCR's hackathon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- FB tags -->
+    <meta property="og:title" content="Cutie Hack | ACM@UCR's hackathon" />
+    <meta property="og:site_name" content="Cutie Hack | ACM@UCR's hackathon" />  
+    <meta property="og:url" content="http://cutiehack.com" />
+    <meta property="og:description" content="Come to Cutie Hack! 80+
+    Hackers, tons of hardware, 12 hours, unlimited potential" />
+    <meta property="og:image" content="http://cutiehack.com/img/logo.png" />
+    <meta property="fb:app_id" content="544219672384014" />
+    <meta property="og:type" content="website" />
+    <meta property="article:author" content="https://www.facebook.com/kilenaitor" />
+    <meta property="article:publisher" content="https://www.facebook.com/pages/Cutie-Hack/789833917761811?fref=ts" />
+    <!-- SEO tags -->
+    <meta name='description' content="Welcome to Cutie Hack! 80+ Hackers, tons of hardware, 24 hours, hosted by ACM@UCR" />
+    <meta name='author' content='Kyle Minshall' />
+    <meta name='keywords' content='hackathon,riverside,ucr,highlanders,programming,cs,cutie,hack,inland empire,california,uc,cutie hack,acm,computer,science' />
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel='icon' href='orange-icon.png' type='img/png'>
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:700,200' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400italic,700italic,700,400' rel='stylesheet' type='text/css'>
+    <!-- CSS -->
+    <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.min.css" type="text/css" media="screen"></link>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css"></link>
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-loading-bar/build/loading-bar.min.css"></link>
+    <link rel="stylesheet" type="text/css" href="css/CutieHack.css"></link>
 
-        <!-- JS should go at the bottom of the page. This is an exception -->
-        <script src="bower_components/modernizr/modernizr.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
-        <!-- FB stuff -->
-        <div id="fb-root"></div>
-        <script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=544219672384014&version=v2.0";
-          fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script><!-- FB stuff -->
- 
-        <div id='social-media' style='position:absolute;overflow:hidden;top:10px;right:10px;z-index:100'>
-            <div class="fb-like" data-href="https://www.facebook.com/pages/Cutie-Hack/789833917761811?fref=ts" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
-        </div>
+    <!-- JS should go at the bottom of the page. This is an exception -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+</head>
+<body>
+    <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    
+    <!-- FB stuff -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=544219672384014&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script><!-- FB stuff -->
 
-        <input type='checkbox' id='nav-toggle'></div>
-        <label for='nav-toggle' id='nav-toggle-label' class='visible-sm visible-xs'></label>
+    <div id='social-media' style='position:absolute;overflow:hidden;top:10px;right:10px;z-index:100'>
+        <div class="fb-like" data-href="https://www.facebook.com/pages/Cutie-Hack/789833917761811?fref=ts" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+    </div>
 
-        <div id='nav-wrapper'>
-            <nav>
-                <a ui-sref='main'>
-                    <img src='img/logo.png' id='logo' class='img-responsive center-block'></img>
-                </a>
-                
-                <ul class='nav nav-pills nav-stacked' >
-                    <li du-scrollspy='splash'>
-                        <a href='#splash' du-smooth-scroll>
-                            Landing
-                        </a>
-                    </li>
-                    <li du-scrollspy='schedule'>
-                        <a href='#schedule' du-smooth-scroll>Schedule</a>
-                    </li>
-                    <li du-scrollspy='faq'>
-                        <a href='#faq' du-smooth-scroll>FAQ</a>
-                    </li>
-                    <li du-scrollspy='sponsors'>
-                        <a href='#sponsors' du-smooth-scroll>Sponsors</a>
-                    </li>
-                    <li du-scrollspy='credits'>
-                        <a href='#credits' du-smooth-scroll>Organized By</a>
-                    </li>
-                    <li du-scrollspy='contact'>
-                        <a href='#contact' du-smooth-scroll>Contact Us</a>
-                    </li>
-                </ul>
-                <div id='action-btns'>
-                    <a
-                        href='https://docs.google.com/forms/d/1YGwCu5nnn_fFCzCIUQ500jxWZBFTCrEl7wkgkhgwK1I/viewform'
-                        target='_blank' class='btn btn-success btn-block'>
-                        Register 
+    <input type='checkbox' id='nav-toggle'></div>
+    <label for='nav-toggle' id='nav-toggle-label' class='visible-sm visible-xs'></label>
+
+    <div id='nav-wrapper'>
+        <nav>
+            <ul class='nav nav-pills list-inline nav-justified'>
+                <li du-scrollspy='splash'>
+                    <a href='#splash' du-smooth-scroll>
+                        Landing
                     </a>
-                </div>
-            </nav>
-        </div>
+                </li>
+                <li du-scrollspy='intro'>
+                    <a href='#intro' du-smooth-scroll>Intro</a>
+                </li>
+                <li du-scrollspy='schedule'>
+                    <a href='#schedule' du-smooth-scroll>Schedule</a>
+                </li>
+                <li du-scrollspy='apply'>
+                    <a href='#apply' du-smooth-scroll>Apply</a>
+                </li>
+                <li du-scrollspy='faq'>
+                    <a href='#faq' du-smooth-scroll>FAQ</a>
+                </li>
+                <li du-scrollspy='sponsors'>
+                    <a href='#sponsors' du-smooth-scroll>Sponsors</a>
+                </li>
+                <li du-scrollspy='credits'>
+                    <a href='#credits' du-smooth-scroll>Organized By</a>
+                </li>
+                <li du-scrollspy='contact'>
+                    <a href='#contact' du-smooth-scroll>Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 
-        <div id='content-wrapper' class='{{ pageView }}' ui-view>
-        </div>
+    <div id='content-wrapper' class='{{ pageView }}' ui-view></div>
 
-        <!-- Javascripts --> 
-        <script src="bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="bower_components/angular/angular.min.js"></script>
-        <script src="bower_components/angular-animate/angular-animate.min.js"></script>
-        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
-        <script src="bower_components/angular-bootstrap-show-errors/src/showErrors.js"></script>
-        <script src="bower_components/es5-shim/es5-shim.min.js"></script>
-        <script src="bower_components/angular-scroll/angular-scroll.min.js"></script>
-        <script src="bower_components/angular-loading-bar/build/loading-bar.min.js"></script>
-        <script src="bower_components/ngSticky/dist/sticky.min.js"></script>
-        <script src="js/CitrusHack.js"></script>
+    <!-- Javascripts --> 
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="bower_components/angular-bootstrap-show-errors/src/showErrors.js"></script>
+    <script src="bower_components/es5-shim/es5-shim.min.js"></script>
+    <script src="bower_components/angular-scroll/angular-scroll.min.js"></script>
+    <script src="bower_components/angular-loading-bar/build/loading-bar.min.js"></script>
+    <script src="bower_components/ngSticky/dist/sticky.min.js"></script>
+    <script src="js/CutieHack.js"></script>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-54500757-1');ga('send','pageview');
-        </script>
-    </body>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+        ga('create','UA-54500757-2');ga('send','pageview');
+    </script>
+</body>
 </html>

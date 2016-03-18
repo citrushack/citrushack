@@ -5,7 +5,7 @@
      * Fetch main application
      */
 
-    var app = angular.module('CitrusHack');
+    var app = angular.module('CutieHack');
 
     /**
      * Sets states/urls

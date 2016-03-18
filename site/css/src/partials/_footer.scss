@@ -1,0 +1,51 @@
+/**
+ * footer
+ */
+
+/**
+ * Module imports
+ */
+
+@import 'modules/colors';
+
+/**
+ * Local variables
+ */
+
+$footer-height: 20vh;
+$footer-bg-color: #2B97DE;
+
+/**
+ * Styles
+ */
+#footer {
+  min-height: $footer-height;
+  background: $footer-bg-color;
+  color: white;
+  margin-top: 0;
+  
+  a {
+    color: white;
+  }
+  
+  .social-links {
+    display: block;
+    line-height: 45px;
+    height: 45px;
+    width: 45px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, .5);
+    border-radius: 3px !important;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .social-links:hover {
+    border: 1px solid rgba(255, 255, 255, .2);
+  }
+  
+  #heart {
+    font-size: 32px;
+  }
+} 

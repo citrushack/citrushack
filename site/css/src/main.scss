@@ -23,6 +23,7 @@
 @import 'partials/schedule';
 @import 'partials/modals';
 @import 'partials/contact';
+@import 'partials/footer';
 
 /**
  * Local variables
@@ -72,4 +73,8 @@ body {
     section:not(:first-child) {
         margin-top: $section-margin-top;
     }
+}
+
+* {
+  border-radius: 0 !important;
 }

@@ -34,7 +34,7 @@
      * Register controller
      */
 
-    angular.module('CitrusHack.controllers')
+    angular.module('CutieHack.controllers')
         .controller('MainCtrl', ['$scope', '$rootScope', '$modal', 'Contact', mainCtrl]);
 
 })();

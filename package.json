@@ -1,20 +1,20 @@
 {
-  "name": "citrushack",
-  "version": "1.0.0",
+  "name": "cutiehack",
+  "version": "2.0.0",
   "description": "UCR's Hackathon Website",
   "main": "server.js",
   "scripts": {
     "test": "mocha"
   },
-  "author": "Manuel Sanchez",
+  "author": "Kyle Minshall",
   "license": "MIT",
   "devDependencies": {
     "gulp": "~3.8.10",
-    "gulp-concat": "~2.4.2",
-    "gulp-sass": "~1.3.3",
-    "jshint-stylish": "~1.0.0",
-    "gulp-jshint": "~1.9.0",
     "gulp-clean": "~0.3.1",
-    "gulp-minify-css": "~0.3.11"
+    "gulp-concat": "~2.4.2",
+    "gulp-jshint": "~1.9.0",
+    "gulp-minify-css": "~0.3.11",
+    "gulp-sass": "^2.2.0",
+    "jshint-stylish": "~1.0.0"
   }
 }

@@ -61,7 +61,7 @@
      * Register directive
      */
 
-    angular.module('CitrusHack.directives')
+    angular.module('CutieHack.directives')
         .directive('chParallax', ['$window', parallax]);
 
 })();
