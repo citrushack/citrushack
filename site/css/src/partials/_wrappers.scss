@@ -80,7 +80,7 @@ $toggle-animation-speed: .25s;
         left: -$nav-width;
         position: fixed;
         // Nav should never be covered
-        z-index: 500;
+        z-index: 9999;
     }
 
     /**
