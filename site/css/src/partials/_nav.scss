@@ -65,8 +65,10 @@ $nav-pills-bg-color: #F39538;
         }
     }
     
-    .nav-justified {
-      width: 100%;
-      padding-top: 40px;
+    @media (max-width:991px) {
+        .nav-justified {
+          width: 100%;
+          padding-top: 40px;
+        }
     }
 }
