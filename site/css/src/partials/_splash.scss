@@ -31,12 +31,29 @@ $splash-img-src: 'img/citrustree.jpg';
     background-position: center center;
     background-attachment: fixed;
     width: 100vw;
-    height: 100vh;
+    
+    @media screen and (max-width: 480px) {
+      height: 50vh;
+    }
+    @media screen and (max-width: 760px) {
+      height: 60vh;
+    }
+    @media screen and (min-width: 761px) {
+      height: 100vh;
+    }
 
     #splash-group {
       
+      @media screen and (max-width: 480px) {
+        height: 50vh;
+      }
+      @media screen and (max-width: 760px) {
+        height: 60vh;
+      }
+      @media screen and (min-width: 761px) {
+        height: 100vh;
+      }
       width: 100vw;
-      height: 100vh;
       position: relative;
       overflow: hidden;
       margin: 0 auto;
@@ -60,6 +77,11 @@ $splash-img-src: 'img/citrustree.jpg';
             margin-top: 40px;
             text-align: center;
             font-weight: bold;
+        }
+        
+        .logo {
+            height: auto;
+            width: 25vw;
         }
       }
       
@@ -95,7 +117,7 @@ $splash-img-src: 'img/citrustree.jpg';
         
         #mountain {
           position: absolute;
-          width: 60%;
+          width: 35%;
           height: auto;
           width: auto\9;
           bottom: 5vw;
