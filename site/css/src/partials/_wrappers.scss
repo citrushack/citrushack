@@ -106,7 +106,8 @@ $toggle-animation-speed: .25s;
 }
 
 #nav-toggle:checked ~ #nav-toggle-label {
-    left: $nav-width;
+    left: 0;
+    z-index: 100000;
 }
 
 #nav-toggle:checked ~ #nav-wrapper {
@@ -120,8 +121,8 @@ $toggle-animation-speed: .25s;
     z-index: 500;
     width: 53px;
     height: 50px;
-    border: 1px solid $vormator-dark-gray;
-    background-color: $vormator-dark-gray;
+    border: 1px solid #3398DB;
+    background-color: #3398DB;
 
     // Hamburger
     &:before {
