@@ -45,3 +45,7 @@ node_modules
 # Vim stuff
 *.swp
 
+# Compiled Files
+site/js/CutieHack.js
+site/css/CutieHack.css
+
