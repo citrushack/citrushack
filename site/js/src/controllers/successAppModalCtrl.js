@@ -5,7 +5,7 @@
      * Success app modal controller
      */
 
-     function successAppModalCtrl ($scope, $modalInstance) {
+     function successAppModalCtrl ($scope, $modalInstance, $location) {
         // Close modal
         $scope.close = function () {
             $modalInstance.close();
@@ -18,5 +18,5 @@
       */
 
      angular.module('CitrusHack.controllers')
-        .controller('SuccessAppModalCtrl', ['$scope', '$modalInstance', successAppModalCtrl]);
+        .controller('SuccessAppModalCtrl', ['$scope', '$modalInstance', , '$location', successAppModalCtrl]);
 })();
