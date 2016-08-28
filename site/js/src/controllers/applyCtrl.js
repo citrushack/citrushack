@@ -14,15 +14,15 @@
                                    'the event';
         // Reason for needing age
         $scope.ageNeededReason = 'Since this is an overnight event, You must ' +
-                                 'be 18 or older to participate'; 
+                                 'be 18 or older to participate';
 
         // Details about transportation
         $scope.transDetail = 'We will be providing transportation for a select ' +
                              'number of schools. This will help us figure out ' +
                              'which schools have the most need';
-        
+
         // Bind application model to scope
-        $scope.Application = Application;  
+        $scope.Application = Application;
 
         // Initialize Diet values
         $scope.Application.Diet['Vegan'] = 'no';
@@ -32,7 +32,7 @@
         $scope.Application.Diet['Other'] = '';
 
         // Send button state
-        $scope.submitting = false; 
+        $scope.submitting = false;
 
         // Form submission
         $scope.submit = function () {
@@ -43,8 +43,12 @@
                 Application.sendApplication()
                     // Success
                     .then(function(){
-                        $rootScope.successApply = true; 
-                        $location.url('/main');
+                        $rootScope.successApply = true;
+                        $modal.open({
+                            templateUrl: 'partials/successAppModal.html'
+                          , controller: 'SuccessAppModalCtrl'
+                          , size: 'md'
+                        });
                     }, function(){
                         $modal.open({
                             templateUrl: 'partials/errorEmailAppModal.html'
@@ -62,7 +66,7 @@
                 var applyFormElem       = angular.element('[name="applyForm"]')
                   , firstErrorInputElem = applyFormElem.find('.has-error').first()
                   , documentElem        = angular.element($document);
-                
+
                 documentElem.scrollToElementAnimated(firstErrorInputElem, 10);
             }
         };
@@ -73,6 +77,6 @@
      */
 
     angular.module('CitrusHack.controllers')
-        .controller('ApplyCtrl', ['$scope', '$rootScope', '$modal', '$document', '$location', 'Application', applyCtrl]); 
-        
+        .controller('ApplyCtrl', ['$scope', '$rootScope', '$modal', '$document', '$location', 'Application', applyCtrl]);
+
 })();

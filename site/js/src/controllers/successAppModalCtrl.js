@@ -9,6 +9,7 @@
         // Close modal
         $scope.close = function () {
             $modalInstance.close();
+            $location.url('/main');
         };
      }
 
