@@ -7,6 +7,10 @@
 
     angular.module('CitrusHack', ['ngAnimate', 'ui.router', 'ui.bootstrap', 'ui.bootstrap.showErrors', 'duScroll', 'angular-loading-bar', 'sticky', 'CitrusHack.constants', 'CitrusHack.controllers', 'CitrusHack.directives', 'CitrusHack.services'])
         .run(['$rootScope', '$location', 'SCHOOLS', 'CLASS_LEVELS', 'APPLICANT_TYPES', function($rootScope, $location, SCHOOLS, CLASS_LEVELS, APPLICANT_TYPES) {
+            // Make constants available
+            $rootScope.SCHOOLS = SCHOOLS;
+            $rootScope.CLASS_LEVELS = CLASS_LEVELS;
+            $rootScope.APPLICANT_TYPES = APPLICANT_TYPES;
             // Make location available in rootScope
             $rootScope.location = $location;
             // Make FB init available in rootScope
