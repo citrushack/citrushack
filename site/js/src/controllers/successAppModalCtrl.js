@@ -18,5 +18,5 @@
       */
 
      angular.module('CitrusHack.controllers')
-        .controller('SuccessAppModalCtrl', ['$scope', '$modalInstance', , '$location', successAppModalCtrl]);
+        .controller('SuccessAppModalCtrl', ['$scope', '$modalInstance', '$location', successAppModalCtrl]);
 })();
