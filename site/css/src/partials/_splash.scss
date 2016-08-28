@@ -26,12 +26,13 @@ $splash-img-src: 'img/citrustree.jpg';
     width: $splash-width;
     position: relative;
     // Background
-    background: #3398DB;
+    //background: #4B6883;
+    background: #1795CE;
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
     width: 100vw;
-    
+
     @media screen and (max-width: 480px) {
       height: 50vh;
     }
@@ -43,7 +44,7 @@ $splash-img-src: 'img/citrustree.jpg';
     }
 
     #splash-group {
-      
+
       @media screen and (max-width: 480px) {
         height: 50vh;
       }
@@ -57,7 +58,7 @@ $splash-img-src: 'img/citrustree.jpg';
       position: relative;
       overflow: hidden;
       margin: 0 auto;
-      
+
       #title {
         position: absolute;
         top: 50%;
@@ -78,17 +79,187 @@ $splash-img-src: 'img/citrustree.jpg';
             text-align: center;
             font-weight: bold;
         }
-        
+
         .logo {
             height: auto;
             width: 25vw;
         }
       }
-      
-      #background { 
+
+      #background {
         min-width: 100vw;
         min-height: 100vh;
-        
+
+        $width: 20;
+
+        #windmill1 {
+          position: absolute;
+          width: $width * 1vw;
+          height: 1.1666 * $width * 1vw;
+          bottom: 2vw;
+          left: -2vw;
+          z-index: 410;
+        }
+
+        #windmill2 {
+          position: absolute;
+          width: $width * .6vw;
+          height: 1.1666 * $width * .6vw;
+          bottom: 12vw;
+          left: 15vw;
+          z-index: 400;
+        }
+
+        #windmill3 {
+          position: absolute;
+          width: $width * .75vw;
+          height: 1.1666 * $width * .75vw;
+          bottom: 6vw;
+          left: 30vw;
+          z-index: 400;
+        }
+
+        #windmill4 {
+          position: absolute;
+          width: $width * 1.5vw;
+          height: 1.1666 * $width * 1.5vw;
+          bottom: 8vh;
+          right: 5vw;
+          z-index: 500;
+        }
+
+        .post {
+          position: absolute;
+          width: 3%;
+          height: 60%;
+          background: #ABABAB;
+          top: 40%;
+          left: 48.5%;
+          border-radius: 1%;
+        }
+
+        .engine {
+          position: absolute;
+          width: 6.66%;
+          height: 5.7%;
+          background: #979797;
+          border-radius: 25%;
+          -webkit-border-radius: 50%;
+          top: 37%;
+          left: 46.7%;
+        }
+
+        .flaps {
+          width: 66.6%;
+          height: 57.1%;
+          position: absolute;
+          top: 11.3%;
+          left: 16.9%;
+          -webkit-animation: rotatemill 6s linear infinite;
+          animation: rotatemill 6s linear infinite;
+        }
+
+        .flap {
+          width: 3%;
+          height: 60%;
+          position: absolute;
+          background: #BABABA;
+          background: #BABABA;
+          border-top-left-radius: 5px 20px;
+        }
+
+        .flaps .flap:nth-child(1) {
+          top: -10%;
+          left: 48.5%;
+        }
+
+        .flaps .flap:nth-child(2) {
+          top: 35%;
+          left: 74.5%;
+          -webkit-transform: rotate(120deg);
+          transform: rotate(120deg);
+        }
+
+        .flaps .flap:nth-child(3) {
+          top: 35%;
+          left: 22%;
+          -webkit-transform: rotate(240deg);
+          transform: rotate(240deg);
+        }
+
+        @-webkit-keyframes "rotatemill" {
+          0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+          }
+          100% {
+            -webkit-transform:
+            rotate(360deg);
+            transform:
+            rotate(360deg);
+          }
+        }
+
+        @keyframes "rotatemill" {
+          0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+          }
+          100% {
+            -webkit-transform:
+            rotate(360deg);
+            transform:
+            rotate(360deg);
+          }
+        }
+
+        #sun {
+          position: absolute;
+          top: 5vw;
+          right: 5vw;
+          height: 10vw;
+          z-index: 0;
+          -webkit-animation: rotating 60s linear infinite;
+          -moz-animation: rotating 60s linear infinite;
+          -ms-animation: rotating 60s linear infinite;
+          -o-animation: rotating 60s linear infinite;
+          animation: rotating 60s linear infinite;
+        }
+
+        @-webkit-keyframes rotating /* Safari and Chrome */ {
+          from {
+            -ms-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+          }
+          to {
+            -ms-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+          }
+        }
+
+        @keyframes rotating {
+          from {
+            -ms-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+          }
+          to {
+            -ms-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+          }
+        }
+
         #right_hill {
           position: absolute;
           max-width: 80%;
@@ -96,7 +267,7 @@ $splash-img-src: 'img/citrustree.jpg';
           right: 0;
           z-index: 500;
         }
-        
+
         #left_hill {
           position: absolute;
           max-width: 80%;
@@ -104,7 +275,7 @@ $splash-img-src: 'img/citrustree.jpg';
           left: 0;
           z-index: 400;
         }
-        
+
         #belltower {
           position: absolute;
           width: 12%;
@@ -114,7 +285,7 @@ $splash-img-src: 'img/citrustree.jpg';
           left: 10vw;
           z-index: 300;
         }
-        
+
         #mountain {
           position: absolute;
           width: 35%;
@@ -124,113 +295,114 @@ $splash-img-src: 'img/citrustree.jpg';
           right: 0;
           z-index: 300;
         }
-        
+
         #clouds {
           top: 100px;
           position: relative;
           left: -10vw;
           z-index: 1;
-          
-          -webkit-perspective: 1; 
-          -webkit-backface-visibility:none; 
+
+          -webkit-perspective: 1;
+          -webkit-backface-visibility:none;
         }
-        
+
         .cloud1, .cloud2, .cloud3 {
           opacity: 0;
+          -webkit-backface-visibility: hidden;
         }
-        
+
         .cloud1 {
           width: auto;
           height: 10vw;
           position: absolute;
           top: 50px;
-          
-          -webkit-animation: move 55s infinite linear;  
-          -moz-animation: move 55s infinite linear;  
+
+          -webkit-animation: move 55s infinite linear;
+          -moz-animation: move 55s infinite linear;
           -ms-animation: move 55s infinite linear;
           animation: move 55s infinite linear;
-          
-          -webkit-animation-delay: -2s;  
-          -moz-animation-delay: -2s;  
+
+          -webkit-animation-delay: -2s;
+          -moz-animation-delay: -2s;
           -ms-animation-delay: -2s;
           animation-delay: -2s;
         }
-        
+
         .cloud2 {
           width: auto;
           height: 6vw;
           position: absolute;
           top: 180px;
-          
-          -webkit-animation: move 80s infinite linear;  
-          -moz-animation: move 80s infinite linear;  
+
+          -webkit-animation: move 80s infinite linear;
+          -moz-animation: move 80s infinite linear;
           -ms-animation: move 80s infinite linear;
           animation: move 80s infinite linear;
-          
-          -webkit-animation-delay: 0s;  
-          -moz-animation-delay: 0s;  
+
+          -webkit-animation-delay: 0s;
+          -moz-animation-delay: 0s;
           -ms-animation-delay: 0s;
           animation-delay: 0s;
         }
-        
+
         .cloud3 {
           width: auto;
           height: 8vw;
           position: absolute;
           top: 20px;
-          
-          -webkit-animation: move 60s infinite linear;  
-          -moz-animation: move 60s infinite linear;  
+
+          -webkit-animation: move 60s infinite linear;
+          -moz-animation: move 60s infinite linear;
           -ms-animation: move 60s infinite linear;
           animation: move 60s infinite linear;
-          
-          -webkit-animation-delay: 12s;  
-          -moz-animation-delay: 12s;  
+
+          -webkit-animation-delay: 12s;
+          -moz-animation-delay: 12s;
           -ms-animation-delay: 12s;
           animation-delay: 12s;
         }
-        
+
         .cloud4 {
           width: auto;
           height: 12vw;
           position: absolute;
           top: 80px;
           left: -10vw;
-          
-          -webkit-animation: move 80s infinite linear;  
-          -moz-animation: move 80s infinite linear;  
+
+          -webkit-animation: move 80s infinite linear;
+          -moz-animation: move 80s infinite linear;
           -ms-animation: move 80s infinite linear;
           animation: move 80s infinite linear;
-          
-          -webkit-animation-delay: 22s;  
-          -moz-animation-delay: 22s;  
+
+          -webkit-animation-delay: 22s;
+          -moz-animation-delay: 22s;
           -ms-animation-delay: 22s;
           animation-delay: 22s;
         }
-        
+
         @-webkit-keyframes move {
           0% {left: -10vw; opacity: 0;}
           1% {left: -10vw; opacity: .8;}
           98% {left: 120vw; opacity: .8;}
-          99% {left: 120vw; opacity: 0;} 
-          100% {left: -10vw; opacity: 0;} 
-        } 
+          99% {left: 120vw; opacity: 0;}
+          100% {left: -10vw; opacity: 0;}
+        }
 
         @-moz-keyframes move {
           0% {left: -10vw; opacity: 0;}
           1% {left: -10vw; opacity: .8;}
           98% {left: 120vw; opacity: .8;}
-          99% {left: 120vw; opacity: 0;} 
-          100% {left: -10vw; opacity: 0;} 
+          99% {left: 120vw; opacity: 0;}
+          100% {left: -10vw; opacity: 0;}
         }
 
         @-ms-keyframes move {
           0% {left: -10vw; opacity: 0;}
           1% {left: -10vw; opacity: .8;}
           98% {left: 120vw; opacity: .8;}
-          99% {left: 120vw; opacity: 0;} 
-          100% {left: -10vw; opacity: 0;} 
-        } 
+          99% {left: 120vw; opacity: 0;}
+          100% {left: -10vw; opacity: 0;}
+        }
       }
     }
 }

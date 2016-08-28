@@ -5,7 +5,7 @@
      * Fetch main application
      */
 
-    var app = angular.module('CutieHack');
+    var app = angular.module('CitrusHack');
 
     /**
      * Sets states/urls
@@ -17,6 +17,11 @@
                 url: '/main'
               , templateUrl: '../../partials/main.html'
               , controller: 'MainCtrl'
+            })
+            .state('apply', {
+                url: '/apply'
+              , templateUrl: '../../partials/apply.html'
+              , controller: 'ApplyCtrl'
             });
 
         // Go to home on unmatched route
@@ -30,6 +35,6 @@
      *
      */
 
-    app.config(['$stateProvider', '$urlRouterProvider', setRoutes]); 
+    app.config(['$stateProvider', '$urlRouterProvider', setRoutes]);
 
 })();

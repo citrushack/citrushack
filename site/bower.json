@@ -32,6 +32,6 @@
     "angular-scroll": "~0.6.4",
     "angular-loading-bar": "~0.6.0",
     "ngSticky": "~1.7.9",
-    "components-font-awesome": "^4.5.0"
+    "components-font-awesome": "^4.6.0"
   }
 }

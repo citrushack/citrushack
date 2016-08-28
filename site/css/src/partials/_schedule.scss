@@ -12,7 +12,7 @@
  * Local variables
  */
 
-$schedule-bg-color: $citrus-orange;
+$schedule-bg-color: #4B6883;
 $light-grey: #EBECEC;
 
 /**
@@ -20,9 +20,9 @@ $light-grey: #EBECEC;
  */
 
 #schedule {
-    color: $white; 
+    color: $white;
     background-color: $schedule-bg-color;
-    
+
     .text-muted {
       color: $light-grey;
     }

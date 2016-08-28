@@ -12,19 +12,19 @@
  * Local variables
  */
 
-$nav-bg-color: #3398DB;
+$nav-bg-color: #2C3D4D;
 $nav-logo-width: 50%;
 $nav-padding-top: 10px;
 $nav-padding-left: 10px;
 $nav-padding-right: 10px;
 
 $nav-logo-margin-bottom: 40px;
-$nav-pills-bg-color: #F39538;
+$nav-pills-bg-color: #FB963C;
 
 /**
  * Styles
  */
- 
+
 #nav-wrapper {
     background-color: $nav-bg-color;
     padding: $nav-padding-top $nav-padding-right;
@@ -41,7 +41,7 @@ $nav-pills-bg-color: #F39538;
     /**
      * Nav pill styles
      */
-    
+
     .nav-pills > li > a {
         color: $white;
 
@@ -55,16 +55,16 @@ $nav-pills-bg-color: #F39538;
           outline: 0;
         }
     }
-    
+
     .nav-pills > li.active > a {
         background-color: $nav-pills-bg-color;
-        
+
         &:hover {
           font-size: 100%;
           background-color: $nav-pills-bg-color;
         }
     }
-    
+
     @media (max-width:991px) {
         .nav-justified {
           width: 100%;

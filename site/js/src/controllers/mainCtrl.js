@@ -11,7 +11,7 @@
         // Security breach elaboration
         $scope.securityElaborate = 'Although your project could be security related';
         // Project ideas explanation
-        $scope.projectIdeasType = 'These projects would be a mix of humanitarian and utility applications'; 
+        $scope.projectIdeasType = 'These projects would be a mix of humanitarian and utility applications';
         // Bind contact
         $scope.Contact = Contact;
         // See if we have sent the contact form
@@ -34,7 +34,7 @@
      * Register controller
      */
 
-    angular.module('CutieHack.controllers')
+    angular.module('CitrusHack.controllers')
         .controller('MainCtrl', ['$scope', '$rootScope', '$modal', 'Contact', mainCtrl]);
 
 })();

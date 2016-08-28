@@ -15,6 +15,7 @@
 $intro-bg-color: $white;
 $info-margin-top: 40px;
 $info-h1-color: $citrus-orange;
+$highlight-color: #FB963C;
 
 /**
  * Styles
@@ -22,8 +23,12 @@ $info-h1-color: $citrus-orange;
 
 #intro {
     background-color: $intro-bg-color;
+    .text-highlight {
+        color: $highlight-color;
+        font-weight: bold;
+    }
     #info-group {
-        margin-top: $info-margin-top;  
+        margin-top: $info-margin-top;
         h1 {
             color: $info-h1-color;
         }

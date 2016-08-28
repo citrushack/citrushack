@@ -12,9 +12,9 @@
  * Local variables
  */
 
-$contact-form-margin-top: 15px; 
+$contact-form-margin-top: 15px;
 $contact-img-src: '/img/stairwell.jpg';
-$contact-form-bg-color: #2B97DE;
+$contact-form-bg-color: #3F576F;
 
 /**
  * Styles
@@ -40,7 +40,7 @@ $contact-form-bg-color: #2B97DE;
             .form-group .glyphicon-remove {
                 display: none;
             }
-            
+
             .form-group.has-error .help-block,
             .form-group.has-error .glyphicon-remove {
                 display: block;

@@ -4,8 +4,8 @@
     /**
      * Create main app
      */
-     
-    angular.module('CutieHack', ['ngAnimate', 'ui.router', 'ui.bootstrap', 'ui.bootstrap.showErrors', 'duScroll', 'angular-loading-bar', 'sticky', 'CutieHack.controllers', 'CutieHack.directives', 'CutieHack.services'])
+
+    angular.module('CitrusHack', ['ngAnimate', 'ui.router', 'ui.bootstrap', 'ui.bootstrap.showErrors', 'duScroll', 'angular-loading-bar', 'sticky', 'CitrusHack.constants', 'CitrusHack.controllers', 'CitrusHack.directives', 'CitrusHack.services'])
         .run(['$rootScope', '$location', function($rootScope, $location){
             // Make location available in rootScope
             $rootScope.location = $location;
@@ -13,7 +13,7 @@
             $rootScope.FBInit = function () {
                 FB.XFBML.parse();
             };
-            
+
             // Flag for showing success registration modal
             $rootScope.successApply = false;
         }])
@@ -23,8 +23,9 @@
           showErrorsConfigProvider.showSuccess(true);
         }]);
 
-    angular.module('CutieHack.controllers', []);
-    angular.module('CutieHack.directives', []);
-    angular.module('CutieHack.services', []);
+    angular.module('CitrusHack.constants', []);
+    angular.module('CitrusHack.controllers', []);
+    angular.module('CitrusHack.directives', []);
+    angular.module('CitrusHack.services', []);
 })();
 

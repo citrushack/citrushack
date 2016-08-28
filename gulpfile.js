@@ -9,7 +9,7 @@ var clean   = require('gulp-clean')
   , minCSS  = require('gulp-minify-css')
   , path    = require('path')
   , sass    = require('gulp-sass')
-  , stylish = require('jshint-stylish'); 
+  , stylish = require('jshint-stylish');
 
 /**
  * Source/Destinations
@@ -21,14 +21,14 @@ var scripts = {
         path.join(__dirname, 'site/js/src/**/*.js')
     ]
   , dest      : path.join(__dirname, 'site/js')
-  , buildName : 'CutieHack.js'
+  , buildName : 'CitrusHack.js'
 };
 
 // Stylesheets
 var styles = {
     src       : path.join(__dirname, 'site/css/src/**/*.scss')
   , dest      : path.join(__dirname, 'site/css')
-  , buildName : 'CutieHack.css'
+  , buildName : 'CitrusHack.css'
 };
 
 /**

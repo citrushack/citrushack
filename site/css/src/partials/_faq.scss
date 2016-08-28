@@ -12,8 +12,8 @@
  * Local variables
  */
 
-$faq-bg-color: #41AA7B;
-$faq-panel-bg-color: darken(#228279, 10%);
+$faq-bg-color: #2C3D4D;
+$faq-panel-bg-color: darken($faq-bg-color, 10%);
 $faq-panel-heading-color: $white;
 $faq-color: $white;
 $faq-body-margin-top: 40px;
@@ -25,7 +25,7 @@ $disclaimer-margin-top: 40px;
 
 #faq {
     background-color: $faq-bg-color;
-    
+
     h1, h5, h6 {
         color: $white;
     }

@@ -6,7 +6,7 @@
      */
 
     function contactFactory ($http, $q){
-        
+
         /**
          * Contact object
          */
@@ -42,7 +42,7 @@
      * Register factory
      */
 
-    angular.module('CutieHack.services')
+    angular.module('CitrusHack.services')
         .factory('Contact', ['$http', '$q', contactFactory]);
 
 })();

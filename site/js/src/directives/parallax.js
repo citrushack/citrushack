@@ -6,18 +6,18 @@
      */
 
     function parallax ($window){
-        
+
         /**
          * Directive syntax
          */
-        
+
         return function (scope, element, attrs) {
             var posY = 0
               , posX = 0
               , speed = attrs.chParallaxSpeed || 5;
 
             var windowEl = angular.element($window);
- 
+
             // Ensure element has background properties
             element.css({
                 backgroundPosition: posX + 'px ' + posY + 'px'
@@ -33,11 +33,11 @@
                   , scrollTop    = windowEl.scrollTop()
                   , windowHeight = windowEl.height();
 
-                if (offset + height <= scrollTop || offset >= scrollTop + windowHeight) 
+                if (offset + height <= scrollTop || offset >= scrollTop + windowHeight)
                     return;
-                
+
                 posY = Math.round((offset - scrollTop) / speed);
-                
+
                 element.css({
                     backgroundPosition: posX + 'px ' + posY + 'px'
                 });
@@ -49,7 +49,7 @@
             {
                 windowEl.on('scroll', updateY);
             }
-            
+
             // Clean up
             element.on('destroy', function (){
                 windowEl.off('scroll', updateY);
@@ -61,7 +61,7 @@
      * Register directive
      */
 
-    angular.module('CutieHack.directives')
+    angular.module('CitrusHack.directives')
         .directive('chParallax', ['$window', parallax]);
 
 })();

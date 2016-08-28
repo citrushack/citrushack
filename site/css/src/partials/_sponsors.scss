@@ -12,7 +12,7 @@
  * Local variables
  */
 
-$sponsors-bg-color: $white;
+$sponsors-bg-color: #3A4F65;
 $sponsor-interest-color: $citrus-orange;
 $sponsor-interest-margin-top: 40px;
 
@@ -31,10 +31,19 @@ $sponsor-max-height: 80px;
         margin-top: $sponsor-interest-margin-top;
     }
 
-        
+    #sponsor-header {
+        h1 {
+            color: #fefefe;
+        }
+        h5 {
+            color: #cfcfcf;
+        }
+    }
+
+
     #sponsor-list {
         margin-top: $sponsor-list-margin-top;
-        
+
         [class^='sponsor-'] {
             margin-top: $sponsor-margin;
             margin-bottom: $sponsor-margin;
@@ -42,6 +51,19 @@ $sponsor-max-height: 80px;
 
         .sponsor {
             max-height: $sponsor-max-height;
+            -webkit-filter: grayscale(100%) brightness(500%);
+            -moz-filter:    grayscale(100%);
+            -ms-filter:     grayscale(100%);
+            -o-filter:      grayscale(100%);
+            filter: gray;
+        }
+
+        .sponsor:hover {
+          filter: none;
+          -webkit-filter: grayscale(0%) brightness(100%);
+          -moz-filter:    grayscale(0%) brightness(100%);
+          -ms-filter:     grayscale(0%) brightness(100%);
+          -o-filter:      grayscale(0%) brightness(100%);
         }
     }
 }
