@@ -23,27 +23,27 @@ $submit-margin-top: 30px;
  */
 
 #apply {
+    margin-top: 40px;
     min-height: $apply-height;
     color: #333;
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
-    
-    //background-color: $apply-bg-color;
-    
+    background-color: $apply-bg-color;
+
     #apply-body {
       margin-top: 50px;
     }
 
     form {
         margin-top: 50px;
-    
+
         .form-group .help-block,
         .form-group .glyphicon-ok,
         .form-group .glyphicon-remove {
             display: none;
         }
-        
+
         .form-group.has-error .help-block,
         .form-group.has-error .glyphicon-remove {
             display: block;
@@ -52,13 +52,19 @@ $submit-margin-top: 30px;
         .form-group.has-success .glyphicon-ok {
             display: block;
         }
-    } 
+    }
 
     #submit {
         margin: $submit-margin-top 0 0 0;
     }
 
+    #mlh {
+        color: #666;
+        margin: 2em 0;
+        font-style: oblique;
+    }
+
     h3 {
         margin: $apply-header-margin-top 0 $apply-header-margin-bottom 0;
     }
-} 
+}

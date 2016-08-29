@@ -21,6 +21,14 @@
                              'number of schools. This will help us figure out ' +
                              'which schools have the most need';
 
+        // Details about code of conduct
+        $scope.cocDetails = 'The MLH Code of Conduct is the set of rules and ' +
+                            'behaviours that must be adhered to at our event. ' +
+                            'It is very important you take the time to read ' +
+                            'through and understand. If you have any ' +
+                            'questions, you can reach out to us or MLH ' +
+                            'at any time.';
+
         // Bind application model to scope
         $scope.Application = Application;
 
@@ -33,6 +41,7 @@
 
         // Send button state
         $scope.submitting = false;
+
 
         // Form submission
         $scope.submit = function () {
