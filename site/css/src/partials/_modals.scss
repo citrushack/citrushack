@@ -22,7 +22,7 @@ $success-header-color: $white;
  */
 
 .modal {
-    z-index: 100000;
+    z-index: 100000 !important;
 }
 
 #successAppModal {
