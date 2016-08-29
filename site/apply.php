@@ -5,35 +5,25 @@ function suicide($response) {
     die;
 }
 
-function array2string($data){
-    $log_a = "";
-    foreach ($data as $key => $value) {
-        if(is_array($value))    $log_a .= "[".$key."] => (". array2string($value). ") \n";
-        else                    $log_a .= "[".$key."] => ".$value."\n";
-    }
-    return $log_a;
-}
-
 try {
-
-error_reporting(E_ALL);
 
     if(!isset($_FILES) || !isset($_FILES['Resume']) || !file_exists($_FILES['Resume']['tmp_name'])) {
         http_response_code(417);
         die;
 
     } else {
-        
-        if(!isset($_POST['Scope'])) suicide(417); 
-        
+
+        if(!isset($_POST['Scope'])) suicide(417);
+
         $json = json_decode($_POST['Scope'], true);
-	
+
         $Fname = $json['Fname'];
         $Lname = $json['Lname'];
         $gender = $json['Gender'];
         $shirt = $json['TShirt'];
         $email = $json['Email'];
         $phone = $json['Phone'];
+        $first = $json['First'];
         $school = $json['School'];
         $classLevel = $json['ClassLvl'];
         $applicantType = $json['Type'];
@@ -42,7 +32,7 @@ error_reporting(E_ALL);
         $ride = $json['Ride'];
         $github = $json['Github'];
         $hardware = $json['Hardware'];
-        
+
 
         // Make DB connection
         $mysqli = new mysqli($_SERVER["DB_HOST"], $_SERVER["DB_USER"], $_SERVER["DB_PASSWORD"], $_SERVER["DB_NAME"]);
@@ -59,7 +49,7 @@ error_reporting(E_ALL);
         }
 
         $resume = $_FILES['Resume']['tmp_name'];
-        $uploadDir = $_SERVER["RESUME_DIR"]; 
+        $uploadDir = $_SERVER["RESUME_DIR"];
         $filePath = $uploadDir . $email;
 
         $result = move_uploaded_file($resume, $filePath);
@@ -72,19 +62,20 @@ error_reporting(E_ALL);
         }
 
         $stmt = $mysqli->prepare(
-            "INSERT INTO apps 
-            (`Fname`, `Lname`, `Gender`, `Shirt`, `Email`, `Phone`, `School`, `Class`, `Role`, `Age`, `Diet`, `Ride`, `Github`, `Hardware`)
+            "INSERT INTO apps
+            (`Fname`, `Lname`, `Gender`, `Shirt`, `Email`, `Phone`, `First`, `School`, `Class`, `Role`, `Age`, `Diet`, `Ride`, `Github`, `Hardware`)
             VALUES
             ( ? , ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
         );
-        
-        $stmt->bind_param('ssssssssisssss', $Fname, $Lname, $gender, $shirt, $email, $phone, $school, $classLevel, $applicantType, $age, $diet, $ride, $github, $hardware);
-        
+
+        $stmt->bind_param('sssssssssisssss', $Fname, $Lname, $gender, $shirt,
+        $email, $phone, $first, $school, $classLevel, $applicantType, $age, $diet, $ride, $github, $hardware);
+
         $stmt->execute();
 	$stmt->close();
     }
 
-} catch (Exception $e) { 
+} catch (Exception $e) {
     echo $e->getMessage();
     suicide(404);
 }
