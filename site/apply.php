@@ -65,7 +65,7 @@ try {
             "INSERT INTO apps
             (`Fname`, `Lname`, `Gender`, `Shirt`, `Email`, `Phone`, `First`, `School`, `Class`, `Role`, `Age`, `Diet`, `Ride`, `Github`, `Hardware`)
             VALUES
-            ( ? , ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+            ( ? , ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
         );
 
         $stmt->bind_param('sssssssssisssss', $Fname, $Lname, $gender, $shirt,
