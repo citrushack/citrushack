@@ -5,13 +5,19 @@ function suicide($response) {
     die;
 }
 
-try {
-    
-    if($_SERVER["CONTENT_LENGTH"] > 1048576)
-    {
-        suicide(300);
+function array2string($data){
+    $log_a = "";
+    foreach ($data as $key => $value) {
+        if(is_array($value))    $log_a .= "[".$key."] => (". array2string($value). ") \n";
+        else                    $log_a .= "[".$key."] => ".$value."\n";
     }
-    
+    return $log_a;
+}
+
+try {
+
+error_reporting(E_ALL);
+
     if(!isset($_FILES) || !isset($_FILES['Resume']) || !file_exists($_FILES['Resume']['tmp_name'])) {
         http_response_code(417);
         die;
@@ -21,28 +27,29 @@ try {
         if(!isset($_POST['Scope'])) suicide(417); 
         
         $json = json_decode($_POST['Scope'], true);
+	
+        $Fname = $json['Fname'];
+        $Lname = $json['Lname'];
+        $gender = $json['Gender'];
+        $shirt = $json['TShirt'];
+        $email = $json['Email'];
+        $phone = $json['Phone'];
+        $school = $json['School'];
+        $classLevel = $json['ClassLvl'];
+        $applicantType = $json['Type'];
+        $age = intval($json['Age']);
+        $diet = print_r($json['Diet'], true);
+        $ride = $json['Ride'];
+        $github = $json['Github'];
+        $hardware = $json['Hardware'];
         
-        $Fname = $json['Fname'] || suicide(401);
-        $Lname = $json['Lname'] || suicide(401);
-        $gender = $json['Gender'] || suicide(401);
-        $shirt = $json['TShirt'] || suicide(401);
-        $email = $json['Email'] || suicide(401);
-        $phone = $json['Phone'] || suicide(401);
-        $school = $json['School'] || suicide(401);
-        $classLevel = $json['ClassLvl'] || suicide(401);
-        $applicantType = $json['Type'] || suicide(401);
-        $age = intval($json['Age']) || suicide(401);
-        $diet = '' || suicide(401);
-        $ride = $json['Ride'] || suicide(401);
-        $github = $json['Github'] || suicide(401);
-        $hardware = $json['Hardware'] || suicide(401);
 
         // Make DB connection
-        $mysqli = new mysqli($_ENV["DB_HOST"], $_ENV["DB_USER"], $_ENV["DB_PASSWORD"], $_ENV["DB_NAME"]);
-        
+        $mysqli = new mysqli($_SERVER["DB_HOST"], $_SERVER["DB_USER"], $_SERVER["DB_PASSWORD"], $_SERVER["DB_NAME"]);
+
         // Check is email is taken
-        $stmt = $mysqli->prepare("SELECT email FROM apps WHERE email=:email");
-        $stmt->bindParam(':email', $email);
+        $stmt = $mysqli->prepare("SELECT Email FROM apps WHERE Email=?");
+        $stmt->bind_param('s', $email);
         $stmt->execute();
         $stmt->store_result();
         if($stmt->num_rows > 0) {
@@ -52,50 +59,33 @@ try {
         }
 
         $resume = $_FILES['Resume']['tmp_name'];
-        $uploadDir = $_ENV["RESUME_DIR"]; 
+        $uploadDir = $_SERVER["RESUME_DIR"]; 
         $filePath = $uploadDir . $email;
 
         $result = move_uploaded_file($resume, $filePath);
 
         if(!$result) {
             error_log("Error uploading file");
-            exit;
+            suicide(500);
         } else {
             error_log("Success!");
         }
 
-        if(isset($json['Diet']))
-            $diet = $json['Diet'];
-         
         $stmt = $mysqli->prepare(
             "INSERT INTO apps 
             (`Fname`, `Lname`, `Gender`, `Shirt`, `Email`, `Phone`, `School`, `Class`, `Role`, `Age`, `Diet`, `Ride`, `Github`, `Hardware`)
             VALUES
-            ( :Fname , :Lname, :gender, :shirt, :email, :phone, :school, :class, :role, :age, :diet, :ride, :github, :hardware)"
+            ( ? , ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
         );
         
-        $stmt->bindParam(':Fname', $Fname);
-        $stmt->bindParam(':Lname', $Lname);
-        $stmt->bindParam(':gender', $gender);
-        $stmt->bindParam(':shirt', $shirt);
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':phone', $phone);
-        $stmt->bindParam(':school', $school);
-        $stmt->bindParam(':class', $classLevel);
-        $stmt->bindParam(':role', $applicantType);
-        $stmt->bindParam(':age', $age);
-        $stmt->bindParam(':diet', $diet);
-        $stmt->bindParam(':ride', $ride);
-        $stmt->bindParam(':github', $github);
-        $stmt->bindParam(':hardware', $hardware);
+        $stmt->bind_param('ssssssssisssss', $Fname, $Lname, $gender, $shirt, $email, $phone, $school, $classLevel, $applicantType, $age, $diet, $ride, $github, $hardware);
         
         $stmt->execute();
-        $stmt->store();
+	$stmt->close();
     }
 
 } catch (Exception $e) { 
-        
-    error_log($e->getMessage());
+    echo $e->getMessage();
     suicide(404);
 }
 ?>
