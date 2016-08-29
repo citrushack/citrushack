@@ -111,8 +111,28 @@
                             <h3>About you</h3>
                         </div>
                         <div class='col-md-12'>
+                            <div class='form-group has-feedback' show-errors>
+                                <label class='control-label required'
+                                for='firstHackathon'>Will this be your first hackathon?</label>
+                                <br>
+                                <label class='radio-inline'>
+                                    <input type='radio' name='firstHackathon'
+                                    id='firstHackathon'
+                                    ng-model='Application.First' value='yes'
+                                    ng-required='!First'>Yes
+                                </label>
+                                <label class='radio-inline'>
+                                    <input type='radio' name='firstHackathon'
+                                    id='firstHackathon'
+                                    ng-model='Application.First' value='no'
+                                    ng-required='!First'>No
+                                </label>
+                            </div>
+                        </div>
+                        <div class='col-md-12'>
                             <div class='form-group'>
-                                <label class='control-label' for='applicantType'><a href='http://www.forbes.com/sites/andyellwood/2012/08/22/the-dream-team-hipster-hacker-and-hustler/' target='_blank'>Hacker, Hipster, or Hustler?</a></label>
+                                <label class='control-label'
+                                for='applicantType'>Are you a <a href='http://www.forbes.com/sites/andyellwood/2012/08/22/the-dream-team-hipster-hacker-and-hustler/' target='_blank'>Hacker, Hipster, or Hustler?</a></label>
                                 <select class='form-control' id='applicantType' name='applicantType' ng-model='Application.Type' ng-options='type for type in APPLICANT_TYPES'>
                                     <option value=''>-- Select a role --</option>
                                 </select>
@@ -239,10 +259,50 @@
                                 <p class='help-block'>Please upload your resume.</p>
                             </div>
                         </div>
+                        <div class='col-md-12'>
+                            <div class='form-group has-feedback' show-errors>
+                                <label class='control-label required'
+                                for='mlhAgreement' tooltip='{{ cocDetails }}'>
+                                <u>MLH Code of Conduct</u></label>
+                                <p>
+                                I have read and
+                                understand the MLH code of conduct and will
+                                abide by all provisions. I understand
+                                infractions of this code may have consequences
+                                up to and including removal from the event.
+                                <br>
+                                <span class='text-muted'>The code of conduct may
+                                be found <a href='/files/mlh_cc.pdf'>here</a></span>
+                                </p>
+                                <div class='checkbox'>
+                                    <label>
+                                        <input type='checkbox'
+                                        ng-model='Applications.MLH'
+                                        name='mlhAgreement' id='agree'
+                                        ng-true-value='yes' ng-false-value='no'
+                                        />Agree
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                         <!-- submit -->
                         <div class='col-md-12' id='submit'>
                             <button type='submit' class='btn btn-success btn-block' ng-click='submit()' ng-disabled='submitting'>{{ submitting ? 'Sending...' : 'Submit' }}</button>
                         </div><!-- submit -->
+                        <!-- data policy -->
+                        <div class='col-md-12' id='mlh'>
+                            <p>
+                                We participate in Major League Hacking (MLH) as
+                                a MLH Member Event. You authorize us to share
+                                certain application/registration information for
+                                event administration, ranking, MLH
+                                administration, pre and post-event informational
+                                e-mails, and occasional messages about
+                                hackathons in line with the <a
+                                href='https://mlh.io/privacy'>MLH Privacy
+                                Policy</a>.
+                            </p>
+                        </div>
                     </div>
                 </form>
             </div>
