@@ -21,8 +21,11 @@ $success-header-color: $white;
  * Styles
  */
 
-#successAppModal {
+.modal {
     z-index: 100000;
+}
+
+#successAppModal {
     .modal-header {
         color: $success-header-color;
         background-color: $success-header-bg-color;
@@ -34,7 +37,6 @@ $success-header-color: $white;
 }
 
 #errorEmailAppModal {
-    z-index: 100000;
     .modal-header {
         color: $error-email-header-color;
         background-color: $error-email-header-bg-color;
