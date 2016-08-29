@@ -70,7 +70,7 @@ $splash-img-src: 'img/citrustree.jpg';
             max-width: 100%;
         }
 
-        h5 {
+        h3 {
             color: $white;
         }
 
@@ -81,8 +81,14 @@ $splash-img-src: 'img/citrustree.jpg';
         }
 
         .logo {
+            @media (max-width: 760px) {
+                width: 60vw;
+            }
+            @media (min-width: 761px) {
+                width: 40vw;
+            }
+
             height: auto;
-            width: 25vw;
         }
       }
 
@@ -121,11 +127,11 @@ $splash-img-src: 'img/citrustree.jpg';
 
         #windmill4 {
           position: absolute;
-          width: $width * 1.5vw;
-          height: 1.1666 * $width * 1.5vw;
-          bottom: 8vh;
-          right: 5vw;
-          z-index: 500;
+          width: $width * 1.75vw;
+          height: 1.1666 * $width * 1.75vw;
+          bottom: 4vw;
+          right: 0vw;
+          z-index: 1000;
         }
 
         .post {
@@ -157,6 +163,11 @@ $splash-img-src: 'img/citrustree.jpg';
           left: 16.9%;
           -webkit-animation: rotatemill 6s linear infinite;
           animation: rotatemill 6s linear infinite;
+        }
+
+        .flaps1 {
+          -webkit-animation-delay: -3s; /* Chrome, Safari, Opera */
+          animation-delay: -3s;
         }
 
         .flap {

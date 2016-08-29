@@ -14,7 +14,9 @@
                                    'the event';
         // Reason for needing age
         $scope.ageNeededReason = 'Since this is an overnight event, You must ' +
-                                 'be 18 or older to participate';
+                                 'be 16 or older to participate. If you are ' +
+                                 'under 18, we will have to send you a ' +
+                                 'liability waiver for you to sign. :)';
 
         // Details about transportation
         $scope.transDetail = 'We will be providing transportation for a select ' +

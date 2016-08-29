@@ -141,8 +141,11 @@
                         <div class='col-md-12'>
                             <div class='form-group has-feedback' show-errors>
                                 <label class='control-label required' tooltip='{{ ageNeededReason }}' for='age'><u>How old are you?</u></label>
-                                <input type='number' class='form-control' id='age' required name='age' min='18' max='99' ng-model='Application.Age' placeholder='18'>
-                                <p class='help-block'>Please enter your age. You must be at least 18 years old.</p>
+                                <input type='number' class='form-control'
+                                id='age' required name='age' min='16' max='99' ng-model='Application.Age' placeholder='18'>
+                                <p class='help-block'>Please enter your age. You
+                                must be at least 16 years old. Under 18 requires
+                                a liability waiver that will be emailed to you.</p>
                                 <span class="glyphicon glyphicon-ok form-control-feedback"></span>
                                 <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                             </div>
