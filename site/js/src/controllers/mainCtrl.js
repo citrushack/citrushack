@@ -17,6 +17,16 @@
         // See if we have sent the contact form
         $scope.sentForm = false;
 
+	$scope.animateElementIn=function($el) {
+	  $el.removeClass('invisible');
+	  $el.addClass('bounce-in');
+	};
+
+	$scope.animateElementOut=function($el) {
+	  $el.addClass('invisible');
+	  $el.removeClass('bounce-in');
+	};
+
         // Send contact form
         $scope.sendMessage = function () {
             $scope.$broadcast('show-errors-check-validity');

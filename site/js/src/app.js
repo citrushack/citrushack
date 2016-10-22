@@ -5,13 +5,14 @@
      * Create main app
      */
 
-    angular.module('CitrusHack', ['ngAnimate', 'ui.router', 'ui.bootstrap', 'ui.bootstrap.showErrors', 'duScroll', 'angular-loading-bar', 'sticky', 'CitrusHack.constants', 'CitrusHack.controllers', 'CitrusHack.directives', 'CitrusHack.services'])
+    angular.module('CitrusHack', ['ngAnimate', 'ui.router', 'ui.bootstrap', 'ui.bootstrap.showErrors', 'duScroll', 'angular-timeline', 'angular-scroll-animate','angular-loading-bar', 'sticky', 'CitrusHack.constants', 'CitrusHack.controllers', 'CitrusHack.directives', 'CitrusHack.services'])
         .value('duScrollOffset', 60)
-        .run(['$rootScope', '$location', 'SCHOOLS', 'CLASS_LEVELS', 'APPLICANT_TYPES', function($rootScope, $location, SCHOOLS, CLASS_LEVELS, APPLICANT_TYPES) {
+        .run(['$rootScope', '$location', 'SCHOOLS', 'CLASS_LEVELS', 'APPLICANT_TYPES', 'TIMELINE_DAYS', function($rootScope, $location, SCHOOLS, CLASS_LEVELS, APPLICANT_TYPES, TIMELINE_DAYS) {
             // Make constants available
             $rootScope.SCHOOLS = SCHOOLS;
             $rootScope.CLASS_LEVELS = CLASS_LEVELS;
             $rootScope.APPLICANT_TYPES = APPLICANT_TYPES;
+	    $rootScope.TIMELINE_DAYS = TIMELINE_DAYS;
             // Make location available in rootScope
             $rootScope.location = $location;
             // Make FB init available in rootScope

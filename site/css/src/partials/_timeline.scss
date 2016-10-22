@@ -1,0 +1,33 @@
+/**
+ * Timeline
+ */
+
+/**
+ * Module imports
+ */
+
+@import 'modules/colors';
+
+/**
+ * Local variables
+ */
+
+
+/**
+ * Styles
+ */
+
+#schedule {
+   
+    timeline-badge {
+        border-radius: 100% !important;
+    }
+
+    .timeline-panel {
+        color: #666;
+    }
+    
+    .invisible {
+        visibility: hidden !important;
+    }
+}

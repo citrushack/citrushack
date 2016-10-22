@@ -1,0 +1,5 @@
+SetEnv DB_NAME heroku_9b40805300176df
+SetEnv DB_HOST us-cdbr-iron-east-02.cleardb.net
+SetEnv DB_PASSWORD 9c9cfe8c
+SetEnv DB_USER be49eb03cbd17f
+SetENV RESUME_DIR /opt/files/

@@ -17,11 +17,6 @@
                 url: '/main'
               , templateUrl: '../../partials/main.html'
               , controller: 'MainCtrl'
-            })
-            .state('apply', {
-                url: '/apply'
-              , templateUrl: '../../partials/apply.html'
-              , controller: 'ApplyCtrl'
             });
 
         // Go to home on unmatched route

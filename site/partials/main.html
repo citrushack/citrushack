@@ -77,13 +77,13 @@
                 California, Riverside.
             </p>
             <p>
-                Established in 2015, Citrus Hack invites across California and
+                Established in 2015, Citrus Hack invites students across California and
                 throughout the world to cultivate new and exciting technologies.
                 For our second annual hackathon, we aim to bring value to the
                 technology sector through innovation from the next generation of
                 developers.
             <p>
-                Held again this year at the wonderful
+                It will be held again this year at the wonderful
                 <strong> Winston Chung Hall </strong> at the
                 University of California, Riverside.
             </p>
@@ -210,21 +210,74 @@
     <h6 id='disclaimer' class='text-center text-muted'><em>FAQ is subject to change at anytime</em></h6>
 </section><!-- FAQ -->
 
-<!-- Schedule -->
+<!-- Timeline -->
 <section id='schedule' class='container-fluid'>
-    <h1 class='text-bold text-center'>Schedule</h1>
+    <h1 class='text-center text-bold'>Schedule</h1>
+    <br>
+    <h3 class='text-center'>Friday</h3>
+    <timeline>
+      <timeline-event ng-repeat="event in TIMELINE_DAYS.friday">
+	<timeline-badge class="{{event.badgeClass}} invisible" when-visible="animateElementIn" when-not-visible="animateElementOut">
+	  <i class="glyphicon {{event.badgeIconClass}}"></i>
+	</timeline-badge>
+	<timeline-panel class="{{event.badgeClass}} invisible" when-visible="animateElementIn" when-not-visible="animateElementOut">
+	  <timeline-heading>
+	    <h4>{{event.title}}</h4>
+	  </timeline-heading>
+	  <p>{{event.content}}</p>
+	</timeline-panel>
+      </timeline-event>
+    </timeline>
+    <h3 class='text-center'>Saturday</h3>
+    <timeline>
+      <timeline-event ng-repeat="event in TIMELINE_DAYS.saturday">
+	<timeline-badge class="{{event.badgeClass}} invisible" when-visible="animateElementIn" when-not-visible="animateElementOut">
+	  <i class="glyphicon {{event.badgeIconClass}}"></i>
+	</timeline-badge>
+	<timeline-panel class="{{event.badgeClass}} invisible" when-visible="animateElementIn" when-not-visible="animateElementOut">
+	  <timeline-heading>
+	    <h4>{{event.title}}</h4>
+	  </timeline-heading>
+	  <p>{{event.content}}</p>
+	</timeline-panel>
+      </timeline-event>
+    </timeline>
+    <h3 class='text-center'>Sunday</h3>
+    <timeline>
+      <timeline-event ng-repeat="event in TIMELINE_DAYS.sunday">
+	<timeline-badge class="{{event.badgeClass}} invisible" when-visible="animateElementIn" when-not-visible="animateElementOut">
+	  <i class="glyphicon {{event.badgeIconClass}}"></i>
+	</timeline-badge>
+	<timeline-panel class="{{event.badgeClass}} invisible" when-visible="animateElementIn" when-not-visible="animateElementOut">
+	  <timeline-heading>
+	    <h4>{{event.title}}</h4>
+	  </timeline-heading>
+	  <p>{{event.content}}</p>
+	</timeline-panel>
+      </timeline-event>
+    </timeline>
+    <h5 class='text-center'>All content is subject to change</h5>
+</section><!-- Timeline -->
+
+<!-- Partners -->
+<section id='partners' class='container-fluid'>
+    <h1 class='text-bold text-center'>Partners</h1>
     <div class='row'>
-        <div class='col-md-8 col-md-offset-2'>
+        <div class='col-xs-2 col-xs-offset-3'>
             <div class='row text-center'>
-                <h5> Coming soon~! </h5>
+                <img class='center-block img-responsive'
+		src='http://static.mlh.io/brand-assets/logo/mlh-logo-black.png' />
+            </div>
+        </div>
+        <div class='col-xs-1'></div>
+        <div class='col-xs-4'>
+            <div class='row text-center'>
+                <img class='center-block img-responsive'
+                src='img/logos/hackerfund.png' 
+                style='max-height: 110px' />
             </div>
         </div>
     </div>
-</section>
-
-<!-- Apply -->
-<section id='apply' class='container-fluid' ch-parallax>
-    <h1 class='text-bold text-center'>Registration coming soon!</h1>
 </section>
 
 <!-- Sponsors -->
@@ -234,28 +287,56 @@
         <h5 class='text-center'>make this event possible</h5>
     </div>
     <div id='sponsor-list' class='row'>
-        <div class='col-md-2'></div>
+        <div class='col-md-4'></div>
+        <div class='col-md-4' style='text-align: center'>
+            <h1 style='color: #fff'> Co-Host </h1>
+            <a href='https://equipovision.com' target='_blank'>
+                <img class='sponsor center-block img-responsive'
+                style='max-height: 250px'
+                src='img/logos/equipo.png' />
+            </a>
+        </div>
+        <div class='col-md-4'></div>
+    </div>
+    <hr style='width: 75%' />
+    <div id='sponsor-list' class='row'>
+	<div class='col-md-1'></div>
+	<div class='col-md-5'>
+	    <a href='https://www.facebook.com' target='_blank'>
+		<img class='sponsor center-block img-responsive'
+		style='max-height: 175px; max-width: 400px; margin-top: 40px'
+		src='img/logos/facebook.png' />
+	    </a>
+	</div>
+	<div class='col-md-5'>
+	    <a href='https://www.google.com' target='_blank'>
+		<img class='sponsor center-block img-responsive'
+		style='max-height: 200px; max-width: 350px'
+		src='img/logos/google.png' />
+	    </a>
+	</div>
+	<div class='col-md-1'></div>
+    </div>
+    <hr style="width: 75%" />
+    <div class='clearfix visible-md visible-lg'></div> 
+    <div id='sponsor-list' class='row'>
+        <div class='col-md-4'></div>
         <div class='col-md-4'>
             <a href='https://www.hackerearth.com' target='_blank'>
                 <img class='sponsor center-block img-responsive'
-                src='img/companies/hacker_earth.png' />
+                style='max-height: 60px'
+                src='img/logos/hack_earth.png' />
             </a>
         </div>
-        <div class='col-md-4'>
-            <a href='https://customink.com' target=_blank'>
-                <img class='sponsor center-block img-responsive'
-                src='img/companies/custom_ink.png' />
-            </a>
-        </div>
-        <div class='col-md-2'></div>
+        <div class='col-md-4'></div>
     </div>
     <div id='sponsor-list' class='row'>
         <div class='clearfix visible-md visible-lg'></div>
         <div class='col-md-2'></div>
         <div class='col-md-4'>
-            <a href='https://amazon.com' target='_blank'>
-                <img class='sponsor center-block img-responsive'
-                src='img/companies/amazon.png' />
+            <a href='https://alexa.amazon.com/spa/index.html' target='_blank'>
+                <img class='sponsor center-block img-responsive' style='max-height: 100px'
+                src='img/logos/alexa.png' />
             </a>
         </div>
         <div class='col-md-4'>
@@ -266,15 +347,86 @@
         </div>
         <div class='col-md-2'></div>
     </div>
+    <div id='sponsor-list' class='row'>
+        <div class='col-md-2'></div>
+        <div class='col-md-4'>
+            <a href='https://www.stickermule.com' target='_blank'>
+                <img class='sponsor center-block img-responsive'
+                src='img/companies/smule.png' />
+            </a>
+        </div>
+        <div class='col-md-4'>
+            <a href='http://www.theyesman.org/' target='_blank'>
+                <img class='sponsor center-block img-responsive'
+                src='img/companies/yesman.png' />
+            </a>
+        </div>
+        <div class='col-md-2'></div>
+    </div>
+    <div id='sponsor-list' class='row'>
+	<div class='col-md-2'></div>
+	<div class='col-md-4'>
+	    <a href='http://www.gigabyte.us' target='_blank'>
+		<img class='sponsor center-block img-responsive'
+                style='max-height: 125px'
+		src='img/logos/gigabyte.png' />
+	    </a>
+	</div>
+	<div class='col-md-4'>
+	    <a href='http://marcellospizzapasta.com' target='_blank'>
+		<img class='sponsor center-block img-responsive'
+		src='img/logos/marcellos.png' />
+	    </a>
+	</div>
+	<div class='col-md-2'></div>
+    </div>
+    <hr style='width: 75%' />
+    <div id='sponsor-list' class='row'>
+        <div class='col-md-2'></div>
+        <div class='col-md-4'>
+            <a href='https://www.starbucks.com' target='_blank'>
+                <img class='sponsor sponsor-small center-block img-responsive'
+                src='img/companies/starbucks.png' />
+            </a>
+        </div>
+	<div class='col-md-4'>
+	    <a href='https://customink.com' target='_blank'>
+		<img class='sponsor sponsor-small center-block img-responsive'
+		src='img/companies/custom_ink.png' />
+	    </a>
+	</div>
+	<div class='col-md-2'></div>
+    </div>
+    <div id='sponsor-list' class='row'>
+        <div class='col-md-2'></div>
+        <div class='col-md-4'>
+            <a href='http://www.unclechuangsbakery.com' target='_blank'>
+                <img class='sponsor sponsor-small center-block img-responsive'
+                src='img/companies/chuangs.png' />
+            </a>
+        </div>
+	<div class='col-md-4'>
+	    <a href='https://www.bitpeel.com' target='_blank'>
+		<img class='sponsor sponsor-small center-block img-responsive'
+		src='img/companies/bitpeel.png' />
+	    </a>
+	</div>
+	<div class='col-md-2'></div>
+    </div>
+    <div id='sponsor-list' class='row'>
+        <div class='col-md-4'></div>
+        <div class='col-md-4'>
+            <a href='https://github.com' target='_blank'>
+                <img class='sponsor sponsor-small center-block img-responsive'
+                style='max-height: 50px'
+                src='img/logos/github.png' />
+            </a>
+        </div>
+	<div class='col-md-4'></div>
+    </div>
     <h5 id='sponsor-interest' class='text-center'>
         Intrested in sponsoring? Please <a href='#contact' du-smooth-scroll>contact us</a>.
     </h5>
-    <a id="mlh-trust-badge"
-        style="display:block;max-width:100px;min-width:60px;position:absolute;right:50px;top:0;width:10%;z-index:100"
-        href="https://mlh.io/seasons/na-2017/events?utm_source=na-2017&utm_medium=TrustBadge&utm_campaign=na-2017&utm_content=gray"
-        target="_blank"><img
-        src="https://s3.amazonaws.com/logged-assets/trust-badge/2017/gray.svg"
-        alt="Major League Hacking 2017 Hackathon Season" style="width:100%"></a>
 </section><!-- Sponsors -->
 
 <!-- Credits -->
@@ -283,21 +435,24 @@
     <h5 class='text-center'>these UCR clubs</h5>
     <div id='organized'>
         <div class='row'>
-            <div class='col-md-4'>
+            <div class='col-md-3'>
                 <a href='http://acm.cs.ucr.edu/' target='_blank'>
                     <img class='center-block img-responsive' src='img/acmucrlogo.png'></img>
                 </a>
             </div>
-            <div class='col-md-4'>
+            <div class='col-md-3'>
                 <a href='https://highlanderlink.ucr.edu/organization/cceucr' target='_blank'>
                     <img class='center-block img-responsive' src='img/ccelogo.png'></img>
                 </a>
             </div>
-            <div class='col-md-4'>
+            <div class='col-md-3'>
                 <a href='http://ieee.ee.ucr.edu/' target='_blank'>
                     <img class='center-block img-responsive' src='img/ieee.jpg'></img>
                 </a>
             </div>
+            <div class='col-md-3'>
+	        <img class='center-block img-responsive' src='img/logos/aspb.png'></img>
+	    </div>
         </div>
     </div>
 </section><!-- Credits -->
@@ -308,7 +463,7 @@
     <h5 class='text-center'>we love to hear from you!</h5>
     <div class='row'>
         <div class='col-md-offset-3 col-md-6' id='form-wrapper'>
-            <h3 class='text-center'>You can email us directly <a href='mailto:cutiehack@gmail.com'
+            <h3 class='text-center'>You can email us directly <a href='mailto:citrushack@gmail.com'
             style="text-decoration: none; color: white;"
             target='_blank'><u>here</u></a></h3>
         </div>

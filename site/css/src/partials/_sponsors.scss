@@ -17,8 +17,9 @@ $sponsor-interest-color: $citrus-orange;
 $sponsor-interest-margin-top: 40px;
 
 $sponsor-list-margin-top: 50px;
-$sponsor-margin: 15px;
-$sponsor-max-height: 80px;
+$sponsor-margin: 25px;
+$sponsor-max-height: 90px;
+$sponsor-small-max-height: 75px;
 
 /**
  * Styles
@@ -42,7 +43,6 @@ $sponsor-max-height: 80px;
 
 
     #sponsor-list {
-        margin-top: $sponsor-list-margin-top;
 
         [class^='sponsor-'] {
             margin-top: $sponsor-margin;
@@ -50,6 +50,8 @@ $sponsor-max-height: 80px;
         }
 
         .sponsor {
+	    margin-top: $sponsor-margin;
+	    margin-bottom: $sponsor-margin;
             max-height: $sponsor-max-height;
             -webkit-filter: brightness(0) invert(1);
             -moz-filter:    brightness(0) invert(1);
@@ -65,6 +67,10 @@ $sponsor-max-height: 80px;
           -ms-filter:     brightness(100%);
           -o-filter:      brightness(100%);
         }
+	
+	.sponsor-small {
+	    max-height: $sponsor-small-max-height;
+	}
     }
 }
 
