@@ -93,22 +93,24 @@
     </div>
 
     <div id='content-wrapper' class='{{ pageView }}' ui-view></div>
-    <div media="(max-width: 760px)">
-        <a id="mlh-trust-badge" class='mlh-flag'
-	    style="display:block;max-width:100px;min-width:60px;position:fixed;left:50px;width:10%;z-index:1000"
-	    href="https://mlh.io/seasons/na-2017/events?utm_source=na-2017&utm_medium=TrustBadge&utm_campaign=na-2017&utm_content=gray"
-	    target="_blank"><img
-	    src="https://s3.amazonaws.com/logged-assets/trust-badge/2017/gray.svg"
-     	    alt="Major League Hacking 2017 Hackathon Season" style="width:100%"></a>
-    </div>
-    <div media="(min-width: 761px)">
-        <a id="mlh-trust-badge" class='mlh-flag'
-	    style="display:block;max-width:100px;min-width:60px;position:fixed;left:50px;width:10%;z-index:1000"
-	    href="https://mlh.io/seasons/na-2017/events?utm_source=na-2017&utm_medium=TrustBadge&utm_campaign=na-2017&utm_content=gray"
-	    target="_blank"><img
-	    src="https://s3.amazonaws.com/logged-assets/trust-badge/2017/gray.svg"
-     	    alt="Major League Hacking 2017 Hackathon Season" style="width:100%"></a>
-    </div>
+    <div ng-if="location.url() === '/main'">
+        <div media="(max-width: 760px)">
+            <a id="mlh-trust-badge" class='mlh-flag'
+            style="display:block;max-width:100px;min-width:60px;position:fixed;left:50px;width:10%;z-index:1000"
+            href="https://mlh.io/seasons/na-2017/events?utm_source=na-2017&utm_medium=TrustBadge&utm_campaign=na-2017&utm_content=gray"
+            target="_blank"><img
+            src="https://s3.amazonaws.com/logged-assets/trust-badge/2017/gray.svg"
+                alt="Major League Hacking 2017 Hackathon Season" style="width:100%"></a>
+        </div>
+        <div media="(min-width: 761px)">
+            <a id="mlh-trust-badge" class='mlh-flag'
+            style="display:block;max-width:100px;min-width:60px;position:fixed;left:50px;width:10%;z-index:1000"
+            href="https://mlh.io/seasons/na-2017/events?utm_source=na-2017&utm_medium=TrustBadge&utm_campaign=na-2017&utm_content=gray"
+            target="_blank"><img
+            src="https://s3.amazonaws.com/logged-assets/trust-badge/2017/gray.svg"
+                alt="Major League Hacking 2017 Hackathon Season" style="width:100%"></a>
+        </div>
+   </div>
 
     <style>
         @media (max-width: 989px) {
@@ -136,6 +138,7 @@
     <script src="bower_components/ngSticky/dist/sticky.min.js"></script>
     <script src="bower_components/angular-timeline/dist/angular-timeline.js"></script>
     <script src="bower_components/angular-scroll-animate/dist/angular-scroll-animate.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js"></script>
     <script src="js/CitrusHack.js"></script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

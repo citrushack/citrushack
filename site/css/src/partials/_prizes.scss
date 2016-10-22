@@ -1,0 +1,31 @@
+/**
+ * Splash
+ */
+
+ /**
+  * Module imports
+  */
+
+@import 'modules/mixins';
+
+ /**
+  * Local variables
+  */
+
+/**
+ * Styles
+ */
+
+#prize_list {
+    .prize {
+        .title {
+            color: #333;
+            font-size: 36px;
+            font-weight: bold;
+        }
+        font-size: 16px;
+        color: #888;
+        text-align: center;
+        padding: 25px 10px;
+    }
+}

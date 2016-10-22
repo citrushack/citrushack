@@ -1,0 +1,209 @@
+<!-- Splash -->
+<section id='live_header' ch-parallax ch-parallax-speed='5'>
+    <div id='splash-group'>
+        <!--
+        <h1 class='text-center'>Citrus Hack</h1>
+        -->
+        <img class='img-responsive center-block' src='img/citrushack-logo.png' style="max-height: 250px; max-width: 250px;" />
+        <br>
+        <div class='row'>
+            <div class='col-md-6' style-'margin: 25px 0px;'>
+                <h3 class='text-center'>Current Weather</h3>
+                <div id="weather"></div>
+            </div>
+            <div class='col-md-6' style='margin: 25px 0px;'>
+                <h3 class='text-center'>Current Time</h3>
+                <div class='text-center' id="time"></div>
+            </div>
+        </div>
+    </div>                                                                                                                                                                                                      </section><!-- Splash -->
+
+<!-- Other Prizes -->
+<section id='live_body' class='container-fluid'>
+    <div class='row'>
+        <div class='col-md-12'>                                                                                                                                                                                             <h1>Time Remaining</h1>
+            <hr>
+            <div id="countdown">
+				<p class="days">00</p>
+				<p class="timeRefDays">days</p>
+				<p class="hours">00</p>
+				<p class="timeRefHours">hours</p>
+				<p class="minutes">00</p>
+				<p class="timeRefMinutes">minutes</p>
+				<p class="seconds">00</p>
+				<p class="timeRefSeconds">seconds</p>
+			</div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class='row'>
+        <div class='col-md-6'>
+            <h1>Important Links</h1>
+            <hr />
+            <div class='row'>
+                <div class='col-md-1'></div>
+                <div class='col-md-4 text-center' style='margin-bottom: 40px'>
+                    <a href='#/schedule' style='font-size: 40px;'>Schedule</a>
+                </div>
+                <div class='col-md-1'></div>
+                <div class='col-md-4 text-center'>
+                    <a href='#/map' style='font-size: 40px;'>Map</a>
+                </div>
+                <div class='col-md-2'></div>
+            </div>
+            <div class='row'>
+                <div class='col-md-1'></div>
+                <div class='col-md-4 text-center' style='margin-bottom: 40px'>
+                    <a href='#/prizes' style='font-size: 40px;'>Prizes</a>
+                </div>
+                <div class='col-md-1'></div>
+                <div class='col-md-4 text-center'>
+                    <a href='https://citrushack2016.hackerearth.com/'
+                    target='_blank' style='font-size: 40px;'>HackerEarth</a>
+                </div>
+                <div class='col-md-2'></div>                                                                                                                                                                                </div>
+        </div>
+<div class='col-md-6'>
+            <h1>Network</h1>
+            <hr />
+            <h4>Use your issued UCR login credentials to access the networks <strong>ucrwpa</strong> and <strong>mobilenet</strong>.</h4>
+            <br>
+            <h4>If you’re affiliated with a supporting campus, feel free to use <strong>eduroam</strong> as well.</h4>
+        </div>
+    </div>
+    <br><br>
+    <div class='row'>
+        <div class='col-md-6 col-md-offset-3'>
+            <h1 class='text-center'>Announcements</h1>
+            <hr />
+            <div class='center-block'>
+                <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/CitrusHack" data-widget-id="662473637996265473">Tweets by @CitrusHack</a>
+            </div>
+        </div>
+        <div class='col-md-6'>
+        </div>
+    </div>
+</section><!-- Timeline -->
+
+<script>
+$(document).ready(function() {
+  $.simpleWeather({
+    location: '92507',
+    unit: 'f',
+    success: function(weather) {
+      html = '<h2><i class="icon-'+weather.code+'"></i> '+weather.temp+'&deg;'+weather.units.temp+'</h2>';
+
+      $("#weather").html(html);
+    },
+    error: function(error) {
+      $("#weather").html('<p>'+error+'</p>');
+    }
+  });
+});
+</script>
+
+<script>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('time').innerHTML =
+    (h == 0 ? "12" : (h > 12 ? h-12 : h)) + ":" + m + ":" + s + (h >= 12 ? " PM" : " AM");
+    var t = setTimeout(startTime, 100);
+
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+
+$(document).ready(function() {
+    startTime();
+});
+
+</script>
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script><script>(function ($) {window.setTimeout(function(){$(".twitter-timeline").attr("style", "position: static; visibility: visible; display: block; width: 100%; height: 600px; padding: 0px; border: none; max-width: 700px; min-width: 180px; min-height: 200px; margin-top: 0px; margin-bottom: 0px; margin-right: auto; margin-left: auto;");
+  }, 1000);})(jQuery);
+</script>
+
+<script>
+(function (e) {
+  e.fn.countdown = function (t, n) {
+      function i() {
+        eventDate = Date.parse(r.date) / 1e3;
+        currentDate = Math.floor(e.now() / 1e3);
+        if (eventDate <= currentDate) {
+          n.call(this);
+          clearInterval(interval);
+        }
+        seconds = eventDate - currentDate;
+        days = Math.floor(seconds / 86400);
+        seconds -= days * 60 * 60 * 24;
+        hours = Math.floor(seconds / 3600);
+        seconds -= hours * 60 * 60;
+        minutes = Math.floor(seconds / 60);
+        seconds -= minutes * 60;
+        days == 1 ? thisEl.find(".timeRefDays").text("day") : thisEl.find(".timeRefDays").text("days");
+        hours == 1 ? thisEl.find(".timeRefHours").text("hour") : thisEl.find(".timeRefHours").text("hours");
+        minutes == 1 ? thisEl.find(".timeRefMinutes").text("minute") : thisEl.find(".timeRefMinutes").text("minutes");
+        seconds == 1 ? thisEl.find(".timeRefSeconds").text("second") : thisEl.find(".timeRefSeconds").text("seconds");
+        if (r["format"] == "on") {
+          days = String(days).length >= 2 ? days : "0" + days;
+          hours = String(hours).length >= 2 ? hours : "0" + hours;
+          minutes = String(minutes).length >= 2 ? minutes : "0" + minutes;
+          seconds = String(seconds).length >= 2 ? seconds : "0" + seconds;
+        }
+        if (!isNaN(eventDate)) {
+          thisEl.find(".days").text(days);
+          thisEl.find(".hours").text(hours);
+          thisEl.find(".minutes").text(minutes);
+          thisEl.find(".seconds").text(seconds);
+        } else {
+          alert("Invalid date. Example: 30 Tuesday 2013 15:50:00");
+          clearInterval(interval);
+        }
+      }
+      var thisEl = e(this);
+      var r = {
+        date: null,
+        format: null
+      };
+      t && e.extend(r, t);
+      i();
+      interval = setInterval(i, 1e3);
+  }
+  })(jQuery);
+
+$(document).ready(function () {
+      function e() {
+        var e = new Date;
+        e.setDate(e.getDate() + 60);
+        dd = e.getDate();
+        mm = e.getMonth() + 1;
+        y = e.getFullYear();
+        futureFormattedDate = mm + "/" + dd + "/" + y;
+        return futureFormattedDate;
+      }
+
+  $("#countdown").countdown({
+    date: "23 October 2016 09:00:00", // Change this to your desired date to countdown to
+    format: "on"
+  });
+
+});
+</script>
+
+<style>
+#countdown p {
+  display: inline-block;
+  padding: 5px;
+  margin: 0 0 20px;
+  font-size: 36px;
+}
+</style>

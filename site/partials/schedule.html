@@ -1,0 +1,48 @@
+<!-- Timeline -->
+<section id='timeline' class='container-fluid'>
+    <h1 class='text-center text-bold'>Timeline</h1>
+    <br>
+    <h3 class='text-center'>Friday</h3>
+    <timeline>
+      <timeline-event ng-repeat="event in TIMELINE_DAYS.friday">
+        <timeline-badge class="{{event.badgeClass}} ">
+          <i class="glyphicon {{event.badgeIconClass}}"></i>
+        </timeline-badge>
+        <timeline-panel class="{{event.badgeClass}} ">
+          <timeline-heading>
+            <h4>{{event.title}}</h4>
+          </timeline-heading>
+          <p>{{event.content}}</p>
+        </timeline-panel>
+      </timeline-event>
+    </timeline>
+    <h3 class='text-center'>Saturday</h3>
+    <timeline>
+      <timeline-event ng-repeat="event in TIMELINE_DAYS.saturday">
+        <timeline-badge class="{{event.badgeClass}} ">
+          <i class="glyphicon {{event.badgeIconClass}}"></i>
+        </timeline-badge>
+        <timeline-panel class="{{event.badgeClass}} ">
+          <timeline-heading>
+            <h4>{{event.title}}</h4>
+          </timeline-heading>
+          <p>{{event.content}}</p>
+        </timeline-panel>
+      </timeline-event>
+    </timeline>
+    <h3 class='text-center'>Sunday</h3>
+    <timeline>
+      <timeline-event ng-repeat="event in TIMELINE_DAYS.sunday">
+        <timeline-badge class="{{event.badgeClass}}">
+          <i class="glyphicon {{event.badgeIconClass}}"></i>
+        </timeline-badge>
+        <timeline-panel class="{{event.badgeClass}}">
+          <timeline-heading>
+            <h4>{{event.title}}</h4>
+          </timeline-heading>
+          <p>{{event.content}}</p>
+        </timeline-panel>
+      </timeline-event>
+    </timeline>
+    <h5 class='text-center'>All content is subject to change</h5>
+</section><!-- Timeline -->

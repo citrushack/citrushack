@@ -25,6 +25,9 @@
 @import 'partials/modals';
 @import 'partials/contact';
 @import 'partials/footer';
+@import 'partials/live_header';
+@import 'partials/prizes';
+@import 'partials/_grand_prizes';
 
 /**
  * Local variables
@@ -67,7 +70,7 @@ body {
      }
 
     /**
-     * Make a gap between each section except for the 
+     * Make a gap between each section except for the
      * first
      */
 

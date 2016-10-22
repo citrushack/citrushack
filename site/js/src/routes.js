@@ -17,6 +17,26 @@
                 url: '/main'
               , templateUrl: '../../partials/main.html'
               , controller: 'MainCtrl'
+            })
+            .state('timeline', {
+                url: '/schedule',
+                templateUrl: '../../partials/schedule.html',
+                controller: 'ScheduleCtrl'
+            })
+            .state('live', {
+                url: '/live',
+                templateUrl: '../../partials/live.html',
+                controller: 'LiveCtrl'
+            })
+            .state('map', {
+                url: '/map',
+                templateUrl: '../../partials/map.html',
+                controller: 'MapCtrl'
+            })
+            .state('prizes', {
+                url: '/prizes',
+                templateUrl: '../../partials/prizes.html',
+                controller: 'PrizesCtrl'
             });
 
         // Go to home on unmatched route

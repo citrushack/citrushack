@@ -1,0 +1,52 @@
+/**
+ * Splash
+ */
+
+ /**
+  * Module imports
+  */
+
+@import 'modules/mixins';
+
+ /**
+  * Local variables
+  */
+
+$splash-width: 100%;
+$splash-height: 700px;
+
+/**
+ * Styles
+ */
+
+#grand_prizes {
+    min-height: $splash-height;
+    width: $splash-width;
+    position: relative;
+    // Background
+    background: #2396CC;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+
+    .prize {
+        background-color: rgba(0,0,0,.5);
+        margin-bottom: 40px;
+        color: #fff;
+        padding: 5px;
+    }
+
+    #splash-group {
+        position: absolute;
+        left: 50%;
+        top: 290px;
+        @include transform(translate(-50%, -50%));
+        width: 50%;
+
+        h1 {
+            color: $white;
+            font-size: 80px;
+        }
+    }
+}
+
