@@ -13,6 +13,11 @@
 
     function setRoutes($stateProvider, $urlRouterProvider){
         $stateProvider
+            .state('live', {
+                url: '/live',
+                templateUrl: '../../partials/live.html',
+                controller: 'LiveCtrl'
+            })
             .state('main', {
                 url: '/main'
               , templateUrl: '../../partials/main.html'
@@ -22,11 +27,6 @@
                 url: '/schedule',
                 templateUrl: '../../partials/schedule.html',
                 controller: 'ScheduleCtrl'
-            })
-            .state('live', {
-                url: '/live',
-                templateUrl: '../../partials/live.html',
-                controller: 'LiveCtrl'
             })
             .state('map', {
                 url: '/map',
@@ -40,7 +40,7 @@
             });
 
         // Go to home on unmatched route
-        $urlRouterProvider.otherwise('/main');
+        $urlRouterProvider.otherwise('/live');
     }
 
     /**

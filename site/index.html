@@ -61,34 +61,59 @@
 
     <div id='nav-wrapper'>
         <nav>
-            <ul class='nav nav-pills list-inline nav-justified'>
-                <li du-scrollspy='splash'>
-                    <a href='#splash' du-smooth-scroll>
-                        Landing
-                    </a>
-                </li>
-                <li du-scrollspy='intro'>
-                    <a href='#intro' du-smooth-scroll>Intro</a>
-                </li>
-                <li du-scrollspy='faq'>
-                    <a href='#faq' du-smooth-scroll>FAQ</a>
-                </li>
-                <li du-scrollspy='schedule'>
-                    <a href='#schedule' du-smooth-scroll>Schedule</a>
-                </li>
-		<li du-scrollspy='partners'>
-		    <a href='#partners' du-smooth-scroll>Partners</a>
-	 	</li>
-                <li du-scrollspy='sponsors'>
-                    <a href='#sponsors' du-smooth-scroll>Sponsors</a>
-                </li>
-                <li du-scrollspy='credits'>
-                    <a href='#credits' du-smooth-scroll>Organized By</a>
-                </li>
-                <li du-scrollspy='contact'>
-                    <a href='#contact' du-smooth-scroll>Contact Us</a>
-                </li>
-            </ul>
+			<div ng-if="location.url() === '/main'">
+				<ul class='nav nav-pills list-inline nav-justified'>
+					<li du-scrollspy='splash'>
+						<a href='#splash' du-smooth-scroll>
+							Landing
+						</a>
+					</li>
+					<li du-scrollspy='intro'>
+						<a href='#intro' du-smooth-scroll>Intro</a>
+					</li>
+					<li du-scrollspy='faq'>
+						<a href='#faq' du-smooth-scroll>FAQ</a>
+					</li>
+					<li du-scrollspy='schedule'>
+						<a href='#schedule' du-smooth-scroll>Schedule</a>
+					</li>
+			<li du-scrollspy='partners'>
+				<a href='#partners' du-smooth-scroll>Partners</a>
+			</li>
+					<li du-scrollspy='sponsors'>
+						<a href='#sponsors' du-smooth-scroll>Sponsors</a>
+					</li>
+					<li du-scrollspy='credits'>
+						<a href='#credits' du-smooth-scroll>Organized By</a>
+					</li>
+					<li du-scrollspy='contact'>
+						<a href='#contact' du-smooth-scroll>Contact Us</a>
+					</li>
+				</ul>
+			</div>
+			<div ng-if="location.url() === '/live'">
+				<ul class='nav nav-pills list-inline nav-justified'>
+					<li>
+						<a href='#/main'>Main Site</a>
+					</li>
+					<li>
+						<a href='#/schedule'>Schedule</a>
+					</li>
+					<li>
+						<a href='#/prizes'>Prizes</a>
+					</li>
+					<li>
+						<a href='#/map'>Map</a>
+					</li>
+				</ul>
+			</div>
+			<div ng-if="location.url() !== '/live' && location.url() !== '/main'">
+				<ul class='nav nav-pills list-inline nav-justified'>
+					<li>
+						<a href='#/live'>Live Site</a>
+					</li>
+				</ul>
+			</div>
         </nav>
     </div>
 
